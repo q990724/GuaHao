@@ -21,11 +21,11 @@
 <style scoped>
 .quik{
   width: 40%;
-  height:100px;
+  height:6.25rem;
   /* margin:0px 5px 5px 15px; */
   box-shadow:-0.08533333rem 0.17066667rem 0.68266667rem -0.04266667rem rgba(20,19,51,.1) ;
   background: url("../../../../public/images/index/22toGuahao/icon-fast-inquiry-background.png");
-  background-size: 60px 60px;
+  background-size: 3.75rem 3.75rem;
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: bottom;
@@ -33,28 +33,28 @@
   /* top:40px; */
 }
 .top{
-  padding:15px 5px 10px 15px;
+  padding:.9375rem .3125rem .625rem .9375rem;
   text-align: left;
 }
 .top>span{
   color:#28354c;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-style: "微软雅黑";
   font-weight: 700;
   
 }
 .top>img{
-  width:36px;
-  height:14px;
-  margin-left:10px;
-  margin-top:10px;
+  width:2.25rem;
+  height:.875rem;
+  margin-left:.625rem;
+  margin-top:.625rem;
 }
 /* .bottom{
 
 } */
 .bottom span{
-  font-size: 14px;
-  line-height: 14px;
+  font-size: .875rem;
+  line-height: .875rem;
   color:#5e616b;
 }
 .bottom>span>span{
