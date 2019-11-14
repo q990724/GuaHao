@@ -101,13 +101,12 @@ export default {
 .ad{
   /* width:375px; */
   width: 100%;
-  height:62px;
   margin-top: .9375rem;
 }
 .ad>div{
   /* width:365px; */
   width: 100%;
-  height:62px;
+  height: 100%;
   /* position: relative; */
   /* top:20px; */
   /* left:-10px; */
