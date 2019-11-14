@@ -9,10 +9,11 @@ import MintUI from "mint-ui"
 import "mint-ui/lib/style.css"
 // 
 
-import {TreeSelect} from "vant";
-import "vant/lib/tree-select/style"
+// 完整引入vant
+import Vant from 'vant';
+import 'vant/lib/index.css';
 
-Vue.use(TreeSelect);
+Vue.use(Vant);
 
 // Vue.use(vant);
 // 3.将mint-ui对象注册到vue实例中
