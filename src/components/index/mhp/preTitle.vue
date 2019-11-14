@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <div class="con_title">
-      <span class="goback" @click="goback"> &lt;</span>
+        <van-icon class="goback" @click="goback" name="arrow-left" />
+      <!-- <span class="goback" @click="goback"> &lt;</span> -->
       <span class="pre_title">预约挂号</span>
     </div>
   </div>
@@ -41,7 +42,7 @@ export default {
 .goback{
   position: relative;
   left:-7.5rem;
-  font-size: 1.875rem;
+  font-size: 1.125rem;
   line-height: 2.8125rem;
 }
 </style>
