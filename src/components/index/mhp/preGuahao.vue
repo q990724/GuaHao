@@ -30,11 +30,13 @@
         </li>
       </ul>
     </div>
+    <preGuahaoBody></preGuahaoBody>
   </div>
 </template>
 <script>
 import preTitle from "./preTitle";
 import wysearch from "./wysearch";
+import preGuahaoBody from "./preGuahaoBody";
 export default {
   data() {
     return {
@@ -44,6 +46,7 @@ export default {
   components:{
     "preTitle":preTitle,
     "wysearch":wysearch,
+    "preGuahaoBody":preGuahaoBody,
   },
 }
 </script>
@@ -58,6 +61,8 @@ templete{
   width:100%;
   height:5.875rem;
   border-bottom: .0625rem solid #eee;
+  background: #fff;
+  margin-bottom: .3125rem;
 }
 .four>ul{
   display: flex;
