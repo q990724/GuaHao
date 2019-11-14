@@ -12,7 +12,6 @@ import "mint-ui/lib/style.css"
 // 完整引入vant
 import Vant from 'vant';
 import 'vant/lib/index.css';
-
 Vue.use(Vant);
 
 // Vue.use(vant);
