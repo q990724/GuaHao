@@ -20,9 +20,9 @@
 </script>
 <style scoped>
 .quik{
-  width:164px;
+  width: 40%;
   height:100px;
-  margin:0px 5px 5px 15px;
+  /* margin:0px 5px 5px 15px; */
   box-shadow:-0.08533333rem 0.17066667rem 0.68266667rem -0.04266667rem rgba(20,19,51,.1) ;
   background: url("../../../../public/images/index/22toGuahao/icon-fast-inquiry-background.png");
   background-size: 60px 60px;

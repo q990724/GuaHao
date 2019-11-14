@@ -46,14 +46,19 @@ export default {
 </script>
 <style scoped>
 .normal_p{
-  width:343px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: .9375rem;
+  /* width:343px;
   height:100px;
-  margin:15px 15px 0px 15px;
+  margin:15px 15px 0px 15px; */
   /* position: relative; */
   /* top:40px; */
+  padding: 0 1.6rem;
 }
 .normal{
-  width:343px;
+  width: 100%;
   height:100px;
   /* margin:0px 15px 0px 25px; */
   display: flex;
@@ -94,15 +99,18 @@ export default {
   color:#3f86ff;
 }
 .ad{
-  width:375px;
+  /* width:375px; */
+  width: 100%;
   height:62px;
+  margin-top: .9375rem;
 }
 .ad>div{
-  width:365px;
+  /* width:365px; */
+  width: 100%;
   height:62px;
-  position: relative;
-  top:20px;
-  left:-10px;
+  /* position: relative; */
+  /* top:20px; */
+  /* left:-10px; */
 }
 .ad>div>img{
   width:100%;

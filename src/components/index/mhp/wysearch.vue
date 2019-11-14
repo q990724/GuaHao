@@ -15,33 +15,34 @@ export default {
 </script>
 <style scoped>
 .search{
-  width:385px;
   height:45px;
   /* position: relative; */
   margin-top: 55px;
   margin-bottom: 10px;
   border-bottom:1px solid #aaa;
+  /* display: flex; */
+  /* align-items: center; */
   /* top:45px; */
 }
 .search>a>.content{
-  width:310px;
+  width: 81.5%;
   height:32px;
-  margin:10px 13px;
   background-color: #ebecf1;
   border-radius: 15px;
   color:#999;
   font-size:10px;
   line-height: 32px;
+  margin-left: .9375rem;
+  display: flex;
+  align-items: center;
+  padding-left: .625rem;
 }
 .search>a>.content>img{
   width:18px;
   height:18px;
-  position: relative;
-  top:7px;
-  left:-40px;
+  margin-right: .5rem;
 }
 .search>a>.content>i{
-  position: relative;
-  left:-33px;
+
 }
 </style>

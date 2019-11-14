@@ -38,6 +38,7 @@ export default {
 <style scoped>
 .entry_major{ 
   display: flex;
+  justify-content: space-around;
 }
 .bottom{
   /* overflow-y:scroll; */
