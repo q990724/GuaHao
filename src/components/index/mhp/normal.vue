@@ -59,40 +59,40 @@ export default {
 }
 .normal{
   width: 100%;
-  height:100px;
+  height:6.25rem;
   /* margin:0px 15px 0px 25px; */
   display: flex;
   justify-content: space-between;
 }
 .p_professor{
-  width:106px;
-  height:100px;
+  width:6.625rem;
+  height:6.25rem;
   text-align: center;
 }
 .professor{
-  width:54px;
-  height:54px;
+  width:3.375rem;
+  height:3.375rem;
   background: #e8f0fe;
   border-radius: 50%;
   margin:0 auto;
 }
 .professor>img{
-  width:36px;
-  height:36px;
+  width:2.25rem;
+  height:2.25rem;
   position: relative;
-  top:8px;
+  top:.5rem;
 }
 .zjwz{
-  margin-top:10px;
-  margin-bottom:3px;
-  font-size:18px;
+  margin-top:.625rem;
+  margin-bottom:.1875rem;
+  font-size:1.125rem;
   font-style:"微软雅黑";
-  line-height: 18px;
+  line-height: 1.125rem;
   font-weight: 600;
   color:#28354c;
 }
 .constructor{
-  font-size:12px;
+  font-size:.75rem;
   color:#9d9ea7;
 }
 .constructor>span{
