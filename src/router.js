@@ -16,6 +16,6 @@ export default new Router({
     {path:"/preTitle",component:preTitle},
     {path:"/city",component:city},
     {path:"/parent",component:parent},
-    {path:"/BottomBar".component:BottomBar}
+    {path:"/BottomBar",component:BottomBar}
   ]
 })
