@@ -5,8 +5,8 @@ import city from "./components/index/mhp/city.vue"
 import preTitle from "./components/index/mhp/preTitle.vue"
 import wysearch from "./components/index/mhp/wysearch.vue";
 import preGuahao from "./components/index/mhp/preGuahao.vue";
-import BottomBar from "./components/index/wtq/BottomBar.vue"
-
+import BottomBar from "./components/index/wtq/BottomBar.vue";
+import tools from "./components/me/wf/tools.vue";
 
 Vue.use(Router)
 export default new Router({
@@ -16,6 +16,7 @@ export default new Router({
     {path:"/preTitle",component:preTitle},
     {path:"/city",component:city},
     {path:"/parent",component:parent},
-    {path:"/BottomBar",component:BottomBar}
+    {path:"/BottomBar",component:BottomBar},
+    {path:"/tools",component:tools},
   ]
 })
