@@ -15,12 +15,12 @@ export default {
 <style scoped>
 .wytitle{
   /* width:100%; */
-  height:45px;
+  height:2.8125rem;
   position: fixed;
-  left: 0px;
-  right: 0px;
-  top:0px;
-  bottom: 0px;
+  left: 0rem;
+  right: 0rem;
+  top:0rem;
+  bottom: 0rem;
   z-index: 999;
   text-align: center;
   background: #fff;
@@ -32,18 +32,18 @@ export default {
   /* width:100%; */
   /* height:45px; */
   /* margin: 0 auto; */
-  border-bottom:1px solid #aaa;
+  border-bottom:.0625rem solid #aaa;
 }
 .wytitle .h3{
   /* position:absolute;
   left:60px;
   right:60px; */
-  width:255px;
-  height:45px;
+  width:15.9375rem;
+  height:2.8125rem;
   margin:0 auto;
-  font-size:18px;
+  font-size:1.125rem;
   text-align: center;
-  line-height: 45px;
+  line-height: 2.8125rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
