@@ -17,6 +17,7 @@ router.get("/login/:phone&:upwd",function(req,res){
    pool.query("select * from user where phone=? and upwd=?",[phone,upwd],function(err,result){
       if(err) throw err;
       if(result.length > 0){
+         req.session.uid = result[0].uid;
          res.send({code : 1 , msg : "登录成功"});
       }else{
          res.send({code : -1 , msg : "登录账号或密码错误"});

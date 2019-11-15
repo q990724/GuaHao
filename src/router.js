@@ -8,6 +8,7 @@ import preGuahao from "./components/index/mhp/preGuahao.vue";
 import BottomBar from "./components/index/wtq/BottomBar.vue";
 import tools from "./components/me/wf/tools.vue";
 import me from "./components/me/me.vue";
+import login from "./components/me/wf/login.vue";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -19,5 +20,6 @@ export default new Router({
     { path: "/BottomBar", component: BottomBar },
     { path: "/tools", component: tools },
     { path: "/me", component: me },
+    { path: "/login",component: login},
   ]
 })
