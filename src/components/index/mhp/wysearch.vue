@@ -15,18 +15,18 @@ export default {
 </script>
 <style scoped>
 .search{
-  height:2.8125rem;
+  height:2.5rem;
   /* position: relative; */
-  margin-top: 3.4375rem;
+  margin-top: 3.2075rem;
   margin-bottom: .625rem;
-  border-bottom:.0625rem solid #aaa;
+  border-bottom:.0625rem solid #eee;
   /* display: flex; */
   /* align-items: center; */
   /* top:45px; */
 }
 .search>a>.content{
   width: 81.5%;
-  height:2rem;
+  height:1.9rem;
   background-color: #ebecf1;
   border-radius: .9375rem;
   color:#999;
