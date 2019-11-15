@@ -34,13 +34,14 @@ router.get("/insertOrder",function(req,res){
 
 router.get("/showOrder",function(req,res){
    var uid = req.session.uid;
-   pool.query("select * from uorder where uid=?",[uid],function(err,result ){
+   pool.query("select * from user_order where uid=?",[uid],function(err,result ){
       if(err) throw err;
       res.send(result);
    });
 });
 
 
+/*
 router.get("/login",function(req,res){
    var uname = req.query.uname;
    var upwd = req.query.upwd;
@@ -55,6 +56,7 @@ router.get("/login",function(req,res){
       }
    });
 });
+*/
 
 
 
