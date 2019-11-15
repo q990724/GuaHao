@@ -50,14 +50,13 @@ io.on("connection",client=>{
     for(var item of didsAndOrders){ // 拿到每一项did
       dids.push(item.did);
     }
+    console.log("拿到客户端发来的所有医生did:" + dids);
     //查询副本,将对应的医生列表,放入list中
     for(var i = 0; i < dorderOrderNumbers.length; i++){
-      //console.log(`遍历到副本:`);
-      //console.log(dorderOrderNumbers[i]);
-      //console.log(dids[i]);
-      if(dorderOrderNumbers[i].did == dids[i]){
-        //console.log("找到对应医生");
-        list.push({did : dids[i] , orders : dorderOrderNumbers[i].order_numbers});
+      for(var j = 0; j < dids.length; j++){
+        if(dorderOrderNumbers[i].did == dids[j]){
+          list.push({did : dids[j] , orders : dorderOrderNumbers[i].order_numbers});
+        }
       }
     }
     //将list返回给客户端
@@ -71,6 +70,7 @@ io.on("connection",client=>{
         var index = arr.indexOf(data.order); 
         arr.splice(index,1);
         item.order_numbers = arr.join(",");
+        pool.query("delete user_order where uid=? and did=?");
         console.log(`移除预约成功,当前所有备份数据为:`);
         console.log(dorderOrderNumbers);
         io.emit("updateToClient",item);
