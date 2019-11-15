@@ -32,7 +32,7 @@
     margin-bottom: .625rem;
   }
   .healthy-item-btn{
-    width: 35%;
+    width: 37%;
     background: #fff;
     line-height: .9rem;
     padding: .5175rem 1.035rem;
