@@ -9,6 +9,7 @@ import BottomBar from "./components/index/wtq/BottomBar.vue";
 import tools from "./components/me/wf/tools.vue";
 import me from "./components/me/me.vue";
 import login from "./components/me/wf/login.vue";
+import index from "./views/index/index.vue";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -21,5 +22,6 @@ export default new Router({
     { path: "/tools", component: tools },
     { path: "/me", component: me },
     { path: "/login",component: login},
+    { path: "/index",component: index},
   ]
 })
