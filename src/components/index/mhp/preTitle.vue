@@ -1,8 +1,7 @@
 <template>
   <div class="container">
     <div class="con_title">
-        <van-icon class="goback" @click="goback" name="arrow-left" />
-      <!-- <span class="goback" @click="goback"> &lt;</span> -->
+      <van-icon class="goback" @click="goback" name="arrow-left" /> 
       <span class="pre_title">预约挂号</span>
     </div>
   </div>
@@ -23,7 +22,7 @@ export default {
 </script>
 <style scoped>
 .container{
-  height: 2.8125rem;
+  height: 2.6125rem;
   position: fixed;
   top:0rem;
   left:0rem;
@@ -32,17 +31,17 @@ export default {
   /* overflow: hidden; */
 }
 .con_title{
-  height:2.8125rem;
+  height:2.6125rem;
   background: #fff;
-  line-height: 2.8125rem;
+  line-height: 2.6125rem;
   font-size: 1.125rem;
   font-weight: 400;
-  border-bottom:.0625rem solid #aaa;
+  border-bottom:.0625rem solid #eee;
 }
 .goback{
   position: relative;
   left:-7.5rem;
   font-size: 1.125rem;
-  line-height: 2.8125rem;
+  line-height: 2.6125rem;
 }
 </style>
