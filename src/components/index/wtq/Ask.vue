@@ -64,10 +64,12 @@ a{
   margin:1.25rem 0;
 }
 .ask{
+  width:100%;
   height:12.0625rem;
   box-shadow:0 0.256rem 0.59733333rem 0.34133333rem rgba(20,19,51,.06);
-  border-radius:.3125rem;
+  border-radius:.610687rem;
   padding:.625rem;
+  padding:0.4rem 0.4rem 0 0rem;
 }
 .ask-title{
   width: 4.375rem;height:1.25rem;
@@ -78,6 +80,7 @@ a{
   color:#9d9ea7;
   /* 一病多问 上边距和左边距 */
   margin:.375rem 0 0 .375rem;
+  text-align:center;
 }
 /* 下方问题区域 */
 .ask-area{
@@ -94,14 +97,18 @@ a{
   color:#fff;
   font-size:.9375rem;
   line-height:1.5625rem;
+  text-align:center;
 }
 .answer-icon{background-color:#589bfe;}
 .ask-text{
   width:18.75rem;
-  height:2.6875rem;
+  height:2.2rem;
   text-align:left;
+  text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
-  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
   color:#2b313d;
   font-weight:700;
 }
