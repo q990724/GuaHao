@@ -19,6 +19,7 @@
     width: 100%;
     height: 100%;
     border-top: .0625rem solid  #eee;
+    text-align:center;
   }
   .healthy-item img{
     width: 3.933125rem;
