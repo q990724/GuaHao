@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="hospital" v-for="(h,i) of hospital" :key="i">
+    <div class="hospital" @click="todetail" v-for="(h,i) of hospital" :key="i">
       <div class="hos">
         <div class="left_img">
           <img src="../../../../public/images/index/22hospital/c7m2954342.webp" alt="">
@@ -130,7 +130,9 @@ export default {
     }
   },
   methods:{
-    
+    todetail(){
+      this.$router.push("./wtq/professor/Order2");
+    }
   },
 }
 </script>
