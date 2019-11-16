@@ -129,11 +129,17 @@ export default {
       ]
     }
   },
+  methods:{
+    
+  },
 }
 </script>
 <style scoped>
+.container{
+  background: #fff;
+}
 .orderby{
-  height:2.5rem !important;
+  /* height:2.5rem !important; */
 }
 .stBtn{
   border:0;
@@ -254,13 +260,14 @@ van-tag{
   height:8.061069rem;
 }
 .more{
-  height:6.10687rem;
+  height:5.60687rem;
   background: #eee;
 }
 .more>.nomore{
   color:#aaa;
   font-size:.732824rem;
-  padding:1.221374rem 0rem;
+  padding:1.021374rem 0rem;
+  text-align: center;
 }
 .helpyou{
   background: #fff;
@@ -269,6 +276,7 @@ van-tag{
   margin:0 auto;
   border-radius: 1.221374rem;
   line-height: 2.442748rem;
+  text-align: center;
 }
 .gohelp{
   color:#fff;
@@ -276,9 +284,9 @@ van-tag{
   background: #3f86ff;
   padding:.305344rem;
   border-radius: .916031rem;
+  margin-left:.610687rem;
 }
 .clo{
   margin-left:1.832061rem;
-
 }
 </style>
