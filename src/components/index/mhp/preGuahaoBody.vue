@@ -131,7 +131,7 @@ export default {
   },
   methods:{
     todetail(){
-      this.$router.push("./wtq/professor/Order2");
+      this.$router.push("/Order2");
     }
   },
 }
