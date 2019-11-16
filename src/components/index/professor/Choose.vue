@@ -16,7 +16,8 @@ export default {
   #choose{
     display:flex;
     justify-content: space-between;
-    padding:15px 15px 10px 15px;
+    padding:10px 5px;
+    border:1px solid #faf;
     margin:10px 0;
   }
   h5{

@@ -205,9 +205,6 @@ a{text-decoration: none;
     padding-left:0;
     margin:0;
   }
-  #index-bottom{
-    padding:0 .916031rem;
-  }
 /*  特色服务*/
   #special-server-floor{
     height:5.9375rem;

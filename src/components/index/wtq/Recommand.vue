@@ -130,6 +130,7 @@
 </template>
 <script>
 // 1.引入子组件
+
 import Ask from './Ask.vue'
 import Gzh from './Gzh.vue'
 export default {
@@ -141,24 +142,16 @@ export default {
 }
 </script>
 <style scoped>
-#recommand-floor{
-  flex-direction:column;
-  justify-content: space-around;
-  align-items: center;
-
-}
 /* 文字大小 */
 .hot-recommand{
   font-size:1.3rem;
   font-weight:700;
   text-align: left;
   margin-bottom:.625rem;
-  display:flex;
 }
 /* 健康号精选 */
   #health{
     margin:1.25rem 0;
-    width:90%;
   } 
   #health .health-choose-title{
     height:15.8125rem;

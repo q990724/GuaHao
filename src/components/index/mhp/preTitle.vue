@@ -22,7 +22,6 @@ export default {
 </script>
 <style scoped>
 .container{
-  padding:0 .610687rem;
   height: 2.6125rem;
   position: fixed;
   top:0rem;
@@ -40,12 +39,9 @@ export default {
   border-bottom:.0625rem solid #eee;
 }
 .goback{
-  /* position: relative;
-  left:-7.5rem; */
+  position: relative;
+  left:-7.5rem;
   font-size: 1.125rem;
   line-height: 2.6125rem;
-}
-.pre_title{
-  padding: 0 9.060305rem;
 }
 </style>

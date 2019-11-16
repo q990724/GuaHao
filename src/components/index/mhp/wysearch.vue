@@ -25,7 +25,7 @@ export default {
   /* top:45px; */
 }
 .search>a>.content{
-  width: 89.5%;
+  width: 81.5%;
   height:1.9rem;
   background-color: #ebecf1;
   border-radius: .9375rem;
