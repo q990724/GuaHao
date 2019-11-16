@@ -2,7 +2,7 @@
   <div class="container">
     <preTitle></preTitle>
     <wysearch></wysearch> 
-    <span class="addr" @click="goCity">北京</span>
+    <div class="addr" @click="goCity">北京</div>
     <div class="four">
       <ul>
         <li class="sanjia">
@@ -57,23 +57,19 @@ export default {
 }
 </script>
 <style scoped>
-templete{
-  height:75rem;
-}
-.tree{
-  height:75rem !important;
-}
 .four{
   width:100%;
   height:5.275rem;
   border-bottom: .0625rem solid #eee;
   background: #fff;
   margin-bottom: .5125rem;
-  margin-top:-1.025rem;
+  /* margin-top:-0.055rem; */
 }
 .four>ul{
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  padding-top:.210687rem;
 }
 .four>ul>li{
   width:5.859375rem;
@@ -87,9 +83,13 @@ templete{
   font-size: .75rem;
 }
 .addr{
-  position:relative;
+  /* position:relative;
   top:-2.775rem;
-  left:10.85rem;
+  left:22.85rem; */
   font-size: .75rem;
+  float: right;
+  margin-top:-2.121374rem;
+  margin-right:.710687rem;
+  /* margin-top:-2.221374rem; */
 }
 </style>
