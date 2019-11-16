@@ -26,12 +26,12 @@
         <div class="middle">
           <div class="left_ask">
             <div class="first">
-              <span>3分钟找到三甲专家 </span>
-              <span> / 提前了解病情</span>
+              <span class="subtitle">3分钟找到三甲专家 </span>
+              <span class="subtitle"> / 提前了解病情</span>
             </div>
             <div class="second">
-              <span>避免挂错科室 </span>
-              <span> / 节省就医成本</span>
+              <span class="subtitle">避免挂错科室 </span>
+              <span class="subtitle"> / 节省就医成本</span>
             </div>
           </div>
           <div class="right_price">
@@ -124,10 +124,13 @@ span{
   margin:0 .625rem 0 0;
 }
 van-tag{
-  color:#000 !important;
+  color:rgb(97,104,124) !important;
   
 }
 .bottom_num{
   text-align: left;
+}
+.subtitle{
+  color:rgb(97,104,124);
 }
 </style>
