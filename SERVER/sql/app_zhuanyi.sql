@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- 主机： w.rdc.sae.sina.com.cn:3306
--- 生成日期： 2019-11-14 16:50:30
--- 服务器版本： 5.7.24-27-log
--- PHP 版本： 7.0.33-0ubuntu0.16.04.5
+-- Host: 127.0.0.1
+-- Generation Time: 2019-11-15 08:13:18
+-- 服务器版本： 10.1.28-MariaDB
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `app_zhuanyi`
+-- Database: `app_zhuanyi`
 --
 
 -- --------------------------------------------------------
@@ -40,6 +40,42 @@ CREATE TABLE `doctors` (
   `money` int(11) NOT NULL COMMENT '挂号费',
   `order_numbers` varchar(1024) NOT NULL COMMENT '医生的被预约号   每个医生最大预约数量100 数据例子:1,2,3,4 '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `doctors`
+--
+
+INSERT INTO `doctors` (`did`, `dname`, `dtype`, `com_grade`, `order_count`, `skill`, `skill_tags`, `isQuestion`, `money`, `order_numbers`) VALUES
+(1, '吴凡', '混子医生', '0.1', 1, '混着', '关节炎,股骨头坏死', 1, 100, '1'),
+(2, '阿砍', '废物医生', '0.1', 1, '砍人', '关节炎,股骨头坏死', 1, 100, '1');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `healthy_choice`
+--
+
+CREATE TABLE `healthy_choice` (
+  `healthy_id` int(11) NOT NULL COMMENT '健康精选信息编号',
+  `heal_title` varchar(32) NOT NULL COMMENT '信息标题',
+  `heal_subtitle` varchar(24) NOT NULL COMMENT '信息副标题',
+  `heal_pic` varchar(128) NOT NULL COMMENT '信息图片路径',
+  `heal_authorName` varchar(12) NOT NULL COMMENT '作者名称',
+  `isOriginal` tinyint(1) NOT NULL COMMENT '该文章是否原创',
+  `publish_time` bigint(20) NOT NULL COMMENT '发表时间',
+  `readed_count` int(11) NOT NULL COMMENT '阅读人数',
+  `lead_msg` varchar(32) NOT NULL COMMENT '导语信息',
+  `type_tags` varchar(128) NOT NULL COMMENT '文章所属类型标签 例子:衰老,肿瘤'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `healthy_choice`
+--
+
+INSERT INTO `healthy_choice` (`healthy_id`, `heal_title`, `heal_subtitle`, `heal_pic`, `heal_authorName`, `isOriginal`, `publish_time`, `readed_count`, `lead_msg`, `type_tags`) VALUES
+(1, '食用油打开后还能保存多久？', '三大因素影响保质期', 'images\\index\\jkh\\1573632779837.jpg', '微医会员', 1, 1573727150767, 392, '三大因素影响保质期', '衰老,肿瘤,疾病介绍,会员生活'),
+(2, '为什么癌症发现都是晚期？', '归根结底，原因有二', 'images\\index\\jkh\\1573539512418.jpg', '微医会员', 1, 1573727150767, 392, '归根结底，原因有二', '衰老,肿瘤,疾病介绍,会员生活'),
+(3, '贫血的人常有的8种表现', '女人贫血时，男人该怎么办？', 'images\\index\\jkh\\1573462167382.jpg', '微医会员', 1, 1573727150767, 392, '归根结底，原因有二', '衰老,肿瘤,疾病介绍,会员生活');
 
 -- --------------------------------------------------------
 
@@ -136,35 +172,49 @@ CREATE TABLE `user_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- 转储表的索引
+-- 转存表中的数据 `user_order`
+--
+
+INSERT INTO `user_order` (`order_id`, `uid`, `did`, `hname`, `class_name`, `class_subname`, `order_number`, `order_time`) VALUES
+(1, 1, 1, '北京医院', '骨科', '骨科', 1, 1573721671084),
+(2, 1, 2, '天津医院', '精神科', '神经病', 1, 1573721671084);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- 表的索引 `doctors`
+-- Indexes for table `doctors`
 --
 ALTER TABLE `doctors`
   ADD PRIMARY KEY (`did`);
 
 --
--- 表的索引 `hospitals`
+-- Indexes for table `healthy_choice`
+--
+ALTER TABLE `healthy_choice`
+  ADD PRIMARY KEY (`healthy_id`);
+
+--
+-- Indexes for table `hospitals`
 --
 ALTER TABLE `hospitals`
   ADD PRIMARY KEY (`hid`);
 
 --
--- 表的索引 `hospitals_class`
+-- Indexes for table `hospitals_class`
 --
 ALTER TABLE `hospitals_class`
   ADD PRIMARY KEY (`class_id`);
 
 --
--- 表的索引 `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`uid`);
 
 --
--- 表的索引 `user_order`
+-- Indexes for table `user_order`
 --
 ALTER TABLE `user_order`
   ADD PRIMARY KEY (`order_id`);
@@ -177,7 +227,13 @@ ALTER TABLE `user_order`
 -- 使用表AUTO_INCREMENT `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `did` int(11) NOT NULL AUTO_INCREMENT COMMENT '医生编号';
+  MODIFY `did` int(11) NOT NULL AUTO_INCREMENT COMMENT '医生编号', AUTO_INCREMENT=3;
+
+--
+-- 使用表AUTO_INCREMENT `healthy_choice`
+--
+ALTER TABLE `healthy_choice`
+  MODIFY `healthy_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '健康精选信息编号', AUTO_INCREMENT=4;
 
 --
 -- 使用表AUTO_INCREMENT `hospitals`
@@ -201,7 +257,7 @@ ALTER TABLE `user`
 -- 使用表AUTO_INCREMENT `user_order`
 --
 ALTER TABLE `user_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
