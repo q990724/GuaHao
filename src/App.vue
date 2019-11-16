@@ -11,7 +11,6 @@ html{
 body{
   background: #f8f8f8;
 }
-
 *{
   margin:0;
   padding:0;
