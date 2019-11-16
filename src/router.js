@@ -10,7 +10,8 @@ import tools from "./components/me/wf/tools.vue";
 import me from "./components/me/me.vue";
 import login from "./components/me/wf/login.vue";
 import index from "./views/index/index.vue";
-import reg from "./components/me/wf/reg.vue"
+import reg from "./components/me/wf/reg.vue";
+import order2 from ".//components/index/wtq/professor/Order2"
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -24,6 +25,7 @@ export default new Router({
     { path: "/me", component: me },
     { path: "/login",component: login},
     { path: "/index",component: index},
-    { path: "/reg",component: reg}
+    { path: "/reg",component: reg},
+    { path: "/order2",component: order2}
   ]
 })

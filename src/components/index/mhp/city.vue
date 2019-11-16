@@ -18,42 +18,59 @@ export default {
   data(){
     return {
       items:[
-        { text: '热门地区',
-          children:[
-            {text:"全国"},
-          ]
-        }, 
-        { text: '北京' ,id:1,disabled:false,children:[
-          {text:"昌平"},{text:"顺义"},{text:"丰台"},{text:"朝阳"},{text:"海淀"},
-          ]
-        },
-        { text: '北京' ,id:1,disabled:false,children:[
-          {text:"昌平"},{text:"顺义"},{text:"丰台"},{text:"朝阳"},{text:"海淀"},
-          ]
-        },
-        { text: '北京' ,id:1,disabled:false,children:[
-          {text:"昌平"},{text:"顺义"},{text:"丰台"},{text:"朝阳"},{text:"海淀"},
+        { text: '热门地区',children:[
+          {text:"全国",id:1,disabled:false},
+          {text:"北京(自动定位)",id:2,disabled:false},
+          {text:"上海",id:3,disabled:false},
+          {text:"广州",id:4,disabled:false},
+          {text:"武汉",id:5,disabled:false},
+          {text:"长沙",id:5,disabled:false},
+          {text:"青岛",id:5,disabled:false},
+          {text:"重庆",id:5,disabled:false},
+          {text:"南京",id:5,disabled:false},
+          {text:"西安",id:5,disabled:false},
+          {text:"杭州",id:5,disabled:false},
+          {text:"深圳",id:5,disabled:false},
           ]
         },
-        { text: '北京' ,id:1,disabled:false,children:[
-          {text:"昌平"},{text:"顺义"},{text:"丰台"},{text:"朝阳"},{text:"海淀"},
+        { text: '北京',children:[
+          {text:"昌平",id:1,disabled:false},
+          {text:"顺义",id:2,disabled:false},
+          {text:"丰台",id:3,disabled:false},
+          {text:"朝阳",id:4,disabled:false},
+          {text:"海淀",id:5,disabled:false},
           ]
         },
-        { text: '北京' ,id:1,disabled:false,children:[
-          {text:"昌平"},{text:"顺义"},{text:"丰台"},{text:"朝阳"},{text:"海淀"},
+        { text: '北京',children:[
+          {text:"昌平",id:1,disabled:false},
+          {text:"顺义",id:2,disabled:false},
+          {text:"丰台",id:3,disabled:false},
+          {text:"朝阳",id:4,disabled:false},
+          {text:"海淀",id:5,disabled:false},
           ]
         },
-        { text: '北京' ,id:1,disabled:false,children:[
-          {text:"昌平"},{text:"顺义"},{text:"丰台"},{text:"朝阳"},{text:"海淀"},
+        { text: '北京',children:[
+          {text:"昌平",id:1,disabled:false},
+          {text:"顺义",id:2,disabled:false},
+          {text:"丰台",id:3,disabled:false},
+          {text:"朝阳",id:4,disabled:false},
+          {text:"海淀",id:5,disabled:false},
           ]
         },
-        { text: '北京' ,id:1,disabled:false,children:[
-          {text:"昌平"},{text:"顺义"},{text:"丰台"},{text:"朝阳"},{text:"海淀"},
+        { text: '北京',children:[
+          {text:"昌平",id:1,disabled:false},
+          {text:"顺义",id:2,disabled:false},
+          {text:"丰台",id:3,disabled:false},
+          {text:"朝阳",id:4,disabled:false},
+          {text:"海淀",id:5,disabled:false},
           ]
         },
-        { text: '北京' ,id:1,disabled:false,children:[
-          {text:"昌平"},{text:"顺义"},{text:"丰台"},{text:"朝阳"},{text:"海淀"},
-          {text:"昌平"},{text:"顺义"},{text:"丰台"},{text:"朝阳"},{text:"海淀"},
+        { text: '北京',children:[
+          {text:"昌平",id:1,disabled:false},
+          {text:"顺义",id:2,disabled:false},
+          {text:"丰台",id:3,disabled:false},
+          {text:"朝阳",id:4,disabled:false},
+          {text:"海淀",id:5,disabled:false},
           ]
         },
       ],
