@@ -123,7 +123,15 @@
       <ask></ask>
       <gzh></gzh>
       <gzh></gzh>
+      <div id="gg">
+        <img src="../../../../public/images/index/gg.webp">
+      </div>
       <ask></ask>
+      <gzh></gzh>
+      <gzh></gzh>
+      <div id="gg">
+        <img src="../../../../public/images/index/gg.webp">
+      </div>
       <gzh></gzh>
       <gzh></gzh>
   </div>
@@ -152,18 +160,15 @@ export default {
   font-size:1.3rem;
   font-weight:700;
   text-align: left;
-  margin-bottom:.625rem;
+  margin-bottom:1rem;
   display:flex;
 }
 /* 健康号精选 */
-  #health{
-    margin:1.25rem 0;
-    width:90%;
-  } 
   #health .health-choose-title{
+    width:100%;
     height:15.8125rem;
     box-shadow:0 0.256rem 0.59733333rem 0.34133333rem rgba(20,19,51,.06);
-    border-radius:.3125rem;
+    border-radius:.610687rem;
     padding:.1875rem;
   }
   #health .title{
@@ -220,9 +225,10 @@ export default {
     margin:1.25rem 0;
   } 
   #mall-floor .health-mall{
+    width:100%;
     height:15.8125rem;
     box-shadow:0 0.256rem 0.59733333rem 0.34133333rem rgba(20,19,51,.06);
-    border-radius:.3125rem;
+    border-radius:.610687rem;
     padding:.1875rem;
   }
   /* 上方标题 */
@@ -268,10 +274,11 @@ export default {
   }
 /* 爱心义诊 */
   #love-heart-floor{
+  width:100%;
   height:12.5rem;
   box-shadow:0 0.256rem 0.59733333rem 0.34133333rem rgba(20,19,51,.06);
-  border-radius:.3125rem;
-  padding:.625rem;
+  border-radius:.610687rem;
+  padding:0.4rem 0.4rem 0 0;
   margin:1.25rem 0;
 }
 /* 药丸样式 */
@@ -283,6 +290,7 @@ export default {
     font-size:.8rem;
     color:#9d9ea7;
     margin:.375rem 0 0 .375rem;
+    text-align: center;
   }
   #love-heart-floor .title{
     font-size:1.3rem;
@@ -357,7 +365,7 @@ export default {
     margin:1.25rem 0;
   } 
   #gg{
-    width:22.25rem;
+    width:100%;
     height:14.375rem;
   }
   #gg img{
