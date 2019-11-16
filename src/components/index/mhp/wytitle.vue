@@ -31,7 +31,7 @@ export default {
   /* height:45px; */
   /* margin: 0 auto; */
   background: #fff !important;
-  border-bottom:.0625rem solid #aaa;
+  border-bottom:.0625rem solid #ebecf1;
   /* position:absolute;
   left:60px;
   right:60px; */

@@ -17,12 +17,13 @@ export default {
 .search{
   height:2.5rem;
   /* position: relative; */
-  margin-top: 3.2075rem;
-  margin-bottom: .625rem;
+  padding-top: 3.2075rem;
+  /* margin-bottom: .625rem; */
   border-bottom:.0625rem solid #eee;
   /* display: flex; */
   /* align-items: center; */
   /* top:45px; */
+  background: #fff;
 }
 .search>a>.content{
   width: 81.5%;
@@ -40,9 +41,10 @@ export default {
 .search>a>.content>img{
   width:1.125rem;
   height:1.125rem;
-  margin-right: .5rem;
+  /* margin-right: .5rem; */
 }
 .search>a>.content>i{
-
+  width:100%;
+  margin-left:.5rem;
 }
 </style>

@@ -184,6 +184,10 @@
     </div>
     <!-- 3f热门推荐   --子组件-->
     <recommand></recommand>
+    <!-- 下方 -->
+    <div class="bottom-info">
+      <span>就医不难,健康有道</span>
+    </div>
   </div>
 </template>
 <script>
@@ -198,12 +202,16 @@ export default {
 <style scoped>
 /* 每个子组件之间的外边距是20px */
 /* 通用样式 */
-a{text-decoration: none;
+  a{text-decoration: none;
     color:#000;}
   ul{
     list-style:none;
     padding-left:0;
     margin:0;
+  }
+  #index-bottom{
+    padding:0 1.099237rem;
+    background-color:#fff;
   }
 /*  特色服务*/
   #special-server-floor{
@@ -216,6 +224,7 @@ a{text-decoration: none;
       justify-content: space-between;
       height:1.375rem;
       width:100%;
+      margin-bottom:.610687rem;
     }
   #special-server-floor .special-server-title span.serve{
       color:#2b313d;
@@ -246,7 +255,7 @@ a{text-decoration: none;
     overflow-y: hidden;
   }
   #special-server-floor .item{
-    width:3.75rem;
+    width:20%;
     text-align:center;
     margin-right: 1.875rem;
   }
@@ -322,4 +331,23 @@ a{text-decoration: none;
     text-align:center;
     margin-top:.625rem;
   }
+/* 底部信息样式 */
+.bottom-info{
+  width:60%;height:7.053435rem;
+  margin:2.221374rem auto;
+  color:#c3c4ca;
+  position:relative;
+}
+.bottom-info span{
+  margin-left: 2.305344rem;
+  font-weight:500;
+}
+.bottom-info::before,.bottom-info::after{
+  content:"";
+  position:absolute;
+  top:.5rem;
+  width:1.9rem;
+  height:.061069rem;
+  background-color:#c3c4ca;
+}
 </style>

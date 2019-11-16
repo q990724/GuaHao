@@ -52,16 +52,59 @@ export default {
           {text:"皮肤科",id:8,disabled:false},
           {text:"心血管内科",id:9,disabled:false},
         ]},
-        {text:"推荐科室",children:[
-          {text:"二鼻咽喉头颈外科",id:1,disabled:false},
-          {text:"骨科",id:2,disabled:false},
-          {text:"内分泌科",id:3,disabled:false},
-          {text:"肾脏病科",id:4,disabled:false},
-          {text:"妇产科",id:5,disabled:false},
-          {text:"口腔科",id:6,disabled:false},
-          {text:"消化内科",id:7,disabled:false},
-          {text:"皮肤科",id:8,disabled:false},
-          {text:"心血管内科",id:9,disabled:false},
+        {text:"内科",children:[
+          {text:"内分泌科",id:1,disabled:false},
+          {text:"血液病科",id:2,disabled:false},
+          {text:"消化内科",id:3,disabled:false},
+          {text:"心血管内科",id:4,disabled:false},
+          {text:"风湿科",id:5,disabled:false},
+          {text:"神经内科",id:6,disabled:false},
+          {text:"胃脏病科",id:7,disabled:false},
+          {text:"呼吸内科",id:8,disabled:false},
+          {text:"高血压门诊",id:9,disabled:false},
+          {text:"针灸科",id:10,disabled:false},
+          {text:"发热门诊",id:11,disabled:false},
+          {text:"老年医学研究所",id:12,disabled:false},
+        ]},
+        {text:"外科",children:[
+          {text:"肝胆外科",id:1,disabled:false},
+          {text:"心血管外科",id:2,disabled:false},
+          {text:"神经外科",id:3,disabled:false},
+          {text:"血管外科",id:4,disabled:false},
+          {text:"整形修复科",id:5,disabled:false},
+          {text:"胃肠肿瘤外科",id:6,disabled:false},
+          {text:"乳腺肿瘤外科",id:7,disabled:false},
+          {text:"肝胆肿瘤外科",id:8,disabled:false},
+        ]},
+        {text:"骨科",children:[
+          {text:"骨科",id:1,disabled:false},
+        ]},
+        {text:"妇产科",children:[
+          {text:"妇产科",id:1,disabled:false},
+        ]},
+        {text:"儿科",children:[
+          {text:"小儿外科",id:1,disabled:false},
+          {text:"小儿骨科",id:2,disabled:false},
+          {text:"小儿内科",id:3,disabled:false},
+        ]},
+        {text:"皮肤性病科",children:[
+          {text:"激光科",id:1,disabled:false},
+          {text:"皮肤科",id:2,disabled:false},
+        ]},
+        {text:"眼科",children:[
+          {text:"眼科",id:1,disabled:false},
+        ]},
+        {text:"耳鼻咽喉科",children:[
+          {text:"耳鼻咽喉科",id:1,disabled:false},
+        ]},
+        {text:"眼科",children:[
+          {text:"眼科",id:1,disabled:false},
+        ]},
+        {text:"口腔科",children:[
+          {text:"口腔科",id:1,disabled:false},
+        ]},
+        {text:"中医科",children:[
+          {text:"中医科",id:1,disabled:false},
         ]},
       ],
       activeId:1,
@@ -80,13 +123,11 @@ export default {
 <style>
 a{text-decoration: none;}
 /* 医院信息卡样式 */
-/* 除了图片以外,尽量别用绝对单位,百分比或者rem最好 */
   .hospital-info{
     height: 5rem;
-    border:.0625rem solid #faf;
     display:flex;
     flex-direction: column;
-    padding:15px 10px 10px 10px;
+    padding:15px 15px 10px 15px;
   }
   .title{
     display:flex;
@@ -138,4 +179,14 @@ a{text-decoration: none;}
     font-weight:700;
     color:#555;
   }
+/* 组件库样式 */
+.van-tree-select__nav{
+  overflow-y:auto !important;
+}
+.van-tree-select{
+  height:27.480916rem !important;
+}
+.van-tree-select__item{
+  font-weight:500 !important;
+}
 </style>
