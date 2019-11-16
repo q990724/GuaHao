@@ -39,11 +39,12 @@
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: bottom;
+  padding:0 .3125rem 0 .9375rem;
   /* position: relative; */
   /* top:40px; */
 }
 .top{
-  padding:.9375rem .3125rem .625rem .9375rem;
+  padding:.732824rem 0;
   text-align: left;
 }
 .top>span{
