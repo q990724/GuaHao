@@ -72,6 +72,7 @@
 <style scoped>
 .reg{
    background: #f8f8f8;
+   text-align: center;
 }
 .mint-header {
    background: #fff;

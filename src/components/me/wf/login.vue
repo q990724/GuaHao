@@ -60,6 +60,7 @@
 .login{
       background: #f8f8f8;
       position: relative;
+      text-align: center;
 }
 .mint-header {
       background: #fff;

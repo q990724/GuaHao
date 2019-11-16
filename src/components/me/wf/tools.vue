@@ -31,6 +31,7 @@
 <style scoped>
   .whole{
     background: #f8f8f8;
+    text-align: center;
   }
   .tools,.community{
     background: #fff;
