@@ -62,6 +62,7 @@ export default {
   /* margin:0px 15px 0px 25px; */
   display: flex;
   justify-content: space-between;
+  padding:0 .854962rem;
 }
 .p_professor{
   width:6.625rem;
