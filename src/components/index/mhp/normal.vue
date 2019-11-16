@@ -55,7 +55,6 @@ export default {
   margin:15px 15px 0px 15px; */
   /* position: relative; */
   /* top:40px; */
-  padding: 0 1.6rem;
 }
 .normal{
   width: 100%;
