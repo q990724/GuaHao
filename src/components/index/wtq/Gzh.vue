@@ -45,10 +45,11 @@ p{margin:0;}
 }
 /* 整体阴影 */
 .health-num{
+  width:100%;
   height:10.375rem;
   box-shadow:0 0.256rem 0.59733333rem 0.34133333rem rgba(20,19,51,.06);
   border-radius:.3125rem;
-  padding:.625rem;
+  padding:0.4rem 0.4rem 0 0;
 }
 /* 药丸样式 */
   .yao{
@@ -59,6 +60,7 @@ p{margin:0;}
     font-size:.8rem;
     color:#9d9ea7;
     margin:.375rem 0 0 .375rem;
+    text-align:center;
   }
   .health-num-container{
     display:flex;
