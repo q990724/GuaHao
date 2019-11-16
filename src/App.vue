@@ -8,6 +8,9 @@
 html{
   font-size: 16.375px;
 }
+body{
+  background: #f8f8f8;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
