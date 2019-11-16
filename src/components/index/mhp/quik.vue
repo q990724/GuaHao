@@ -24,7 +24,7 @@
   height:6.25rem;
   /* margin:0px 5px 5px 15px; */
   box-shadow:-0.08533333rem 0.17066667rem 0.68266667rem -0.04266667rem rgba(20,19,51,.1) ;
-  background: url("../../../../public/images/index/22toGuahao/icon-fast-inquiry-background.png");
+  background: url("../../../../public/images/index/22toGuahao/icon-fast-inquiry-background.png") #fff;
   background-size: 3.75rem 3.75rem;
   background-repeat: no-repeat;
   background-position-x: right;
