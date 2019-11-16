@@ -1,5 +1,5 @@
 <template>
-  <div on="parent">
+  <div on="index">
     <parent></parent>
     <bottom-bar></bottom-bar>
   </div>
@@ -17,5 +17,7 @@ export default {
 </script>
 
 <style>
-
+  #index{
+    background-color:#fff;
+  }
 </style>
