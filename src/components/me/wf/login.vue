@@ -12,7 +12,6 @@
             <van-field placeholder="邮箱、手机号或用户名"/>
       </van-cell-group>
       <van-cell-group>
-            <i></i>
             <van-field placeholder="密码"/>
       </van-cell-group>
       <van-button type="primary" size="large">登&nbsp;&nbsp;录</van-button>
