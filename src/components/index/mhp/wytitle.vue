@@ -1,6 +1,6 @@
 <template>
   <div class="wytitle">
-    <mt-header class="font_title" fixed title="微医(挂号网)-互联网医院在线诊疗平台">  
+    <mt-header class="font_title" fixed title="专医(挂号网)-互联网医院在线诊疗平台">  
 
     </mt-header>
   </div>
