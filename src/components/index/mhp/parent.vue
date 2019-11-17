@@ -3,12 +3,12 @@
     <wytitle class="title"></wytitle>
     <!-- 手动复制搜索框 与后面的不受影响 -->
     <div class="search">
-      <a href="">
+      <div>
         <div class="content">
           <img src="../../../../public/images/index/22toGuahao/gray-search.cfda5be2b31e1669e46a9bc82bf199f2.png" alt="">
           <i>搜索医院，医生，科室，疾病，药品</i>
         </div>
-      </a>
+      </div>
     </div>
     <div class="entry_major">
       <quik></quik>
@@ -51,29 +51,35 @@ export default {
 }
 /* 搜索框样式 */
   .search{
-  height:2.5rem;
+  height:3.1rem;
   /* position: relative; */
-  margin-top: 3.2075rem;
+  margin-top: 2.7075rem;
   margin-bottom: .625rem;
   border-bottom:.0625rem solid #eee;
+  background: #fff;
   /* display: flex; */
   /* align-items: center; */
   /* top:45px; */
   }
-  .search>a>.content{
+  .search>div{
+    padding:.610687rem;
+  }
+  .search>div>.content{
     width: 89.5%;
     height:1.9rem;
+  vertical-align: middle;
     background-color: #ebecf1;
     border-radius: .9375rem;
     color:#999;
     font-size:.625rem;
-    line-height: 2rem;
+    line-height: 1.9rem;
     margin-left: .9375rem;
     display: flex;
     align-items: center;
     padding-left: .625rem;
+    vertical-align: middle;
   }
-  .search>a>.content>img{
+  .search>div>.content>img{
     width:1.125rem;
     height:1.125rem;
     margin-right: .5rem;
