@@ -12,6 +12,7 @@ var user = require("./routes/user");
 var test = require("./routes/test");
 var hotRommend = require("./routes/hotRommend");
 var hospitals = require("./routes/hospitals");
+var healthyNumber = require("./routes/healthyNumber");
 
 var dorderOrderNumbers;
 
@@ -104,3 +105,4 @@ app.use("/test",test);
 app.use("/user",user);
 app.use("/hotRecommend",hotRommend);
 app.use("/hospitals",hospitals);
+app.use("/healthyNumber",healthyNumber);
