@@ -13,6 +13,7 @@ var test = require("./routes/test");
 var hotRommend = require("./routes/hotRommend");
 var hospitals = require("./routes/hospitals");
 var healthyNumber = require("./routes/healthyNumber");
+var doctor = require("./routes/doctor");
 
 var dorderOrderNumbers;
 
@@ -20,8 +21,23 @@ app.use(cors({
   origin:['http://localhost:8080',"http://127.0.0.1:5500","http://localhost:8081","http://127.0.0.1:8080"],
   credentials:true
 }))
-http.listen(5050);
 
+app.use(session({
+  secret:"128位安全字符串",
+  resave:true,         //请求更新数据 
+  saveUninitialized:true//保存初始数据
+}));  
+
+//使用body-parser中间件
+app.use(bodyParser.urlencoded({extended:false}));
+//托管静态资源到public目录下
+app.use(express.static('public'));
+//将服务器的session，放在req.session中
+
+
+
+http.listen(5050);
+/*
 //启动socket.io监听客户端连接
 io.on("connection",client=>{
   //监听客户端添加预约
@@ -88,21 +104,12 @@ pool.query("select did,order_numbers from doctors",function(err,result){
   console.log(dorderOrderNumbers);
   console.log("-----------------end---------------");
 });
+*/
 
-//使用body-parser中间件
-app.use(bodyParser.urlencoded({extended:false}));
-//托管静态资源到public目录下
-app.use(express.static('public'));
-app.use(session({
-  secret:'随机字符串',
-  cookie:{maxAge:60*1000*30},//过期时间ms
-  resave:false,
-  saveUninitialized:true
-}));//将服务器的session，放在req.session中
 /*使用路由器来管理路由*/
-
 app.use("/test",test);
 app.use("/user",user);
 app.use("/hotRecommend",hotRommend);
 app.use("/hospitals",hospitals);
+app.use("/doctor",doctor);
 app.use("/healthyNumber",healthyNumber);
