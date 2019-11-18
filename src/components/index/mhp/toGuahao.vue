@@ -1,6 +1,6 @@
 <template>
-  <div class="toGuahao">
-    <div class="top" @click="togh">
+  <div class="toGuahao" @click="togh">
+    <div class="top">
       <span>去挂号</span>
       <!-- <img src="../assets/toGuahao/PeY130253620.webp" alt=""> -->
     </div>
