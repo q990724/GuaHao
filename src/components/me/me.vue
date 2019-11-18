@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="parent">
     <div class="top">
-      <mt-header title="我">
+      <mt-header fixed  title="我">
         <router-link to="/" slot="left">
           <mt-button icon="back"></mt-button>
         </router-link>
@@ -49,14 +49,32 @@
       </div>
       <div class="order">
         <h4>我的订单</h4>
+         <div class = "tools-list">
+          <tools-item v-for="(item,i) of list.slice(0,4)" :key="i" :item="item" class = "tools-list-item">
+          </tools-item>
+        </div>
       </div>
+      <tools></tools>
     </div>
   </div>
 </template>
 <script>
-
+import toolsItem from "./wf/tools-item.vue"
+import tools from "./wf/tools.vue"
 export default {
-
+  data(){
+    return {
+      list:[
+          {text:"我的预约",path:"me/me-order/icon-book.png"},
+          {text:"我的问诊",path:"me/me-order/icon-consult.png"},
+          {text:"服务包订单",path:"me/me-order/icon-order.png"},
+          {text:"商品订单",path:"me/me-order/icon-order2.png"},
+      ]
+    }
+  },
+  components:{
+    toolsItem,tools
+  }
 };
 </script>
 <style scoped>
@@ -150,6 +168,7 @@ export default {
   height:1.25rem;
   width:50%;
   text-align: left;
+  line-height: 1.25rem;
   padding-left:1.6875rem;
   font-size:1rem;
   color:#6B331A;
@@ -159,20 +178,23 @@ export default {
 }
 .van-ellipsis{
   width:200px;
+  line-height: 1.25rem;
   font-size:.875rem;
   color:#6B331A;
 }
 .to-right{
   display:block;
-  width:1.25rem;
+  width:1.5625rem;
   height:1.25rem;
   background:url("../../../public/images/me/me-header/r87117168736.png") no-repeat left center;
   background-size:.875rem .875rem;
 }
 .discount{
   padding:1.25rem 0;
+  margin-bottom: .625rem;
   display: flex;
   justify-content: space-around;
+  background: #fff;
 }
 .dis-item{
   display:inline-block;
@@ -194,30 +216,18 @@ export default {
   color:#83889a;
   font-weight: 500;
 }
+.order{
+  margin-bottom: .625rem;
+  text-align: center;
+  background: #fff;
+}
 
-
-
-
-.tools-item{
-    display: flex;
-    justify-content: space-around; 
-    border-top: .0625rem solid  #eee;
-  }
-  .tools-item-img{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    color: #83889a;
-    padding: 1.035rem 0 .8125rem;
-    font-size: .8125rem;
-    width: 17%;
-  }
-  .tools-item-img img{
-    width: 1.5rem;
-    height: 1.5rem;
-    display: block;
-    margin-bottom:.5rem; 
-  }
+.tools-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+}
+.tools-list-item{
+  width: 25%;
+}
 </style>
-  
