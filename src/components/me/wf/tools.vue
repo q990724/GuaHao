@@ -6,12 +6,14 @@
         <tools-item v-for="(item,i) of list.slice(0,4)" :key="i" :item="item" class = "tools-list-item"></tools-item>
       </div>
       <div class = "tools-list">
-        <tools-item v-for="(item,i) of list.slice(4)" :key="i" :item="item" class = "tools-list-item"></tools-item>
+        <tools-item v-for="(item,i) of list.slice(4,8)" :key="i" :item="item" class = "tools-list-item"></tools-item>
       </div>
     </div>
     <div class = "community">
       <h2>我的社区</h2>
-      <community></community>
+      <div class = "tools-list">
+        <tools-item v-for="(item,i) of list.slice(8)" :key="i" :item="item" class = "tools-list-item"></tools-item>
+      </div>
     </div>
     <div class = "healthy">
       <h2>健康档案</h2>
@@ -22,7 +24,6 @@
 
 <script>
   import toolsItem from "./tools-item.vue"
-  import community from "./community.vue"
   import healthy from "./healthy.vue"
   export default {
     data(){
@@ -36,12 +37,15 @@
           {text:"会员好友",path:"me/me-tools/BJh154243448.png"},
           {text:"帮助反馈",path:"me/me-tools/icon-help.png"},
           {text:"更多",path:"me/me-tools/icon-more.png"},
+          {text:"我的关注",path:"me/me-Community/icon-sns-watch.png"},
+          {text:"我的提问",path:"me/me-Community/icon-sns-question.png"},
+          {text:"我的发帖",path:"me/me-Community/icon-sns-post.png"},
+          {text:"更多",path:"me/me-Community/icon-sns-more.png"}
         ]
       }
     },
     components:{
       "toolsItem" : toolsItem,
-      "community" : community,
       "healthy" : healthy
     }
   }
