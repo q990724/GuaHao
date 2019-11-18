@@ -91,6 +91,7 @@ export default {
   background-size: 100%, 100%;
   height: 11.25rem;
   display: flex;
+  margin-top:2.5rem;
   padding: 0.625rem 0.625rem 0 0.625rem;
 }
 .my-msg > img {
@@ -150,13 +151,13 @@ export default {
   margin-left: -1.71875rem;
 }
 .vip{
-  width:90%;
+  width:94%;
   height:2.75rem;
   background:url("../../../public/images/me/me-header/OLY117168734.png") no-repeat;
   background-size:100% 100%;
   position:absolute;
-  left:5%;
-  top:11.5625rem;
+  left:3%;
+  top:9.125rem;
   display: flex;
   justify-content:space-around;
   align-items: center;
@@ -173,11 +174,11 @@ export default {
   font-size:1rem;
   color:#6B331A;
   font-weight:600;
-  background:url('../../../public/images/me/me-header/Mr9117168729.png') no-repeat left center;;
+  background:url('../../../public/images/me/me-header/Mr9117168729.png') no-repeat left -.125rem;
   background-size:1.25rem 1.25rem;
 }
 .van-ellipsis{
-  width:200px;
+  width:12.5rem;
   line-height: 1.25rem;
   font-size:.875rem;
   color:#6B331A;
@@ -185,7 +186,7 @@ export default {
 .to-right{
   display:block;
   width:1.5625rem;
-  height:1.25rem;
+  height:1.5625rem;
   background:url("../../../public/images/me/me-header/r87117168736.png") no-repeat left center;
   background-size:.875rem .875rem;
 }
