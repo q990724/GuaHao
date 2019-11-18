@@ -24,6 +24,6 @@ export default new Router({
     { path: "/login",component: login},
     { path: "/index",component: index},
     { path: "/reg",component: reg},
-    { path: "/order2",component: order2},
+    { path: "/order2",component: order2}
   ]
 })
