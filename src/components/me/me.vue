@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="parent">
     <div class="top">
-      <mt-header title="我">
+      <mt-header fixed  title="我">
         <router-link to="/" slot="left">
           <mt-button icon="back"></mt-button>
         </router-link>
@@ -49,14 +49,32 @@
       </div>
       <div class="order">
         <h4>我的订单</h4>
+        <div class = "tools-list">
+          <tools-item v-for="(item,i) of list.slice(0,4)" :key="i" :item="item" class = "tools-list-item">
+          </tools-item>
+        </div>
       </div>
+      <tools></tools>
     </div>
   </div>
 </template>
 <script>
-
+import toolsItem from "./wf/tools-item.vue"
+import tools from "./wf/tools.vue"
 export default {
-
+  data(){
+    return {
+      list:[
+          {text:"我的预约",path:"me/me-order/icon-book.png"},
+          {text:"我的问诊",path:"me/me-order/icon-consult.png"},
+          {text:"服务包订单",path:"me/me-order/icon-order.png"},
+          {text:"商品订单",path:"me/me-order/icon-order2.png"},
+      ]
+    }
+  },
+  components:{
+    toolsItem,tools
+  }
 };
 </script>
 <style scoped>
@@ -73,6 +91,7 @@ export default {
   background-size: 100%, 100%;
   height: 11.25rem;
   display: flex;
+  margin-top:2.5rem;
   padding: 0.625rem 0.625rem 0 0.625rem;
 }
 .my-msg > img {
@@ -100,7 +119,7 @@ export default {
 .setting a {
   position: absolute;
   right: 0.625rem;
-  top: 2.8125rem;
+  top: 0.8125rem;
   width: 1.5625rem;
   height: 1.5625rem;
 }
@@ -132,13 +151,13 @@ export default {
   margin-left: -1.71875rem;
 }
 .vip{
-  width:90%;
+  width:94%;
   height:2.75rem;
   background:url("../../../public/images/me/me-header/OLY117168734.png") no-repeat;
   background-size:100% 100%;
   position:absolute;
-  left:5%;
-  top:11.5625rem;
+  left:3%;
+  top:9.125rem;
   display: flex;
   justify-content:space-around;
   align-items: center;
@@ -150,29 +169,33 @@ export default {
   height:1.25rem;
   width:50%;
   text-align: left;
+  line-height: 1.25rem;
   padding-left:1.6875rem;
   font-size:1rem;
   color:#6B331A;
   font-weight:600;
-  background:url('../../../public/images/me/me-header/Mr9117168729.png') no-repeat left center;;
+  background:url('../../../public/images/me/me-header/Mr9117168729.png') no-repeat left -.125rem;
   background-size:1.25rem 1.25rem;
 }
 .van-ellipsis{
-  width:200px;
+  width:12.5rem;
+  line-height: 1.25rem;
   font-size:.875rem;
   color:#6B331A;
 }
 .to-right{
   display:block;
-  width:1.25rem;
-  height:1.25rem;
+  width:1.5625rem;
+  height:1.5625rem;
   background:url("../../../public/images/me/me-header/r87117168736.png") no-repeat left center;
   background-size:.875rem .875rem;
 }
 .discount{
   padding:1.25rem 0;
+  margin-bottom: .625rem;
   display: flex;
   justify-content: space-around;
+  background: #fff;
 }
 .dis-item{
   display:inline-block;
@@ -194,30 +217,18 @@ export default {
   color:#83889a;
   font-weight: 500;
 }
+.order{
+  margin-bottom: .625rem;
+  text-align: center;
+  background: #fff;
+}
 
-
-
-
-.tools-item{
-    display: flex;
-    justify-content: space-around; 
-    border-top: .0625rem solid  #eee;
-  }
-  .tools-item-img{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    color: #83889a;
-    padding: 1.035rem 0 .8125rem;
-    font-size: .8125rem;
-    width: 17%;
-  }
-  .tools-item-img img{
-    width: 1.5rem;
-    height: 1.5rem;
-    display: block;
-    margin-bottom:.5rem; 
-  }
+.tools-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+}
+.tools-list-item{
+  width: 25%;
+}
 </style>
-  

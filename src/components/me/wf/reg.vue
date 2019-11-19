@@ -150,6 +150,9 @@
    margin-top: .625rem;
    position: relative;
 }
+.reg-pwd>.van-cell-group{
+      height:3.125rem;
+}
 .van-cell:first-child{
    padding-left: 2.625rem;
    background: url(../../../../public/images/me/me-reg/icon-captcha.png) no-repeat 1rem center;
@@ -162,7 +165,7 @@
    color: #fff;
    background-color: #2f7fe2;
    border-radius: .3125rem;
-   height: 95%;
+   height: 80%;
 }
 .van-field__control{
    width: 55% !important;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 2019-11-17 08:41:15
+-- Generation Time: 2019-11-18 17:50:43
 -- 服务器版本： 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -37,17 +37,39 @@ CREATE TABLE `doctors` (
   `skill` varchar(128) NOT NULL COMMENT '擅长',
   `skill_tags` varchar(128) NOT NULL COMMENT '擅长技能标签 例:关节炎,股骨头坏死,骨关节炎',
   `isQuestion` tinyint(1) NOT NULL COMMENT '该医生是否可在线问诊',
-  `money` int(11) NOT NULL COMMENT '挂号费',
-  `order_numbers` varchar(1024) NOT NULL COMMENT '医生的被预约号   每个医生最大预约数量100 数据例子:1,2,3,4 '
+  `money` int(11) NOT NULL COMMENT '挂号费'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `doctors`
 --
 
-INSERT INTO `doctors` (`did`, `dname`, `dtype`, `com_grade`, `order_count`, `skill`, `skill_tags`, `isQuestion`, `money`, `order_numbers`) VALUES
-(1, '吴凡', '混子医生', '0.1', 1, '混着', '关节炎,股骨头坏死', 1, 100, '1'),
-(2, '阿砍', '废物医生', '0.1', 1, '砍人', '关节炎,股骨头坏死', 1, 100, '1');
+INSERT INTO `doctors` (`did`, `dname`, `dtype`, `com_grade`, `order_count`, `skill`, `skill_tags`, `isQuestion`, `money`) VALUES
+(1, '吴凡', '混子医生', '0.1', 1, '混着', '关节炎,股骨头坏死', 1, 100),
+(2, '阿砍', '废物医生', '0.1', 1, '砍人', '关节炎,股骨头坏死', 1, 100);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `doctor_orders`
+--
+
+CREATE TABLE `doctor_orders` (
+  `do_id` int(11) NOT NULL COMMENT '医生预约信息编号',
+  `uid` int(11) NOT NULL COMMENT '用户编号',
+  `did` int(11) NOT NULL COMMENT '医生编号',
+  `order_number` int(11) NOT NULL COMMENT '用户预约号'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `doctor_orders`
+--
+
+INSERT INTO `doctor_orders` (`do_id`, `uid`, `did`, `order_number`) VALUES
+(1, 1, 1, 2),
+(2, 2, 1, 1),
+(3, 1, 1, 3),
+(4, 1, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -236,10 +258,10 @@ INSERT INTO `user` (`uid`, `phone`, `uname`, `email`, `upwd`, `upic`, `user_name
 -- --------------------------------------------------------
 
 --
--- 表的结构 `user_order`
+-- 表的结构 `user_orders`
 --
 
-CREATE TABLE `user_order` (
+CREATE TABLE `user_orders` (
   `order_id` int(11) NOT NULL,
   `uid` int(11) NOT NULL COMMENT '用户编号',
   `did` int(11) NOT NULL COMMENT '医生编号',
@@ -251,12 +273,14 @@ CREATE TABLE `user_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- 转存表中的数据 `user_order`
+-- 转存表中的数据 `user_orders`
 --
 
-INSERT INTO `user_order` (`order_id`, `uid`, `did`, `hname`, `class_name`, `class_subname`, `order_number`, `order_time`) VALUES
+INSERT INTO `user_orders` (`order_id`, `uid`, `did`, `hname`, `class_name`, `class_subname`, `order_number`, `order_time`) VALUES
 (1, 1, 1, '北京医院', '骨科', '骨科', 1, 1573721671084),
-(2, 2, 2, '天津医院', '精神科', '神经病', 1, 1573721671084);
+(2, 2, 2, '天津医院', '精神科', '神经病', 1, 1573721671084),
+(6, 1, 1, '北京301', '骨科', '骨科', 3, 1574095681376),
+(7, 1, 1, '北京301', '骨科', '骨科', 4, 1574095694102);
 
 --
 -- Indexes for dumped tables
@@ -267,6 +291,12 @@ INSERT INTO `user_order` (`order_id`, `uid`, `did`, `hname`, `class_name`, `clas
 --
 ALTER TABLE `doctors`
   ADD PRIMARY KEY (`did`);
+
+--
+-- Indexes for table `doctor_orders`
+--
+ALTER TABLE `doctor_orders`
+  ADD PRIMARY KEY (`do_id`);
 
 --
 -- Indexes for table `healthy_choice`
@@ -299,9 +329,9 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`uid`);
 
 --
--- Indexes for table `user_order`
+-- Indexes for table `user_orders`
 --
-ALTER TABLE `user_order`
+ALTER TABLE `user_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
@@ -313,6 +343,12 @@ ALTER TABLE `user_order`
 --
 ALTER TABLE `doctors`
   MODIFY `did` int(11) NOT NULL AUTO_INCREMENT COMMENT '医生编号', AUTO_INCREMENT=3;
+
+--
+-- 使用表AUTO_INCREMENT `doctor_orders`
+--
+ALTER TABLE `doctor_orders`
+  MODIFY `do_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '医生预约信息编号', AUTO_INCREMENT=5;
 
 --
 -- 使用表AUTO_INCREMENT `healthy_choice`
@@ -345,10 +381,10 @@ ALTER TABLE `user`
   MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户编号', AUTO_INCREMENT=3;
 
 --
--- 使用表AUTO_INCREMENT `user_order`
+-- 使用表AUTO_INCREMENT `user_orders`
 --
-ALTER TABLE `user_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `user_orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
