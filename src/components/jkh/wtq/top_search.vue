@@ -31,78 +31,99 @@
     <!-- 搜索框上方的医生 -->
     <!-- 下方列表 -->
     <!-- 一排是一个  -->
-    <div class="all-list">
-      <div class="row">
-      <!-- 循环生成 -->
-        <div class="item">
-          <div class="img">
-            <img src="../../../../public/images/jkh/true-wy.png">
-          </div>
-          <p class="item-info">就医互助</p>
-        </div>
+    <div class="all">
+      <!-- 有一个相对定位 -->
+      <div class="all-list">
+        <div class="row">
         <!-- 循环生成 -->
-        <div class="item">
-          <div class="img">
-            <img src="../../../../public/images/jkh/true-wy.png">
+          <div class="item">
+            <div class="img">
+              <img src="../../../../public/images/jkh/true-wy.png">
+            </div>
+            <p class="item-info">就医互助</p>
           </div>
-          <p class="item-info">就医互助</p>
+          <!-- 循环生成 -->
+          <div class="item">
+            <div class="img">
+              <img src="../../../../public/images/jkh/true-wy.png">
+            </div>
+            <p class="item-info">就医互助</p>
+          </div>
+          <div class="item">
+            <div class="img">
+              <img src="../../../../public/images/jkh/true-wy.png">
+            </div>
+            <p class="item-info">就医互助</p>
+          </div>
+          <div class="item">
+            <div class="img">
+              <img src="../../../../public/images/jkh/true-wy.png">
+            </div>
+            <p class="item-info">就医互助</p>
+          </div>
         </div>
-        <div class="item">
-          <div class="img">
-            <img src="../../../../public/images/jkh/true-wy.png">
+        <div class="row">
+        <!-- 循环生成 -->
+          <div class="item">
+            <div class="img">
+              <img src="../../../../public/images/jkh/true-wy.png">
+            </div>
+            <p class="item-info">就医互助</p>
           </div>
-          <p class="item-info">就医互助</p>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="../../../../public/images/jkh/true-wy.png">
+          <!-- 循环生成 -->
+          <div class="item">
+            <div class="img">
+              <img src="../../../../public/images/jkh/true-wy.png">
+            </div>
+            <p class="item-info">就医互助</p>
           </div>
-          <p class="item-info">就医互助</p>
+          <div class="item">
+            <div class="img">
+              <img src="../../../../public/images/jkh/true-wy.png">
+            </div>
+            <p class="item-info">就医互助</p>
+          </div>
+          <div class="item">
+            <div class="img">
+              <img src="../../../../public/images/jkh/true-wy.png">
+            </div>
+            <p class="item-info">就医互助</p>
+          </div>
         </div>
       </div>
-      <div class="row">
-      <!-- 循环生成 -->
-        <div class="item">
-          <div class="img">
-            <img src="../../../../public/images/jkh/true-wy.png">
-          </div>
-          <p class="item-info">就医互助</p>
+      <!-- 动态话题 -->
+      <div class="topic">
+        <div class="first-topic">
+          <div class="t1"># <span>二十四节气之立冬</span></div>
+          <div class="t2"># <span>二十四节气之霜降</span></div>
         </div>
-        <!-- 循环生成 -->
-        <div class="item">
-          <div class="img">
-            <img src="../../../../public/images/jkh/true-wy.png">
-          </div>
-          <p class="item-info">就医互助</p>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="../../../../public/images/jkh/true-wy.png">
-          </div>
-          <p class="item-info">就医互助</p>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="../../../../public/images/jkh/true-wy.png">
-          </div>
-          <p class="item-info">就医互助</p>
+        <div class="second-topic">
+          <div class="t3"># <span>更多话题/活动</span></div>
+          <div class="t4"># <span>热门内容排行榜</span></div>
         </div>
       </div>
     </div>
-    <!-- 动态话题 -->
-    <div class=""></div>
+    
     
     <!-- 精选精推 -->
-    <div v-for="(item,i) of list" :key="i">
-      <div>{{item.hn_id}}</div>
-    <div>{{item.Author}}</div>
-    <div>{{item.authorType}}</div>
-    <div>{{item.authorPic}}</div>
+    <div class="jx-recommand">
+      <div class="jx-title">
+        <!-- 点击的时候颜色得改变 -->
+        <span>精选推荐</span>
+        <span>我关注的</span>
+      </div>
+      <div class="context">
+        <!-- 父传子传参  -->
+        <!-- 父亲当中用:方式进行绑定  孩子抛出的公共属性:父亲中的i-->
+        <jx v-for="(item,i) of list" :key="i" :i="i" :item="item" ></jx>
+      </div>
     </div>
     
   </div>
 </template>
 <script>
+// 引入精选推荐
+import jx from './jx'
 import config from  '../../../assets/js/config.js'
 export default {
   data(){
@@ -110,14 +131,27 @@ export default {
       value:"",
       pno:0,
       list:[],
+      // 数据加载
+      please:true,//刚开始是发送请求
+      loading:false,//不加载
+      tips:"努力加载中",
+      url:"healthyNumber/healthyNumber",
     }
+  },
+  components:{
+    "jx":jx,
   },
   created(){//组件创建成功后,立即执行
     this.loadMore();
 
   },
+  // 挂载阶段
+  mounted(){
+    this.scrollBottom();
+  },
+  
   methods:{
-    loadMore(){//获取服务器中的商品列表
+    loadMore(){//#获取服务器中的商品列表
       var url = "healthyNumber/healthyNumber";
       // 自增页码
       this.pno++;
@@ -130,17 +164,45 @@ export default {
       console.log(config);
       config.axios.get(url,{params:obj})
       .then(res=>{
-        console.log(res);
-        
+        console.log(res.data);
+        console.log(this.list,typeof this.list)
+        this.list = this.list.concat(res.data.rows);
       })
       .catch(err=>{
         console.log(err);
       })
-    }
-  },
-}
+    },
+    // #滚轮滑动到最底部时,加载更多数据(创建/挂载/更新/销毁)
+    // scrollBottom(){
+      // 当滚轮滑动到最底部时,就加载更多数据,在页面挂载时,向服务器发送请求
+      // #判断当页面滑动到最底部时,向服务器发送请求
+      // var scrollTop = //滚动条距离顶部的距离
+      //   document.documentElement.scrollTop 
+      //   || document.body.scrollTop;
+      // if( (window.screen.height + scrollTop) > document.body.clientHeight || document.documentElement.clientHeight ){
+      //   this.please = false;
+      //   this.loading = true;
+      //   this.tips = "努力加载中";
+      //   // 向服务器发送请求
+      //   config.axios.get = 
+      // }
+      // clientHeight即为html的css高度
+    },
+  }
 </script>
 <style scoped>
+#top{
+  background-color:#f5f6f6;
+  position:relative;
+}
+.all{
+  border-bottom:1px solid #ebecf1;
+  height:92px;
+  /* background-color:#fff; */
+  z-index:1;
+  /* position:relative; */
+  /* top:100px; */
+}
 /*搜索框样式*/
   .search{
     background-color:#3f86ff;
@@ -180,6 +242,8 @@ export default {
     margin:auto;
     display:flex;
     justify-content: space-around;
+    box-shadow:0 4px 8px 0 rgba(40,53,76,.05);
+    z-index:99;
   }
   .p1{
     width:60px;
@@ -232,5 +296,34 @@ export default {
   }
 
 /*动态话题*/
-
+  .topic{
+    margin-top:200px;
+    font-size:15px;
+    color:#83889a;
+  }
+  .first-topic,.second-topic{
+    width:95%;
+    display:flex;
+    justify-content: space-between;
+    border-top:1px solid #ebecf1;
+    height:40px;
+    line-height:40px;
+  }
+  .first-topic span,.second-topic span{
+    color:#000;
+  }
+  .t1,.t3{margin-left:25px;}
+  .t2{margin-right:20px;}
+  .t4{margin-right:35px;}
+/*下方精选推荐*/
+.jx-title{
+  display: flex;
+  justify-content: space-around;
+  height:40px;
+  line-height:40px;
+  border-bottom:1px solid #ebecf1;
+  border-top:1px solid #ebecf1;
+  color:#a6a8b6;
+  font-size:15px;
+}
 </style>
