@@ -22,7 +22,7 @@
       <div class="vip">
         <div class="health">健康VIP会员</div>
         <div calss="adv">
-          <van-swipe :autoplay="3000" style="height: 20px; width:200px;" vertical :show-indicators="false">
+          <van-swipe :autoplay="3000" style="height: 2rem; width:9.5rem;" vertical :show-indicators="false">
             <van-swipe-item>
               <div class="van-ellipsis">每天只需0.5元/天，一年预计可省1510元</div>
             </van-swipe-item>
@@ -179,7 +179,7 @@ export default {
 }
 .van-ellipsis{
   width:12.5rem;
-  line-height: 1.25rem;
+  line-height: 2rem;
   font-size:.875rem;
   color:#6B331A;
 }

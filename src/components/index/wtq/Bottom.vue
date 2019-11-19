@@ -249,7 +249,7 @@ export default {
   #special-server-floor .special-server-container{
     display:flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     overflow-x: auto;
     padding: 0rem 1.25rem 1.875rem .3125rem;
     overflow-y: hidden;
@@ -258,13 +258,16 @@ export default {
     width:20%;
     text-align:center;
     margin-right: 1.875rem;
+    display: flex;
+    flex-direction: column;
   }
   #special-server-floor .item-img{
-    margin:.625rem .625rem  0 .625rem;
+    /* margin:.625rem .625rem  0 .625rem; */
+    margin: 0 1rem;
 
   }
   #special-server-floor .item-img img{
-    width: 1.75rem;
+    width: 1.8rem;
   }
   #special-server-floor .item-text{
     color:#5e616b;
@@ -284,6 +287,12 @@ export default {
     line-height:1.375rem;
     margin-bottom:.625rem;
   }
+
+  #type-floor .home-special-title>div[to]{
+    display: flex;
+    align-items: center;
+  }
+
   /* 文字 */
   #type-floor .home-special-title .title{
     font-size:1.3rem;

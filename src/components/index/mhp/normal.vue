@@ -94,6 +94,7 @@ export default {
 .constructor{
   font-size:.75rem;
   color:#9d9ea7;
+  margin-top: .5rem;
 }
 .constructor>span{
   color:#3f86ff;

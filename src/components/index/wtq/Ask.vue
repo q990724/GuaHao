@@ -68,8 +68,8 @@ a{
   height:12.0625rem;
   box-shadow:0 0.256rem 0.59733333rem 0.34133333rem rgba(20,19,51,.06);
   border-radius:.610687rem;
-  padding:.625rem;
-  padding:0.4rem 0.4rem 0 0rem;
+  padding: .9375rem 1.5rem ;
+  box-sizing: border-box;
 }
 .ask-title{
   width: 4.375rem;height:1.25rem;
@@ -79,14 +79,13 @@ a{
   font-size:.8rem;
   color:#9d9ea7;
   /* 一病多问 上边距和左边距 */
-  margin:.375rem 0 0 .375rem;
+  margin:.375rem 0 0 0;
   text-align:center;
 }
 /* 下方问题区域 */
 .ask-area{
   display:flex;
   margin:.625rem 0 .3125rem 0;
-  padding:.3125rem;
 }
 .ask-icon,.answer-icon{
   width:1.5625rem;
@@ -124,8 +123,7 @@ a{
 /* 回答区域 */
 .answer-area{
   display:flex;
-  justify-content: space-between;
-  padding:.3125rem;
+  padding:.3125rem 0;
 }
 .answer-text{
   display:flex;
