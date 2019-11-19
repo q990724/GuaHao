@@ -1,6 +1,6 @@
 <template>
    <div class = "my-register">
-      <mt-header fixed title="预约信息">
+      <mt-header title="预约信息">
          <router-link to="/" slot="left">
          <mt-button icon="back"></mt-button>
          </router-link>
@@ -82,15 +82,14 @@
 </script>
 
 <style scoped>
-   .mint-header.is-fixed{
+   .mint-header{
       background: #fff;
+      font-size: 1.1rem;
       color: #28354c;
-      width: 100%;
+      width: 26rem;
+      position: fixed;
+      top: 0;
       border-bottom: .0625rem solid #ebecf1;
-      height: 2.8125rem;
-      line-height: 2.8125rem;
-      font-size: 1.125rem;
-      font-weight: 400;
    }
    .doc-title{
       padding: .3125rem .625rem;
@@ -99,7 +98,7 @@
       display: flex;
       justify-content: start;
       align-items: center;
-      margin-top: 2.8125rem;
+      margin-top: 2.5rem;
       background: #fff;
       font-size: .75rem;
       color: #83889A;     

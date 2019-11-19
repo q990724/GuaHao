@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="top">
-      <mt-header fixed  title="预约挂号">
+      <mt-header title="预约挂号">
         <router-link to="/" slot="left">
           <mt-button icon="back"></mt-button>
         </router-link>
@@ -74,9 +74,15 @@
   background: #fff;
   font-size: 1.1rem;
   color: #28354c;
+  width: 26rem;
+  position: fixed;
+  top: 0;
+}
+.top{
+  position: relative;
 }
 .top_bg{
-  margin-top:2.687023rem;
+  margin-top:1.687023rem;
   height:9.465649rem;
   background:url("../../../../public/images/index/appointment/rMs78715832.png");
   background-size:cover;
@@ -139,8 +145,8 @@
   display: inline-block;
   font-size: .854962rem;
   color:#fff;
-  position: fixed;
-  top:3.541985rem;
+  position: absolute;
+  top:1.541985rem;
   right:0;
   background-color: #7593ce;
   border: .04266667rem solid #8ba6e4;
