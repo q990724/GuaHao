@@ -119,7 +119,7 @@ export default {
 .setting a {
   position: absolute;
   right: 0.625rem;
-  top: 2.8125rem;
+  top: 0.8125rem;
   width: 1.5625rem;
   height: 1.5625rem;
 }
