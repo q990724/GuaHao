@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class = "be-careful">
-        <van-collapse v-model="activeNames" style="padding:0;">
+        <van-collapse v-model="activeNames" accordion = "false" style="padding:0;">
           <van-collapse-item name="1" >
             <div slot="title" >
               <span>挂号费由医院自行设定，平台不收取任何额外费用。</span><br>
@@ -67,7 +67,41 @@
       <div class = "tips">
         <span>本院仅支持身份证;此为分时号源，支付成功后不能取消，需到医院现场取消</span>
       </div>
-      <div class = "patient"></div>
+      <div class = "patient">
+        <div>
+          <div>
+            <span>就诊人:</span>
+          </div>
+          <div>
+            <router-link to="">李明</router-link>
+            <i></i>
+          </div>
+        </div>
+      </div>
+      <div class = "patient">
+        <div>
+          <div>
+            <span>预约时间段:</span>
+          </div>
+          <div>
+            <span @click="open">{{time}}</span>
+            <i></i>
+          </div>
+        </div>
+      </div>
+      <div class = "patient">
+        <div>
+          <div>
+            <span>所患疾病:</span>
+          </div>
+          <div>
+            <router-link to="" class = "a_color">请选择疾病</router-link>
+            <i></i>
+          </div>
+        </div>
+      </div>
+      <van-action-sheet v-model="show" :actions="actions" cancel-text="取消" @cancel="onCancel" @select = "phoneMethod" @click-overlay = "hide" style="width:27rem;"/>
+      <button class = "my-register-btn">提交</button>
    </div>
 </template>
 
@@ -75,8 +109,31 @@
    export default {
       data(){
         return {
-          activeNames: ['1']
+          activeNames: ['1'],
+          show: false,
+          actions: [
+          { name: '08:00-08-59'},
+          { name: '09:00-09-59'},
+          { name: '10:00-10-59'}
+          ],
+          time:"08:00-08-59"
         }
+      },
+      methods:{
+        open(){
+            this.show = !this.show;
+         },
+        hide(){
+            this.show = false;
+         },
+         phoneMethod(item){
+            var str = item.name;
+            this.time = str;
+            this.show = false;
+         },
+         onCancel() {
+            this.show = false;
+         },
       }
    }
 </script>
@@ -184,6 +241,54 @@
       line-height: 1.35;
     }
     .patient{
-      padding: .7rem;
+      background: #fff;
+      margin-top: .7rem;
+    }
+    .patient div{
+      padding: 0 .7rem;
+      display: flex;
+      height: 2.75rem;
+      line-height: 2.75rem;
+    }
+    .patient div>div:first-child{
+      width: 65%;
+      color: #a6a8b6;
+      margin-right: .75rem;
+      font-size: 1rem;
+    }
+    .patient div>div:last-child{
+      width: 35%;
+      position: relative;
+      text-align: right;
+    }
+    .patient div>div:last-child a,.patient div>div:last-child span{
+      display: inline-block;
+      width: 100%;
+      color: #28354c;
+    }
+    .patient div>div:last-child i{
+      position: absolute;
+      top: 1.34375rem;
+      right: 0;
+      width: .5rem;
+      height: .5rem;
+      border-left: .03125rem solid #999;
+      border-bottom: .03125rem solid #999;
+      transform: translate(0,-50%) rotate(-135deg);
+    }
+    .a_color{
+      color: #c4c5ce !important;
+    }
+    .my-register-btn{
+      display: block;
+      height: 3.2rem;
+      line-height: 3.2rem;
+      font-size: 1.0625rem;
+      background-color: #3f86ff;
+      color: #fff;
+      width: 90%;
+      margin: 1.25rem auto; 
+      border-radius: 3.125rem;
+      border: 0;
     }
 </style>

@@ -23,7 +23,7 @@
       </div>
       <!-- 最后一行的额话题.回复 点赞 -->
       <div class="last">
-        <span class="topic"># <span class="last-text">{{item.tag}}</span></span>
+        <span class="last-text" v-for="(t,index) of item.tag" :key="index">#{{t}}</span>
         <div class="last-right">
           <span> 回复 {{item.commend_count}} .</span>
           <span>点赞 {{item.good_count}}</span>
@@ -40,7 +40,6 @@ export default {
     i:{type:Number},
     item:{default:{},type:Object}
   },
-  
 }
 </script>
 <style scoped>
