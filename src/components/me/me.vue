@@ -1,7 +1,7 @@
 <template>
   <div class="parent">
     <div class="top">
-      <mt-header fixed  title="我">
+      <mt-header title="我">
         <router-link to="/" slot="left">
           <mt-button icon="back"></mt-button>
         </router-link>
@@ -22,7 +22,7 @@
       <div class="vip">
         <div class="health">健康VIP会员</div>
         <div calss="adv">
-          <van-swipe :autoplay="3000" style="height: 20px; width:200px;" vertical :show-indicators="false">
+          <van-swipe :autoplay="3000" style="height: 2rem; width:12.5rem" vertical :show-indicators="false">
             <van-swipe-item>
               <div class="van-ellipsis">每天只需0.5元/天，一年预计可省1510元</div>
             </van-swipe-item>
@@ -31,7 +31,7 @@
             </van-swipe-item>
           </van-swipe>
         </div>
-        <router-link to="" class="to-right"></router-link>
+        <router-link to="" class="to-right"></router-link> 
       </div>
       <div class="discount">
         <router-link to="" class="dis-item">
@@ -82,6 +82,10 @@ export default {
   background: #fff;
   font-size: 1.1rem;
   color: #28354c;
+  position: fixed;
+  top: 0;
+  width: 26rem;
+  z-index: 999;
 }
 .top {
   position: relative;
@@ -91,7 +95,7 @@ export default {
   background-size: 100%, 100%;
   height: 11.25rem;
   display: flex;
-  margin-top:2.5rem;
+  margin-top:1.5rem;
   padding: 0.625rem 0.625rem 0 0.625rem;
 }
 .my-msg > img {
@@ -119,7 +123,7 @@ export default {
 .setting a {
   position: absolute;
   right: 0.625rem;
-  top: 0.8125rem;
+  top: 1.5rem;
   width: 1.5625rem;
   height: 1.5625rem;
 }
@@ -159,7 +163,7 @@ export default {
   left:3%;
   top:9.125rem;
   display: flex;
-  justify-content:space-around;
+  justify-content:space-between;
   align-items: center;
   padding:0 10px;
   box-sizing: border-box;
@@ -178,11 +182,12 @@ export default {
   background-size:1.25rem 1.25rem;
 }
 .van-ellipsis{
-  width:12.5rem;
-  line-height: 1.25rem;
+  width:11.25rem;
+  line-height: 2rem;
   font-size:.875rem;
   color:#6B331A;
 }
+
 .to-right{
   display:block;
   width:1.5625rem;

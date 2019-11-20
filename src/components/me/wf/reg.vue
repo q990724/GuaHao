@@ -28,7 +28,7 @@
          <router-link to="">《法律声明及隐私权政策》</router-link>
       </div>
       <!-- <van-action-sheet v-model="show" :actions="actions" @select="onSelect" /> -->
-      <van-action-sheet v-model="show" :actions="actions" cancel-text="取消" @cancel="onCancel" @select = "phoneMethod" @click-overlay = "hide"/>
+      <van-action-sheet v-model="show" :actions="actions" cancel-text="取消" @cancel="onCancel" @select = "phoneMethod" @click-overlay = "hide" style="width:26rem;"/>
    </div>
 </template>
 

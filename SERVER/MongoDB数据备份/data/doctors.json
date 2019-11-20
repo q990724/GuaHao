@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5dd3ccc20e86462f3c0465bd"},"dname":"吴凡","dtype":"主任医师","com_grade":"8.9","order_count":{"$numberInt":"1"},"skill":"骨科","skill_tages":["关节炎","股骨头坏死","骨关节炎"],"isQuestion":true,"price":{"$numberInt":"100"}}
+{"_id":{"$oid":"5dd3ce36c4c81e2f3c83e9de"},"dname":"阿砍","dtype":"副主任医师","com_grade":"7.5","order_count":{"$numberInt":"1"},"skill":"骨科","skill_tages":["关节炎","股骨头坏死","骨关节炎"],"isQuestion":true,"price":{"$numberInt":"50"}}

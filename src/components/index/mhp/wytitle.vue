@@ -1,6 +1,6 @@
 <template>
   <div class="wytitle">
-    <mt-header class="font_title" fixed title="专医(挂号网)-互联网医院在线诊疗平台">  
+    <mt-header class="font_title" title="专医(挂号网)-互联网医院在线诊疗平台">  
 
     </mt-header>
   </div>
@@ -11,12 +11,14 @@ export default {
 }
 </script>
 <style scoped>
+.wytitle>.font_title{
+  width: 100%;
+}
 .wytitle{
   /* width:100%; */
+  width: 26rem;
   height:2.6125rem;
   position: fixed;
-  left: 0rem;
-  right: 0rem;
   top:0rem;
   bottom: 0rem;
   z-index: 999;

@@ -238,7 +238,8 @@ export default {
     height:1.375rem;
     line-height:1.375rem;
     margin-bottom:.625rem;
-    margin:.9375rem 0 0 1rem;
+    /* margin:.9375rem 0 0 1rem; */
+    padding: .5rem 1rem;
   }
   /* 文字 */
   #mall-floor .health-mall-title .title{
@@ -246,6 +247,12 @@ export default {
     font-weight: 700;
     
   }
+
+  #mall-floor .health-mall-title>a{
+    display: flex;
+    align-items: center;
+  }
+
   #mall-floor .health-mall-title .more{
     font-size:.6rem;
     color:#5e616b;
@@ -278,8 +285,9 @@ export default {
   height:12.5rem;
   box-shadow:0 0.256rem 0.59733333rem 0.34133333rem rgba(20,19,51,.06);
   border-radius:.610687rem;
-  padding:0.4rem 0.4rem 0 0;
+  padding: .9375rem 1.5rem ;
   margin:1.25rem 0;
+  box-sizing: border-box;
 }
 /* 药丸样式 */
   #love-heart-floor .yao{
@@ -289,14 +297,13 @@ export default {
     line-height:1.25rem;
     font-size:.8rem;
     color:#9d9ea7;
-    margin:.375rem 0 0 .375rem;
+    margin:.375rem 0 0 0;
     text-align: center;
   }
   #love-heart-floor .title{
     font-size:1.3rem;
     font-weight: 700;
     text-align:left;
-    margin-left:1rem;
     margin-top:.3125rem;
   }
 /* 下方内容 */
@@ -308,7 +315,6 @@ export default {
   #love-heart-floor .doctor{
     width:4.375rem;
     height:7.25rem;
-    margin-left:1rem;
     margin-top:.3125rem;
     position:relative;
 

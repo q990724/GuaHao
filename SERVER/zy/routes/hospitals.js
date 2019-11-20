@@ -1,17 +1,22 @@
 const express=require("express");
 var router=express.Router();
-var pool=require("../pool");
+var config = require("../config");
 
 //获取医院所有简介信息
 router.get("/hospitalsAll",function(req,res){
-    var sql = "select hid,hname,hrank,hmajor,comment_msg,hpic from hospitals";
-    pool.query(sql,function(err,result){
+    config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
         if(err) throw err;
-        if(result.length > 0){
-            res.send({code : 1, msg : "查询成功",result : result});
-        }else{
-            res.send({code : -1, msg : "查询出错或没有数据"});
-        }
+        var dbo = db.db("app_zhuanyi");
+        dbo.collection("hospitals").find({})
+        .project({_id : 1 , hname : 1 , hrank : 1 , hmajor : 1 , comment_msg : 1 , hpic : 1})
+        .toArray(function(err,result){
+            if(err) throw err;
+            if(result.length > 0){
+                res.send({code : 1 , msg : "查询成功",data : result});
+            }else{
+                res.send({code : -1 , msg : "查询失败"});
+            }
+        });
     });
 })
 
@@ -22,14 +27,17 @@ router.get("/hospitalsDetails/:hid",function(req,res){
         res.send({code : -2,msg : "参数hid为空或获取失败"});
         return;
     }
-    var sql = "select * from hospitals where hid=?";
-    pool.query(sql,[hid],function(err,result){
+    config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
         if(err) throw err;
-        if(result.length > 0){
-            res.send({code : 1, msg : "查询成功",result : result});
-        }else{
-            res.send({code : -1, msg : "查询出错或没有数据"});
-        }
+        var dbo = db.db("app_zhuanyi");
+        dbo.collection("hospitals").findOne({'_id' : config.objectId(hid)},function(err,result){
+           if(err) throw err;
+           if(result){
+              res.send({code : 1 , msg : "查询成功" , data : result});
+           }else{
+              res.send({code : -1 , msg : "查询失败"}); 
+           }
+        });
     });
 })
 

@@ -38,7 +38,7 @@
             <span class="pri_con">¥</span>
             <span class="price">9</span>
             <span class="pri_begin">起</span>
-            <van-icon name="arrow" />
+            <van-icon class="right_arrow" name="arrow" />
           </div>
         </div>
         <div class="bottom_num">
@@ -262,13 +262,17 @@ van-tag{
   height:8.061069rem;
 }
 .more{
-  height:5.60687rem;
+  height:5.10687rem;
   background: #eee;
+  padding: .610687rem .610687rem;
+  display: flex;
+  
 }
 .more>.nomore{
   color:#aaa;
+  height:1.832061rem;
   font-size:.732824rem;
-  padding:1.021374rem 0rem;
+  padding:.021374rem 0rem;
   text-align: center;
 }
 .helpyou{
@@ -290,5 +294,8 @@ van-tag{
 }
 .clo{
   margin-left:1.832061rem;
+}
+.right_arrow{
+  position:unset;
 }
 </style>

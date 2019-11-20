@@ -1,6 +1,6 @@
 const express=require("express");
 var router=express.Router();
-var pool=require("../pool");
+var config = require("../config");
 
 //登录接口
 router.get("/login/:phone&:upwd",function(req,res){
@@ -13,19 +13,27 @@ router.get("/login/:phone&:upwd",function(req,res){
       res.send({code : -3 ,msg : "密码参数获取错误"});
       return;
    }
-   console.log(phone,upwd);
+   //console.log(phone,upwd);
 
-   pool.query("select * from user where phone=? and upwd=?",[phone,upwd],function(err,result){
+   var obj = {
+      phone,upwd
+   }
+
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
       if(err) throw err;
-      if(result.length > 0){
-         req.session.uid = result[0].uid;
-         console.log("session uid:" + req.session.uid);
-         res.send({code : 1 , msg : "登录成功"});
-      }else{
-         res.send({code : -1 , msg : "登录账号或密码错误"});
-      }
+      var dbo = db.db("app_zhuanyi");
+      dbo.collection("user").findOne(obj,function(err,result){
+         if(err) throw err;
+         if(result){
+            req.session.uid = result._id;
+            console.log("用户登录成功,session为:" + req.session.uid);
+            res.send({code : 1 , msg : '登录成功'});
+         }else{
+            res.send({code : -1 , msg : '用户名或密码错误'});
+         }
+      });
    });
-
+   
 });
 
 //查询用户预约信息
@@ -36,40 +44,79 @@ router.get("/showUserOrder",function(req,res){
       return;
    }
 
-   var sql = "select * from user_orders where uid = ?";
-   pool.query(sql,[uid],function(err,result){
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
       if(err) throw err;
-      if(result.length > 0){
-         res.send({code : 1 , msg : "查询成功" , data : result[0]});
-      }else{
-         res.send({code : -1 , msg : "还没有预约过任何医生!"});
-      }
+      var dbo = db.db("app_zhuanyi");
+      dbo.collection("user_orders").find({uid : uid}).toArray(function(err,result){
+         if(err) throw err;
+         if(result.length > 0){
+            res.send({code : 1 , msg : '查询成功',data : result})
+         }else if(result.length == 0){
+            res.send({code : 0 , msg : '暂时没有预约过医生'})
+         }else{
+            res.send({code : -1 , msg : "查询失败"});
+         }
+      });
    });
 });
-//插入用户预约信息
+//插入用户预约信息并插入医生的预约信息
 router.post("/insertUserOrder",function(req,res){
-   var uid = req.session.uid;
-   console.log(uid);
-   var did = req.body.did;
-   var hname = req.body.hname;
-   var class_name = req.body.class_name;
-   var class_subname = req.body.class_subname;
-   var order_number = req.body.order_number;
-   var order_time = req.body.order_time;
+   //var uid = req.session.uid;
+   var obj = {
+      uid : req.session.uid,
+      did : req.body.did,
+      hname : req.body.hname,
+      class_name : req.body.class_name,
+      class_subname : req.body.class_subname,
+      order_number : req.body.order_number,
+      order_time : req.body.order_time
+   }
+   
 
+   if(!obj.uid){
+      res.send({code : -2, msg :'未登录,请重新登录'});
+      return;
+   }
+
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
+      if(err) throw err;
+      var dbo = db.db("app_zhuanyi");
+      dbo.collection("user_orders").insertOne(obj,function(err,result){
+         if(err) throw err;
+         var docObj = {
+            uid : obj.uid,
+            did : obj.did,
+            order_number : obj.order_number
+         }
+         dbo.collection("doctor_orders").insertOne(docObj,function(err,result){
+            if(err) throw err;
+            res.send({code : 1 , msg : "预约成功!"});
+         })
+      });
+   });
+});
+
+
+//删除用户预约信息和对应的医生预约信息
+router.get("/deleteUserOrder",function(req,res){
+   var uid = req.session.uid;
+   var did = req.query.did;
    if(!uid){
       res.send({code : -2, msg :'未登录,请重新登录'});
       return;
    }
 
-   var sql = "insert into user_orders values(null,?,?,?,?,?,?,?)";
-   pool.query(sql,[uid,did,hname,class_name,class_subname,order_number,order_time],function(err,result){
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
       if(err) throw err;
-      if(result.affectedRows >= 0){
-         res.send({code : 1 , msg : "插入成功"});
-      }else{
-         res.send({code : -1 , msg : "插入失败"});
-      }
+      var dbo = db.db("app_zhuanyi");
+      dbo.collection("user_orders").deleteOne({uid : uid , did : did},function(err,result){
+         if(err) res.send({code : -1 , msg : "删除失败" , err : err});
+         //res.send({code : 1 , msg : "删除成功"});
+         dbo.collection("doctor_orders").deleteOne({uid : uid , did : did},function(err,result){
+            if(err) res.send({code : -1 , msg : "删除失败" , err : err});
+            res.send({code : 1 , msg : "删除成功"});
+         });
+      });
    });
 });
 
