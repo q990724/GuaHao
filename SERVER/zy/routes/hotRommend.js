@@ -4,7 +4,7 @@ var config = require("../config");
 
 //查询健康号精选信息
 router.get("/healthyAll",function(req,res){
-   config.mongoClient.connect(config.url,{useNewUrlParser : config.useNewUrlParser},function(err,db){
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
       if(err) throw err;
       var dbo = db.db("app_zhuanyi");
       dbo.collection("healthy_choice").find({})
@@ -26,7 +26,7 @@ router.get("/healthyDetails/:healthy_id",function(req,res){
       res.send({code : -2 , msg : "参数获取失败"});
       return;
    }
-   config.mongoClient.connect(config.url,{useNewUrlParser : config.useNewUrlParser},function(err,db){
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
       if(err) throw err;
       var dbo = db.db("app_zhuanyi");
       dbo.collection("healthy_number").findOne({'_id' : config.objectId(healthy_id)},function(err,result){

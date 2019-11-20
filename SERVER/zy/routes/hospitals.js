@@ -4,7 +4,7 @@ var config = require("../config");
 
 //获取医院所有简介信息
 router.get("/hospitalsAll",function(req,res){
-    config.mongoClient.connect(config.url,{useNewUrlParser : config.useNewUrlParser},function(err,db){
+    config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
         if(err) throw err;
         var dbo = db.db("app_zhuanyi");
         dbo.collection("hospitals").find({})
@@ -27,7 +27,7 @@ router.get("/hospitalsDetails/:hid",function(req,res){
         res.send({code : -2,msg : "参数hid为空或获取失败"});
         return;
     }
-    config.mongoClient.connect(config.url,{useNewUrlParser : config.useNewUrlParser},function(err,db){
+    config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
         if(err) throw err;
         var dbo = db.db("app_zhuanyi");
         dbo.collection("hospitals").findOne({'_id' : config.objectId(hid)},function(err,result){
