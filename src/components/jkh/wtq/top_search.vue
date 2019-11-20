@@ -147,12 +147,15 @@ export default {
   },
   // 挂载阶段
   mounted(){
-    this.scrollBottom();
+    // window.addEventListener("scroll",this.scrollBottom)
   },
-  
+  // 销毁阶段--移除掉window的监听事件,防止影响其他页面
+  destroyed(){
+    // window.removeEventListener("scroll",this.scrollBottom)
+  },
+
   methods:{
     loadMore(){//#获取服务器中的商品列表
-      var url = "healthyNumber/healthyNumber";
       // 自增页码
       this.pno++;
       // 创建参数对象
@@ -162,33 +165,55 @@ export default {
       };
       // 客户端发送ajax请求(将后端app.js中所需要的参数传给服务器)
       console.log(config);
-      config.axios.get(url,{params:obj})
+      config.axios.get(this.url,{params:obj})
       .then(res=>{
         console.log(res.data);
         console.log(this.list,typeof this.list)
-        this.list = this.list.concat(res.data.rows);
+        this.list = this.list.concat(res.data);
       })
       .catch(err=>{
         console.log(err);
       })
     },
     // #滚轮滑动到最底部时,加载更多数据(创建/挂载/更新/销毁)
-    // scrollBottom(){
-      // 当滚轮滑动到最底部时,就加载更多数据,在页面挂载时,向服务器发送请求
-      // #判断当页面滑动到最底部时,向服务器发送请求
-      // var scrollTop = //滚动条距离顶部的距离
-      //   document.documentElement.scrollTop 
-      //   || document.body.scrollTop;
-      // if( (window.screen.height + scrollTop) > document.body.clientHeight || document.documentElement.clientHeight ){
-      //   this.please = false;
-      //   this.loading = true;
-      //   this.tips = "努力加载中";
-      //   // 向服务器发送请求
-      //   config.axios.get = 
-      // }
-      // clientHeight即为html的css高度
-    },
+    // scrollBottom(e){
+    //   // #当滚轮滑动到最底部时,就加载更多数据,在页面挂载时,向服务器发送请求
+    //   // #滚动条滚动的距离+当前内容的高度+滚动条的高度>整体的高度时
+    //   // #还得判断当前页是不是第一页
+    //   //滚动条距离顶部的距离
+    //   var scrollTop = document.documentElement.scrollTop  ||document.body.scrollTop;
+    //   console.log(scrollTop);
+    //   // 当前内容的高度
+    //   var screenHeight = window.screen.height;
+    //   console.log(screenHeight);
+    //   // 滚动条的高度怎么算
+    //   // var scrollHeight = 
+    //   // (window.screen.height + scrollTop) > document.body.clientHeight || document.documentElement.clientHeight 
+    //   var obj = {
+    //     pno:this.pno
+    //   };
+    //   if( document.body.clientHeight || document.documentElement.clientHeight < scrollTop + screenHeight ){
+    //     console.log("加载到底部了");
+    //     console.log(window.screen.height,scrollTop,document.body.clientHeight);
+    //     this.please = false;
+    //     this.loading = true;
+    //     this.tips = "努力加载中";
+    //     // 向服务器发送请求
+    //     config.axios.get(this.url,{params:obj})
+    //     .then(res=>{
+    //       console.log(res);
+    //       this.list = this.list.concat(res.data.rows);
+    //     })
+    //     .catch(err=>{
+    //       console.log(err);
+    //     })
+    //   }else{
+    //     console.log("未加载到底部");
+    //   }
+    //   // clientHeight即为html的css高度
+    // },
   }
+}
 </script>
 <style scoped>
 #top{
