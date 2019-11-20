@@ -7,3 +7,4 @@ axios.defaults.withCredentials = true;
 var config = {
    axios : axios
 }
+export default config
