@@ -15,7 +15,7 @@ router.get("/healthyNumber", function (req, res) {
     var offset = (pno - 1) * ps;
     //给pageSize造型整型
     ps = parseInt(ps);
-    config.mongoClient.connect(config.url,{useNewUrlParser : config.useNewUrlParser},function(err,db){
+    config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
         if(err) throw err;
         var dbo = db.db("app_zhuanyi");
         /*

@@ -19,7 +19,7 @@ router.get("/login/:phone&:upwd",function(req,res){
       phone,upwd
    }
 
-   config.mongoClient.connect(config.url,{useNewUrlParser : config.useNewUrlParser},function(err,db){
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
       if(err) throw err;
       var dbo = db.db("app_zhuanyi");
       dbo.collection("user").findOne(obj,function(err,result){
@@ -44,7 +44,7 @@ router.get("/showUserOrder",function(req,res){
       return;
    }
 
-   config.mongoClient.connect(config.url,{useNewUrlParser : config.useNewUrlParser},function(err,db){
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
       if(err) throw err;
       var dbo = db.db("app_zhuanyi");
       dbo.collection("user_orders").find({uid : uid}).toArray(function(err,result){
@@ -78,7 +78,7 @@ router.post("/insertUserOrder",function(req,res){
       return;
    }
 
-   config.mongoClient.connect(config.url,{useNewUrlParser : config.useNewUrlParser},function(err,db){
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
       if(err) throw err;
       var dbo = db.db("app_zhuanyi");
       dbo.collection("user_orders").insertOne(obj,function(err,result){
@@ -106,7 +106,7 @@ router.get("/deleteUserOrder",function(req,res){
       return;
    }
 
-   config.mongoClient.connect(config.url,{useNewUrlParser : config.useNewUrlParser},function(err,db){
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
       if(err) throw err;
       var dbo = db.db("app_zhuanyi");
       dbo.collection("user_orders").deleteOne({uid : uid , did : did},function(err,result){
