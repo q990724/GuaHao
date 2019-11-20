@@ -71,7 +71,7 @@ html{
 body{
   background: #f8f8f8;
   width: 26rem;
-  margin: 0 auto;
+  margin: 0 auto !important;
 }
 *{
   margin:0;
