@@ -68,19 +68,19 @@
     <!-- 轮播广告 -->
     <van-swipe class="lunbo"  :autoplay="3000" indicator-color="white">
       <van-swipe-item>
-        <img src="../../../../public/images/index/22carousel/h-3.4 预约挂号轮播banner 750-240.webp" alt="">
+        <img src="../../../../public/images/index/22carousel/h-3.4 预约挂号轮播banner 750-240.png" alt="">
       </van-swipe-item>
       <van-swipe-item>
-        <img src="../../../../public/images/index/22carousel/h-3.4.1-750-240 (1).webp" alt="">
+        <img src="../../../../public/images/index/22carousel/h-3.4.1-750-240 (1).png" alt="">
       </van-swipe-item>
       <van-swipe-item>
-        <img src="../../../../public/images/index/22carousel/750-192.webp" alt="">
+        <img src="../../../../public/images/index/22carousel/750-192.png" alt="">
       </van-swipe-item>
     </van-swipe>
     <div class="hospital" v-for="(h,i) of hospital" :key="i+4">
       <div class="hos">
         <div class="left_img">
-          <img src="../../../../public/images/index/22hospital/c7m2954342.webp" alt="">
+          <img src="../../../../public/images/index/22hospital/c7m2954342.png" alt="">
         </div>
         <div class="right_title">
           <p class="hos_name">{{h.hname}}</p>
@@ -109,9 +109,9 @@ export default {
   data(){
     return {
       images: [
-        '../../../../public/images/index/22carousel/h-3.4 预约挂号轮播banner 750-240.webp',
-        '../../../../public/images/index/22carousel/h-3.4.1-750-240 (1).webp',
-        "../../../../public/images/index/22carousel/750-192.webp"
+        '../../../../public/images/index/22carousel/h-3.4 预约挂号轮播banner 750-240.png',
+        '../../../../public/images/index/22carousel/h-3.4.1-750-240 (1).png',
+        "../../../../public/images/index/22carousel/750-192.png"
       ],
       hospitalType:["综合医院","眼科医院","儿童医院","妇产科医院","肿瘤医院","耳鼻喉科医院"],
       hospitalLevel:["三甲医院","三级医院","一级医院","对外专科","对外综合","其他","二级医院"],
