@@ -15,7 +15,7 @@
       <div class="special-server-container">
         <!-- 每一个都循环生成 -->
         <div class="item" to="#" v-for="(item,i) of servers" :key="i">
-          <div style="width:1.8rem;height:1.8rem" class="item-img">
+          <div style="width:3rem;height:3rem" class="item-img">
             <img class="server-img" src="../../../../public/images/index/2serve/doctor.webp" width="28">
           </div>
           <div class="item-text">私人医生</div>
@@ -200,7 +200,6 @@ export default {
   #special-server-floor .special-server-container{
     display:flex;
     flex-wrap: nowrap;
-    justify-content: space-around;
     overflow-x: auto;
     padding: 0rem 1.25rem 1.875rem .3125rem;
     overflow-y: hidden;
@@ -225,7 +224,9 @@ export default {
     color:#5e616b;
     font-size:.512rem;
     line-height:.6rem;
-    margin-top:.625rem;
+    margin-top:.2rem;
+    width:75px;
+    text-align:left;
   }
 /*  专病专科*/
 /* 上方标题 */
