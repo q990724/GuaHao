@@ -56,11 +56,13 @@
       </div>
       <tools></tools>
     </div>
+    <frame :frameName="3"></frame>
   </div>
 </template>
 <script>
 import toolsItem from "./wf/tools-item.vue"
 import tools from "./wf/tools.vue"
+import frame from "../index/frame.vue"
 export default {
   data(){
     return {
@@ -73,7 +75,7 @@ export default {
     }
   },
   components:{
-    toolsItem,tools
+    toolsItem,tools,frame
   }
 };
 </script>
