@@ -6,6 +6,8 @@ const session = require("express-session");
 const bodyParser = require('body-parser');
 const cors=require("cors");
 const io = require("socket.io")(http);
+const mongoClient = require("mongodb").MongoClient;
+var expressMongoDb = require('express-mongo-db');
 /*引入路由模块*/
 var user = require("./routes/user");
 var hotRommend = require("./routes/hotRommend");
@@ -30,9 +32,14 @@ app.use(session({
   resave:false,
   saveUninitialized:true
 }));//将服务器的session，放在req.session中
+
+
+app.use(expressMongoDb('mongodb://127.0.0.1/app_zhuanyi'));
+
 /*使用路由器来管理路由*/
 app.use("/user",user);
 app.use("/hotRommend",hotRommend);
 app.use("/hospitals",hospitals);
 app.use("/healthyNumber",healthyNumber);
 app.use("/doctor",doctor);
+

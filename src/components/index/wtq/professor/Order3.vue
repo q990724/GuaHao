@@ -13,49 +13,17 @@
       <div class="can-choose-date">
         <!-- 时间得后期自动获取 -->
         <!-- 每个时间是一个 -->
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
+        <div class="date" v-for="(day,ind) of days" :key="ind">
+          <span>{{day.lastWeek}}</span>
+          <h4>{{day.month}}.{{day.lastDay}}</h4>
         </div>
         <!-- 循环生成 -->
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
+      
       </div>
     </div>
     <!-- 组件:下拉菜单 -->
      <van-dropdown-menu>
       <van-dropdown-item v-model="value1" :options="option1" />
-      <van-dropdown-item v-model="value2" :options="option2" />
     </van-dropdown-menu>
     <!-- 医生个人信息 循环生成 -->
       <div class="main-doctor">
@@ -63,7 +31,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -90,7 +58,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -116,7 +84,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -142,7 +110,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -168,7 +136,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -194,7 +162,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -220,7 +188,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -246,7 +214,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -272,11 +240,11 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">
+          <div class="doc-info">  
             <!-- 第一行 -->
             <div class="first-info">
               <div class="left">
@@ -306,17 +274,119 @@ export default {
       value1: 0,
       value2: 'a',
       option1: [
-        { text: '全部商品', value: 0 },
-        { text: '新款商品', value: 1 },
-        { text: '活动商品', value: 2 }
+        { text: '专家擅长', value: 0 },
+        { text: '全部', value: 1 },
+        { text: '糖尿病', value: 2 },
+        { text: '甲状腺', value: 3 },
+        { text: '甲状腺', value: 4 },
+        { text: '甲状腺', value: 5 },
+        { text: '甲状腺', value: 6 }
       ],
-      option2: [
-        { text: '默认排序', value: 'a' },
-        { text: '好评排序', value: 'b' },
-        { text: '销量排序', value: 'c' },
-      ]
+      days:[],
+
     }
-  }
+  },
+  methods:{
+    created() {
+      this.getDate();
+    },
+    getDate(){
+      var year = new Date().getFullYear();
+      var nowMon = new Date().getMonth() + 1;//获取今天月份
+      var nowDay = new Date().getDate();//当前今天日期
+      var nowWeek = new Date().getDay();//获取当前星期
+
+      var isRun = false;//是否为闰年,默认为false
+
+      //判断当前年份是否为闰年
+      if(year%4==0&&year%100!=0||year%400==0){
+        isRun = true;
+  　　}else{
+        isRun = false
+  　　}
+
+      //1 3 5 7 8 10 12 :31
+      //4 6 9 11 : 30
+      //2 ? 29 : 28
+
+      //计算当前月份总天数
+      function computedMonthDay(now){
+        if(now == 1 || now == 3 || now == 5 || now == 7 || now == 8 || now == 10 || now == 12){
+          return 31
+        }else if(now == 2){
+          return isRun ?  29 : 28;
+        }else{
+          return 30;
+        }
+      }
+
+      //修改星期的格式
+      function changeWeekFormat(week){
+        switch(week){
+          case 1:{
+            return "一"
+            break;
+          }
+          case 2:{
+            return "二"
+            break;
+          }
+          case 3:{
+            return "三"
+            break;
+          }
+          case 4:{
+            return "四"
+            break;
+          }
+          case 5:{
+            return "五"
+            break;
+          }
+        }
+      }
+
+      var monthDays = computedMonthDay(nowMon);//当前月的总天数
+      console.log(`今年${isRun ? "是闰年" : "不是闰年"},${nowMon}月的总天数为:${monthDays},星期:${nowWeek}`);
+
+
+      var lastDays = [];//后面的十五天
+      var lastWeek;
+      var lastDay;
+      for(var i = 1; i <= monthDays; i++){
+        lastWeek = (nowWeek + i) % 7;
+        lastDay = nowDay + i;
+        if(lastWeek == 0 || lastWeek == 6){
+          continue;
+        }
+        if(lastDay >= monthDays){
+          var lastMonthDays = computedMonthDay(nowMon+1);
+          for(var j = 1; j <= lastMonthDays; j++){
+            lastDay = j;
+            lastWeek = (nowWeek + j) % 7;
+            if(lastWeek == 0 || lastWeek == 6){
+              continue;
+            }
+            lastDays.push({month : nowMon+1,lastDay,lastWeek :"星期" + changeWeekFormat(lastWeek)});
+              if(lastDays.length == 15){
+              break;
+            } 
+          }
+          break;
+        }else{
+          lastDays.push({month : nowMon,lastDay,lastWeek :"星期" +  changeWeekFormat(lastWeek)});
+          if(lastDays.length == 15){
+            break;
+          }        
+        }
+        
+      }
+
+      console.log(lastDays);
+      this.days = lastDays;
+      console.log(this.days);
+      }
+    },
   
 }
 </script>
@@ -325,6 +395,12 @@ export default {
 #export{
   position:relative;
 }
+.van-dropdown-menu__item{
+  justify-content: start !important;
+}
+[class*=van-hairline]::after{
+  border:0px solid #fff;
+}
 /* 顶部导航 固定的左上角的颜色 */
 .van-nav-bar .van-icon{
   color:#28354c !important;
@@ -332,10 +408,12 @@ export default {
 /* 选择时间样式 */
   .choose-all{
     border:.04266667rem solid #e3e3e3;
+    border-right:0rem solid ;
     width:100%;
-    height:3.5rem;
+    height:4rem;
     position:fixed;
-    top:2.8rem;
+    top:3.3rem;
+    left:0;
     z-index:5;
     background-color:#fff;
   }
@@ -359,11 +437,13 @@ export default {
     margin-top:1rem;
   }
   .can-choose-date{
+    margin-left:3rem;
+    text-align:center;
     width:100%;
     height:3.3rem;
     display:flex;
     flex-wrap: nowrap;
-    position:fixed;
+    /* position:fixed; */
     left:3rem;
     top:2.80916rem;
     overflow-x:auto;
@@ -386,7 +466,7 @@ export default {
 
 /* ddd */
   .van-dropdown-menu{
-    padding-top:6.5rem;
+    padding-top: 9.5rem;
     z-index:0;
     border-bottom:.04266667rem solid #e3e3e3;
     height:2.748092rem !important;
@@ -414,7 +494,7 @@ export default {
     margin-top:.732824rem;
   }
   .doc-info{
-    width:17.770992rem !important;
+    width:19.770992rem !important;
     padding:.305344rem .610687rem;
   }
   .first-info{
@@ -436,7 +516,7 @@ export default {
     height:.916031rem;
     padding:.030534rem .005344rem;
     line-height: .916031rem;
-   
+    text-align: center;
   }
   .left{
     width:12.053435rem;
@@ -451,13 +531,14 @@ export default {
   .left span:nth-child(4){
     border:.061069rem solid #ff695c;
     background-color:#ff695c;
-    width:2.221374rem;
+    width:3rem;
   }
   .first-info span:nth-child(2){
     border:1px solid #468aff;
     color: #468aff;
-    width: 1.6rem;
+    width: 2.6rem;
     height:.916031rem;
+    text-align:center;
   }
   .second{
     text-align:left;
