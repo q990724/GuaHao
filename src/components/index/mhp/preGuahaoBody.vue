@@ -53,7 +53,7 @@
     <div class="hospital" @click="todetail" v-for="(h,i) of hospital" :key="i">
       <div class="hos">
         <div class="left_img">
-          <img src=h.hpic alt="">
+          <img :src="`http://127.0.0.1:5050/${h.hpic}`" alt="">
         </div>
         <div class="right_title">
           <p class="hos_name">{{h.hname}}</p>
@@ -269,7 +269,6 @@ van-tag{
   text-align: left;
   color:#707c93;
   background: #e0ebfa;
-  padding: .122137rem;
 }
 .lunbo{
   height:8.061069rem;
