@@ -79,7 +79,7 @@
             <router-link class="doctor" to="#">
               <!-- 医生图片 相对定位-->
               <div style="width:4.375rem;height:4.375rem;" class="item-img">
-                <img class="one-img" src="../../../../public/images/index/8love/1.webp">
+                <img src="../../../../public/images/index/8love/1.webp">
               </div>
               <p>剩余4次</p>
               <p class="yuan-price">¥20元</p>
@@ -89,7 +89,7 @@
             <router-link class="doctor" to="#">
               <!-- 医生图片 相对定位-->
               <div class="item-img">
-                <img class="one-img" src="../../../../public/images/index/8love/1.webp">
+                <img  src="../../../../public/images/index/8love/1.webp">
               </div>
               <p>剩余4次</p>
               <p class="yuan-price">¥20元</p>
@@ -98,7 +98,7 @@
             <router-link class="doctor" to="#">
               <!-- 医生图片 相对定位-->
               <div class="item-img">
-                <img class="one-img" src="../../../../public/images/index/8love/1.webp">
+                <img src="../../../../public/images/index/8love/1.webp">
               </div>
               <p>剩余4次</p>
               <p class="yuan-price">¥20元</p>
@@ -117,20 +117,20 @@
       <ask></ask>
       <!-- 广告 -->
       <div id="gg">
-        <img src="../../../../public/images/index/gg.webp">
+        <img style=" border-radius:.3125rem;"  src="../../../../public/images/index/gg.webp">
       </div>
       <ask></ask>
       <ask></ask>
       <gzh></gzh>
       <gzh></gzh>
       <div id="gg">
-        <img src="../../../../public/images/index/gg.webp">
+        <img style=" border-radius:.3125rem;"  src="../../../../public/images/index/gg.webp">
       </div>
       <ask></ask>
       <gzh></gzh>
       <gzh></gzh>
       <div id="gg">
-        <img src="../../../../public/images/index/gg.webp">
+        <img style=" border-radius:.3125rem;" src="../../../../public/images/index/gg.webp">
       </div>
       <gzh></gzh>
       <gzh></gzh>
@@ -323,7 +323,7 @@ export default {
     width:4.375rem;height:4.375rem;
     
   }
-  #love-heart-floor .item-img .one-img{
+  #love-heart-floor .item-img img{
     width:100%;
     height:100%;
     border-radius:.625rem;
@@ -342,6 +342,7 @@ export default {
     background-color:#3f86ff;
     border-bottom-left-radius: .625rem;
     border-bottom-right-radius: .625rem;
+    line-height:1.0625rem;
   }
   #love-heart-floor .doctor>p:nth-child(3){
     color:#9d9ea7;
@@ -377,7 +378,7 @@ export default {
   }
   #gg img{
     width:100%;
-    border-radius:.3125rem;
+   
   }
 /*  */
 
