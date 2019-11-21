@@ -13,7 +13,7 @@
       </div>
       <!-- 主要内容 -->
       <div class="special-server-container">
-        <!-- 每一个a都循环生成 -->
+        <!-- 每一个都循环生成 -->
         <div class="item" to="#">
           <div class="item-img">
             <img src="../../../../public/images/index/2serve/doctor.webp" width="28">
@@ -264,10 +264,11 @@ export default {
   #special-server-floor .item-img{
     /* margin:.625rem .625rem  0 .625rem; */
     margin: 0 1rem;
-
+    width:1.8rem;
   }
   #special-server-floor .item-img img{
-    width: 1.8rem;
+    width:100%;
+    height:100%;
   }
   #special-server-floor .item-text{
     color:#5e616b;
