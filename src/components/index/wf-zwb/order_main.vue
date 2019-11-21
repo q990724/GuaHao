@@ -42,7 +42,7 @@
               </div>
               <span class="isOrder">可预约</span>
             </div>
-            <div class="down_content" :style="`height:${downHeight}rem`">
+            <div class="down_content" :style="`height:${isPull ? 17.2 : 8.6}rem`">
               <div class="left">
                 本月
               </div>
@@ -78,7 +78,7 @@
               </ul>
             </div>
             <div class="up" @click="pull">
-              {{pullAll}}<van-icon :name="`${iconName}`" />
+              {{isPull ? "收起排班":"显示全部排班"}}<van-icon :name="`${isPull ? 'arrow-up' : 'arrow-down'}`" />
             </div>
           </van-collapse-item>
         </van-collapse>
@@ -429,23 +429,13 @@ export default {
    data() {
     return {
       activeNames: ['1'],
-      downHeight:8.6,
-      iconName:"arrow-down",
-      pullAll:"显示全部排班",
-      stars:5
+      stars:5,
+      isPull:false
     }
   },
   methods:{
     pull:function(){
-      if(this.downHeight==8.6&&this.iconName=="arrow-down"){
-        this.downHeight=17.2;
-        this.iconName="arrow-up";
-        this.pullAll="收起排班";
-      }else{
-        this.downHeight=8.6;
-        this.iconName="arrow-down";
-        this.pullAll="显示全部排班";
-      }
+      this.isPull=!this.isPull;
     }
   }
 }
