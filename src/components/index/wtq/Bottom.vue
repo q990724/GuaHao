@@ -15,63 +15,63 @@
       <div class="special-server-container">
         <!-- 每一个都循环生成 -->
         <div class="item" to="#">
-          <div class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp" width="28">
+          <div style="width:1.8rem;height:1.8rem" class="item-img">
+            <img class="server-img" src="../../../../public/images/index/2serve/doctor.webp" width="28">
           </div>
           <div class="item-text">私人医生</div>
         </div>
 
         <div class="item" to="#">
-          <div class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp" >
+          <div style="width:1.8rem;height:1.8rem"  class="item-img">
+            <img class="server-img"  src="../../../../public/images/index/2serve/doctor.webp" >
           </div>
           <div class="item-text">私人医生</div>
         </div>
         <div class="item" to="#">
-          <div class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp" >
+          <div style="width:1.8rem;height:1.8rem"  class="item-img">
+            <img class="server-img"  src="../../../../public/images/index/2serve/doctor.webp" >
           </div>
           <div class="item-text">私人医生</div>
         </div>
         <div class="item" to="#">
-          <div class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp" >
+          <div style="width:1.8rem;height:1.8rem"  class="item-img">
+            <img class="server-img"  src="../../../../public/images/index/2serve/doctor.webp" >
           </div>
           <div class="item-text">私人医生</div>
         </div>
         <div class="item" to="#">
-          <div class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp" >
+          <div style="width:1.8rem;height:1.8rem"   class="item-img">
+            <img class="server-img"  src="../../../../public/images/index/2serve/doctor.webp" >
           </div>
           <div class="item-text">私人医生</div>
         </div>
         <div class="item" to="#">
-          <div class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp" >
+          <div style="width:1.8rem;height:1.8rem"   class="item-img">
+            <img class="server-img"   src="../../../../public/images/index/2serve/doctor.webp" >
           </div>
           <div class="item-text">私人医生</div>
         </div>
         <div class="item" to="#">
-          <div class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp" >
+          <div style="width:1.8rem;height:1.8rem"   class="item-img">
+            <img class="server-img"   src="../../../../public/images/index/2serve/doctor.webp" >
           </div>
           <div class="item-text">私人医生</div>
         </div>
         <div class="item" to="#">
-          <div class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp" >
+          <div style="width:1.8rem;height:1.8rem"   class="item-img">
+            <img class="server-img"   src="../../../../public/images/index/2serve/doctor.webp" >
           </div>
           <div class="item-text">私人医生</div>
         </div>
         <div class="item" to="#">
-          <div class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp" >
+          <div style="width:1.8rem;height:1.8rem"   class="item-img">
+            <img class="server-img"   src="../../../../public/images/index/2serve/doctor.webp" >
           </div>
           <div class="item-text">私人医生</div>
         </div>
         <div class="item" to="#">
-          <div class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp" >
+          <div style="width:1.8rem;height:1.8rem"   class="item-img">
+            <img class="server-img"   src="../../../../public/images/index/2serve/doctor.webp" >
           </div>
           <div class="item-text">私人医生</div>
         </div>
@@ -261,15 +261,15 @@ export default {
     display: flex;
     flex-direction: column;
   }
-  #special-server-floor .item-img{
+  /* #special-server-floor .item-img{
     /* margin:.625rem .625rem  0 .625rem; */
-    margin: 0 1rem;
+    /* margin: 0 1rem;
     width:1.8rem;
-  }
-  #special-server-floor .item-img img{
+  } */ 
+  #special-server-floor .item-img .server-img{
     width:100%;
     height:100%;
-  }
+  } 
   #special-server-floor .item-text{
     color:#5e616b;
     font-size:.512rem;

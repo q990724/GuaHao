@@ -78,8 +78,8 @@
             <!-- 循环生成 -->
             <router-link class="doctor" to="#">
               <!-- 医生图片 相对定位-->
-              <div class="item-img">
-                <img src="../../../../public/images/index/8love/1.webp">
+              <div style="width:4.375rem;height:4.375rem;" class="item-img">
+                <img class="one-img" src="../../../../public/images/index/8love/1.webp">
               </div>
               <p>剩余4次</p>
               <p class="yuan-price">¥20元</p>
@@ -89,7 +89,7 @@
             <router-link class="doctor" to="#">
               <!-- 医生图片 相对定位-->
               <div class="item-img">
-                <img src="../../../../public/images/index/8love/1.webp">
+                <img class="one-img" src="../../../../public/images/index/8love/1.webp">
               </div>
               <p>剩余4次</p>
               <p class="yuan-price">¥20元</p>
@@ -98,7 +98,7 @@
             <router-link class="doctor" to="#">
               <!-- 医生图片 相对定位-->
               <div class="item-img">
-                <img src="../../../../public/images/index/8love/1.webp">
+                <img class="one-img" src="../../../../public/images/index/8love/1.webp">
               </div>
               <p>剩余4次</p>
               <p class="yuan-price">¥20元</p>
@@ -323,7 +323,7 @@ export default {
     width:4.375rem;height:4.375rem;
     
   }
-  #love-heart-floor .item-img img{
+  #love-heart-floor .item-img .one-img{
     width:100%;
     height:100%;
     border-radius:.625rem;
