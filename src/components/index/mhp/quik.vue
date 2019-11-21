@@ -2,7 +2,7 @@
   <div class="quik">
     <div class="top">
       <span>极速问诊</span>
-      <img src="../../../../public/images/index/22toGuahao/PeY130253620.webp" alt="">
+      <img src="../../../../public/images/index/22toGuahao/PeY130253620.png" alt="">
     </div>
     <div class="bottom">
       <span>

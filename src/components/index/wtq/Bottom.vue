@@ -15,7 +15,7 @@
       <div class="special-server-container">
         <!-- 每一个都循环生成 -->
         <div class="item" to="#" v-for="(item,i) of servers" :key="i">
-          <div style="width:3rem;height:3rem" class="item-img">
+          <div style="width:2.8rem;height:2.8rem" class="item-img">
             <img src="../../../../public/images/index/2serve/doctor.png">
           </div>
           <div class="item-text">私人医生</div>
@@ -185,7 +185,7 @@ export default {
     }
   #special-server-floor .all{
       font-size:.6rem;
-        color:#5e616b;
+      color:#5e616b;
     }
   #special-server-floor .icon{
       background:url("../../../../public/images/index/4bing/more.png") no-repeat;
@@ -225,8 +225,8 @@ export default {
     font-size:.512rem;
     line-height:.6rem;
     margin-top:.2rem;
-    width:75px;
-    text-align:left;
+    width:3.153435rem;
+    text-align:center;
   }
 /*  专病专科*/
 /* 上方标题 */
@@ -271,7 +271,7 @@ export default {
     margin-bottom:.625rem;
   }
   #type-floor .home-special-container .item{
-     width:5rem;
+    width:5rem;
     height:5rem;
     border-radius:.4rem;
     background-color:#f5f9ff;

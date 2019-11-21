@@ -2,7 +2,7 @@
 <!-- 预约挂号第二页面 -->
   <div id="order2">
     <!-- 子组件头部 -->
-    <header></header>
+    <pre-title></pre-title>
     <!-- 页面2下方选项卡 -->
     <!-- 医院信息卡 -->
     <div class="hospital-info">
@@ -28,12 +28,13 @@
       <van-search v-model="value" placeholder="搜索医生、疾病、科室、查看本院医生" shape="round"/>
     </form>
     <!-- 选择组件 -->
-    <van-tree-select :items="items" :active-id.sync="activeId" :main-active-index.sync="activeIndex"/>
+    <van-tree-select @click-item="next" :items="items" :active-id.sync="activeId" :main-active-index.sync="activeIndex"/>
     <!-- vant 组件库 -->
   </div>
 </template>
 
 <script>
+import preTitle from '../../mhp/preTitle'
 import Choose from './Choose'
 export default {
   data(){
@@ -113,10 +114,14 @@ export default {
   },
   components:{
     "choose":Choose,
+    "preTitle":preTitle,
   },
   methods:{
+   next(data){ 
+     this.$router.push("/index");
+   },
     
-  }
+  },
 }
 </script>
 
@@ -127,7 +132,8 @@ a{text-decoration: none;}
     height: 5rem;
     display:flex;
     flex-direction: column;
-    padding:15px 15px 10px 15px;
+    padding:55px 15px 10px 15px;
+    background-color:#fff;
   }
   .title{
     display:flex;

@@ -8,7 +8,7 @@
       <!-- 下方内容 -->
       <div class="health-num-container">
         <div class="num-img">
-          <img src="../../../../public/images/index/gzh/doc.webp">
+          <img src="../../../../public/images/index/gzh/doc.png">
         </div>
         <div class="num-text">
           <p>吴春林 | 住院医师</p>
