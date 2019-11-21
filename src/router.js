@@ -17,6 +17,7 @@ import find from "./components/fx/find.vue";
 Vue.use(Router)
 export default new Router({
   routes: [
+	{ path: "/", component: index },
     { path: "/preGuahao", component: preGuahao },
     { path: "/wysearch", component: wysearch },
     { path: "/preTitle", component: preTitle },
