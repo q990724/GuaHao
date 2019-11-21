@@ -16,7 +16,7 @@
         <!-- 每一个都循环生成 -->
         <div class="item" to="#" v-for="(item,i) of servers" :key="i">
           <div style="width:3rem;height:3rem" class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.webp">
+            <img src="../../../../public/images/index/2serve/doctor.png">
           </div>
           <div class="item-text">私人医生</div>
         </div>

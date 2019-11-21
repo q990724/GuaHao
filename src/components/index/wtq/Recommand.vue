@@ -117,20 +117,20 @@
       <ask></ask>
       <!-- 广告 -->
       <div id="gg">
-        <img src="../../../../public/images/index/gg.webp">
+        <img style=" border-radius:.3125rem;"  src="../../../../public/images/index/gg.webp">
       </div>
       <ask></ask>
       <ask></ask>
       <gzh></gzh>
       <gzh></gzh>
       <div id="gg">
-        <img src="../../../../public/images/index/gg.webp">
+        <img style=" border-radius:.3125rem;"  src="../../../../public/images/index/gg.webp">
       </div>
       <ask></ask>
       <gzh></gzh>
       <gzh></gzh>
       <div id="gg">
-        <img src="../../../../public/images/index/gg.webp">
+        <img style=" border-radius:.3125rem;" src="../../../../public/images/index/gg.webp">
       </div>
       <gzh></gzh>
       <gzh></gzh>
@@ -342,6 +342,7 @@ export default {
     background-color:#3f86ff;
     border-bottom-left-radius: .625rem;
     border-bottom-right-radius: .625rem;
+    line-height:1.0625rem;
   }
   #love-heart-floor .doctor>p:nth-child(3){
     color:#9d9ea7;
@@ -377,7 +378,7 @@ export default {
   }
   #gg img{
     width:100%;
-    border-radius:.3125rem;
+   
   }
 /*  */
 

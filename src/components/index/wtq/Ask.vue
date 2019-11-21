@@ -100,7 +100,7 @@ a{
 }
 .answer-icon{background-color:#589bfe;}
 .ask-text{
-  width:18.75rem;
+  width:17rem;
   height:2.2rem;
   text-align:left;
   text-overflow: -o-ellipsis-lastline;
