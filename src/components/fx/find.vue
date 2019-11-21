@@ -46,6 +46,7 @@
   </div>
 </template>
 <script>
+import config from "../../assets/js/config.js";
 export default{
   data(){
     return {
