@@ -53,15 +53,15 @@
     <div class="hospital" @click="todetail" v-for="(h,i) of hospital" :key="i">
       <div class="hos">
         <div class="left_img">
-          <img src="../../../../public/images/index/22hospital/c7m2954342.webp" alt="">
+          <img src=h.hpic alt="">
         </div>
         <div class="right_title">
-          <p class="hos_name">中国人民解放军总医院301医院</p>
+          <p class="hos_name">{{h.hname}}</p>
           <div class="hos_est">
-            <span class="hos_level">三级甲等</span>
-            <span class="hos_type">综合医院</span>
+            <span class="hos_level">{{h.hrank}}</span>
+            <span class="hos_type">{{h.hmajor}}</span>
           </div>
-          <span class="hos_con">全国综合榜患者好评第2名</span>
+          <span class="hos_con">{{h.comment_msg}}</span>
         </div> 
       </div>
     </div>
@@ -83,12 +83,12 @@
           <img src="../../../../public/images/index/22hospital/c7m2954342.webp" alt="">
         </div>
         <div class="right_title">
-          <p class="hos_name">中国人民解放军总医院301医院</p>
+          <p class="hos_name">{{h.hname}}</p>
           <div class="hos_est">
-            <span class="hos_level">三级甲等</span>
-            <span class="hos_type">综合医院</span>
+            <span class="hos_level">{{h.hrank}}</span>
+            <span class="hos_type">{{h.hmajor}}</span>
           </div>
-          <span class="hos_con">全国综合榜患者好评第2名</span>
+          <span class="hos_con">{{h.comment_msg}}</span>
         </div> 
       </div>
     </div>
@@ -104,6 +104,7 @@
   </div>
 </template>
 <script>
+import config from "../../../assets/js/config.js"
 export default {
   data(){
     return {
@@ -114,7 +115,7 @@ export default {
       ],
       hospitalType:["综合医院","眼科医院","儿童医院","妇产科医院","肿瘤医院","耳鼻喉科医院"],
       hospitalLevel:["三甲医院","三级医院","一级医院","对外专科","对外综合","其他","二级医院"],
-      hospital:[1,2,3,4],
+      hospital:[],
       index:0,
       value1: 0,
       value2: 'a',
@@ -126,14 +127,30 @@ export default {
       ],
       option2: [
         { text: '筛选', value: 'a' },
-      ]
+      ],
+      url:"hospitals/hospitalsAll",
     }
   },
   methods:{
     todetail(){
       this.$router.push("/Order2");
+    },
+    load(){
+      config.axios.get(this.url)
+      .then(res=>{
+        console.log(res.data);
+        this.hospital=this.hospital.concat(res.data.data);
+        console.log(this.hospital)
+      })
+      .catch(err=>{
+        console.log(err);
+      })
     }
   },
+  created() {
+    this.load();
+  },
+
 }
 </script>
 <style scoped>
@@ -266,11 +283,12 @@ van-tag{
   background: #eee;
   padding: .610687rem .610687rem;
   display: flex;
-  
+  flex-direction: column;
+  margin-bottom: 3.969466rem;
 }
 .more>.nomore{
   color:#aaa;
-  height:1.832061rem;
+  height:1.332061rem;
   font-size:.732824rem;
   padding:.021374rem 0rem;
   text-align: center;
