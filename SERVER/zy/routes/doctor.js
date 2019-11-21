@@ -1,6 +1,5 @@
 const express=require("express");
 var router=express.Router();
-var config = require("../config");
 /*
 //插入到医生预约表中
 router.post("/insertDoctorOrder",function(req,res){
@@ -27,10 +26,7 @@ router.post("/insertDoctorOrder",function(req,res){
  //查询对应医生的所有预约信息
  router.get("/showDoctorOrder/:did",function(req,res){
     var did = req.params.did;
-    config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
-        if(err) throw err;
-        var dbo = db.db("app_zhuanyi");
-        dbo.collection("doctor_orders").find().toArray(function(err,result){
+   req.db.collection("doctor_orders").find({did : did}).toArray(function(err,result){
             if(err) throw err;
             if(result.length == 0) {
                 res.send({code : 0 , msg : "该医生没有被预约信息" , data : []});
@@ -40,7 +36,6 @@ router.post("/insertDoctorOrder",function(req,res){
                 res.send({code : -1 , msg : "查询失败" , err : err});
             }
         });
-    });
  });
 /*
  //删除对应医生的对应用户预约信息
