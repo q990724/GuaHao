@@ -23,7 +23,7 @@ router.get("/login/:phone&:upwd", function (req, res) {
     if (result) {
       req.session.uid = result._id;
       console.log("用户登录成功,session为:" + req.session.uid);
-      res.send({ code: 1, msg: '登录成功' });
+      res.send({ code: 1, msg: '登录成功' , data : result});
     } else {
       res.send({ code: -1, msg: '用户名或密码错误' });
     }
