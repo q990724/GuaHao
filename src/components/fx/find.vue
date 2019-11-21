@@ -51,15 +51,25 @@ export default{
   data(){
     return {
       msg:[1,2,3],
-      doc:[1,2,3,4]
+      doc:[1,2,3,4],
+      url:"hospitals/hospitalsAll"
     }
   },
+  created() {
+    this.load();
+  },
   methods: {
-      onClick(name, title) {
-        this.$toast(title);
-      }
+    onClick(name, title) {
+      this.$toast(title);
+    },
+    load(){
+      config.axios.get(this.url)
+      .then(res=>{
+        console.log(res.data);
+      })
     }
   }
+}
 </script>
 <style scoped>
 mt-header{
