@@ -28,7 +28,7 @@
       <van-search v-model="value" placeholder="搜索医生、疾病、科室、查看本院医生" shape="round"/>
     </form>
     <!-- 选择组件 -->
-    <van-tree-select :items="items" :active-id.sync="activeId" :main-active-index.sync="activeIndex"/>
+    <van-tree-select @click-item="next" :items="items" :active-id.sync="activeId" :main-active-index.sync="activeIndex"/>
     <!-- vant 组件库 -->
   </div>
 </template>
@@ -117,8 +117,11 @@ export default {
     "preTitle":preTitle,
   },
   methods:{
+   next(data){ 
+     this.$router.push("/index");
+   },
     
-  }
+  },
 }
 </script>
 
