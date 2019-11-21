@@ -7,7 +7,7 @@
     >
       <span :class="currIndex == index ? active:''">{{item.title}}</span>
       <template slot="icon" slot-scope="props">
-        <i :style="`background-image:url(${props.active ? item.active : item.normal});background-position:0 ${props.active ? -25 : 0}px`"></i>
+        <i :style="`background-image:url(${props.active ? item.active : item.normal});background-position:0 ${props.active ? -1.526718 : 0}rem`"></i>
       </template>
     </van-tabbar-item>
   </van-tabbar>
