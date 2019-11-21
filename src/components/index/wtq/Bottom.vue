@@ -16,7 +16,7 @@
         <!-- 每一个都循环生成 -->
         <div class="item" to="#" v-for="(item,i) of servers" :key="i">
           <div style="width:3rem;height:3rem" class="item-img">
-            <img class="server-img" src="../../../../public/images/index/2serve/doctor.webp" width="28">
+            <img src="../../../../public/images/index/2serve/doctor.webp">
           </div>
           <div class="item-text">私人医生</div>
         </div>
@@ -216,7 +216,7 @@ export default {
     /* margin: 0 1rem;
     width:1.8rem;
   } */ 
-  #special-server-floor .item-img .server-img{
+  #special-server-floor .item-img img{
     width:100%;
     height:100%;
   } 
