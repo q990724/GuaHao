@@ -15,7 +15,7 @@
     </van-dropdown-menu>
     <div class="preAsk">
       <div class="l_img">
-        <img src="../../../../public/images/index/22toGuahao/QHY73129938.webp" alt="">
+        <img src="../../../../public/images/index/22toGuahao/QHY73129938.png" alt="">
       </div>
       <div class="r_details">
         <div class="t_title">
