@@ -13,22 +13,23 @@
       </div>
       <div class="p_professor" href="">
         <div class="professor">
-          <img src="../../../../public/images/index/22toGuahao/icon-export-consult-new.png" alt="">
+          <img src="../../../../public/images/index/22toGuahao/icon-export-consult-new2.png" alt="">
         </div>
-        <p class="zjwz">专家问诊</p>
+        <p class="zjwz">一病多问</p>
         <p class="constructor">
-          <span>27万</span>
-          医生在线
+          一次看
+          <span>5位</span>
+          专家
         </p>
       </div>
       <div class="p_professor" href="">
         <div class="professor">
-          <img src="../../../../public/images/index/22toGuahao/icon-export-consult-new.png" alt="">
+          <img src="../../../../public/images/index/22toGuahao/icon-online-medical-new3.png" alt="">
         </div>
-        <p class="zjwz">专家问诊</p>
+        <p class="zjwz">健康商城</p>
         <p class="constructor">
-          <span>27万</span>
-          医生在线
+          <span>1小时达</span>
+          极速送药
         </p>
       </div>
     </div>
