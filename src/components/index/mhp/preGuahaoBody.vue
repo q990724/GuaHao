@@ -80,7 +80,7 @@
     <div class="hospital" v-for="(h,i) of hospital" :key="i+4">
       <div class="hos">
         <div class="left_img">
-          <img src="../../../../public/images/index/22hospital/c7m2954342.png" alt="">
+          <img :src="`http://127.0.0.1:5050/${h.hpic}`" alt="">
         </div>
         <div class="right_title">
           <p class="hos_name">{{h.hname}}</p>
