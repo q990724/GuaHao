@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     goback(){
-      this.$router.push("/index");
+      this.$router.go(-1);
     }
   },
 }
