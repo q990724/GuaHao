@@ -35,6 +35,7 @@
       <mt-tab-container-item id="jkh">
       </mt-tab-container-item>
       <mt-tab-container-item id="find">
+        <find></find>
       </mt-tab-container-item>
       <mt-tab-container-item id="me">
         <!--  -->
@@ -46,6 +47,7 @@
 <script>
 import Bottom from './Bottom'
 import me from "../../me/me.vue"
+import find from "../../fx/find.vue"
 export default {
   data(){
     return {
@@ -54,7 +56,8 @@ export default {
   },
   components:{
     "bottom":Bottom,
-    me
+    me,
+    find
   },
 }
 </script>
