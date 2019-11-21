@@ -39,8 +39,16 @@
           </div>
         </div>
       </van-tab>
-      <van-tab title="工具">
-        
+      <van-tab class="tools" title="工具">
+        <div class="nav-tech" v-for="(t,i) of tool" :key="i">
+          <div class="left-p">
+            <p>科室导航</p>
+            <h3>常见科室分类，帮你更快找到对医生</h3>
+          </div>
+          <div class="right-img">
+            <img src="../../../public/images/find/found-zizhen.png" alt="">
+          </div>
+        </div>
       </van-tab>
     </van-tabs>
   </div>
@@ -52,7 +60,8 @@ export default{
     return {
       msg:[1,2,3],
       doc:[1,2,3,4],
-      url:"hospitals/hospitalsAll"
+      url:"hospitals/hospitalsAll",
+      tool:[1,2,3,4],
     }
   },
   created() {
@@ -128,7 +137,9 @@ mt-header{
 .health-ul{
   width:41.526718rem;
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 .health{
   padding:.610687rem;
@@ -140,6 +151,8 @@ mt-header{
   padding:.610687rem .610687rem;
   text-align: center;
   margin-right:.610687rem;
+  -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
 }
 .doc-img>img{
   border-radius: 50%;
@@ -169,5 +182,24 @@ mt-header{
   border:1px solid #3f86ff;
   border-radius: 1.9216031rem;
   color:#3f86ff;
+}
+.tools{
+  margin-top: .610687rem;
+}
+.nav-tech{
+  margin-bottom: .183206rem;
+  height:3.969466rem;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding:.305344rem .916031rem;
+}
+.right-img{
+  width: 2.381679rem;
+  height:2.381679rem;
+}
+.left-p{
+  color:#28354c;
+  font-size:.64rem;
 }
 </style>
