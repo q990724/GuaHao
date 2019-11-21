@@ -1,8 +1,11 @@
 <template>
   <div class="wytitle">
-    <mt-header class="font_title" title="专医(挂号网)-互联网医院在线诊疗平台">  
+    <van-nav-bar
+   class="font_title" title="专医(挂号网)-互联网医院在线诊疗平台"
+/>
+    <!-- <mt-header class="font_title" title="专医(挂号网)-互联网医院在线诊疗平台">  
 
-    </mt-header>
+    </mt-header> -->
   </div>
 </template>
 <script>
