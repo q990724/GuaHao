@@ -9,12 +9,12 @@
 		专医帐号可直接登录
 	</div>
       <van-cell-group>
-            <van-field placeholder="邮箱、手机号或用户名"/>
+            <van-field placeholder="邮箱、手机号或用户名" v-model="uname"/>
       </van-cell-group>
       <van-cell-group>
-            <van-field placeholder="密码"/>
+            <van-field placeholder="密码" v-model="upwd"/>
       </van-cell-group>
-      <van-button type="primary" size="large">登&nbsp;&nbsp;录</van-button>
+      <van-button type="primary" size="large"  @click="login">登&nbsp;&nbsp;录</van-button>
       <div class="to-reg">
             <router-link to="">快速登录/注册</router-link>
       </div>
@@ -53,7 +53,35 @@
 </template>
 
 <script>
+import config from "../../../assets/js/config.js"
    export default {
+      data(){
+            return {
+                  uname:"",
+                  upwd:""
+            }
+      },
+      methods:{
+            login:function(){
+                  config.axios.get(
+                        `/user/login/${this.uname}&${this.upwd}`
+                  ).then(res=>{
+                        if(res.data.code==1){
+                              this.$notify({type:"success",message:res.data.msg,duration:1000,
+                              onOpened:()=>{
+                                    this.$router.push({name:"me",params:{data:res.data}})
+                              }
+                              });
+                        }
+                  })
+                  .catch(err=>{          
+                        console.log(err)
+                  })
+            }
+      },
+      created(){
+            
+      }
    }
 </script>
 

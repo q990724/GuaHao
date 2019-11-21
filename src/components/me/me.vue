@@ -7,9 +7,9 @@
         </router-link>
       </mt-header>
       <div class="my-msg">
-        <img src="../../../public/images/me/me-header/qZY78470658.png" width="100%">
+        <img src="../../../public/images/me/me-header/touxiang.png" width="100%">
         <div class="msg">
-          <p class="username">用户wy02316469720</p>
+          <p class="username">{{user_name}}</p>
           <router-link to="/" class="complete">完善信息</router-link>
           <router-link to="/" class="award">领取Lv2福利</router-link>
         </div>
@@ -71,8 +71,18 @@ export default {
           {text:"我的问诊",path:"me/me-order/icon-consult.png"},
           {text:"服务包订单",path:"me/me-order/icon-order.png"},
           {text:"商品订单",path:"me/me-order/icon-order2.png"},
-      ]
+      ],
+      result:{},
+      user_name:""
     }
+  },
+  created(){
+    this.result=this.$route.params.data
+    if(!this.result.user_name){
+      var time=new Date().getTime().toString().slice(3)
+      this.user_name="zy"+time;
+    }
+    sessionStorage.setItem("userMsg",JSON.stringify(this.result))
   },
   components:{
     toolsItem,tools,frame
