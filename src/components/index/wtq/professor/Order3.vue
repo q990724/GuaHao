@@ -14,8 +14,8 @@
         <!-- 时间得后期自动获取 -->
         <!-- 每个时间是一个 -->
         <div class="date" v-for="(day,ind) of days" :key="ind">
-          <span>周一</span>
-          <h4>11.09</h4>
+          <span>{{day.lastWeek}}</span>
+          <h4>{{day.month}}.{{day.lastDay}}</h4>
         </div>
         <!-- 循环生成 -->
       
@@ -282,15 +282,111 @@ export default {
         { text: '甲状腺', value: 5 },
         { text: '甲状腺', value: 6 }
       ],
-      
+      days:[],
 
     }
   },
   methods:{
+    created() {
+      this.getDate();
+    },
     getDate(){
+      var year = new Date().getFullYear();
+      var nowMon = new Date().getMonth() + 1;//获取今天月份
+      var nowDay = new Date().getDate();//当前今天日期
+      var nowWeek = new Date().getDay();//获取当前星期
 
-    }
-  },
+      var isRun = false;//是否为闰年,默认为false
+
+      //判断当前年份是否为闰年
+      if(year%4==0&&year%100!=0||year%400==0){
+        isRun = true;
+  　　}else{
+        isRun = false
+  　　}
+
+      //1 3 5 7 8 10 12 :31
+      //4 6 9 11 : 30
+      //2 ? 29 : 28
+
+      //计算当前月份总天数
+      function computedMonthDay(now){
+        if(now == 1 || now == 3 || now == 5 || now == 7 || now == 8 || now == 10 || now == 12){
+          return 31
+        }else if(now == 2){
+          return isRun ?  29 : 28;
+        }else{
+          return 30;
+        }
+      }
+
+      //修改星期的格式
+      function changeWeekFormat(week){
+        switch(week){
+          case 1:{
+            return "一"
+            break;
+          }
+          case 2:{
+            return "二"
+            break;
+          }
+          case 3:{
+            return "三"
+            break;
+          }
+          case 4:{
+            return "四"
+            break;
+          }
+          case 5:{
+            return "五"
+            break;
+          }
+        }
+      }
+
+      var monthDays = computedMonthDay(nowMon);//当前月的总天数
+      console.log(`今年${isRun ? "是闰年" : "不是闰年"},${nowMon}月的总天数为:${monthDays},星期:${nowWeek}`);
+
+
+      var lastDays = [];//后面的十五天
+      var lastWeek;
+      var lastDay;
+      for(var i = 1; i <= monthDays; i++){
+        lastWeek = (nowWeek + i) % 7;
+        lastDay = nowDay + i;
+        if(lastWeek == 0 || lastWeek == 6){
+          continue;
+        }
+        if(lastDay >= monthDays){
+          var lastMonthDays = computedMonthDay(nowMon+1);
+          for(var j = 1; j <= lastMonthDays; j++){
+            lastDay = j;
+            lastWeek = (nowWeek + j) % 7;
+            if(lastWeek == 0 || lastWeek == 6){
+              continue;
+            }
+            lastDays.push({month : nowMon+1,lastDay,lastWeek :"星期" + changeWeekFormat(lastWeek)});
+              if(lastDays.length == 15){
+              break;
+            } 
+          }
+          break;
+        }else{
+          lastDays.push({month : nowMon,lastDay,lastWeek :"星期" +  changeWeekFormat(lastWeek)});
+          if(lastDays.length == 15){
+            break;
+          }        
+        }
+        
+      }
+
+      console.log(lastDays);
+      this.days = lastDays;
+      console.log(this.days);
+      }
+    },
   
 }
 </script>
@@ -435,7 +531,7 @@ export default {
   .left span:nth-child(4){
     border:.061069rem solid #ff695c;
     background-color:#ff695c;
-    width:2.221374rem;
+    width:3rem;
   }
   .first-info span:nth-child(2){
     border:1px solid #468aff;
