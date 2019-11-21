@@ -1,7 +1,7 @@
 <template>
     <div class = "tools-item">
       <router-link to = "" class = "tools-item-img">
-        <img :src="`http://localhost:8080/images/${item.path}`" alt="">
+        <img :src="`http://zhuanyi.applinzi.com/images/${item.path}`" alt="">
         <p>{{item.text}}</p>
       </router-link>
     </div>
