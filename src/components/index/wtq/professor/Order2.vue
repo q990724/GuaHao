@@ -118,7 +118,7 @@ export default {
   },
   methods:{
    next(data){ 
-     this.$router.push("/index");
+     this.$router.push("/order3");
    },
     
   },
@@ -132,7 +132,7 @@ a{text-decoration: none;}
     height: 5rem;
     display:flex;
     flex-direction: column;
-    padding:55px 15px 10px 15px;
+    padding:3.358779rem .916031rem .610687rem .916031rem;
     background-color:#fff;
   }
   .title{
@@ -144,18 +144,18 @@ a{text-decoration: none;}
     display:inline;
   }
   .title .yao{
-    font-size:12px;
+    font-size:.732824rem;
     color:#83889a;
     border:1px solid #c4c5ce;
-    border-radius:10px;
-    height:18px;width:60px;
+    border-radius:.610687rem;
+    height:1.099237rem;width:3.664122rem;
     text-align: center;
-    line-height:18px;
+    line-height:1.099237rem;
   }
-  .subtitle{margin:10px 0;}
+  .subtitle{margin:.610687rem 0;}
   .subtitle span{
-    margin-right:30px;
-    font-size:14px;
+    margin-right:1.832061rem;
+    font-size:.854962rem;
   }
   .subtitle>.choose{
     color:rgba(255,0,0,.8);
@@ -168,20 +168,20 @@ a{text-decoration: none;}
     justify-content: space-between;
   }
   .more .mingci{
-    font-size:10px;
+    font-size:.610687rem;
     color:#83889a;
-    widows: 145px;;
-    height:20px;
-    line-height:20px;
+    widows: 8.854962rem;
+    height:1.221374rem;
+    line-height:1.221374rem;
     background-color:#e0ebfa;
   }
   .more .zhuye{
-    font-size:12px;
+    font-size:.732824rem;
     color:#28354c;
 
   }
   .large{
-    font-size:12px;
+    font-size:.732824rem;
     font-weight:700;
     color:#555;
   }

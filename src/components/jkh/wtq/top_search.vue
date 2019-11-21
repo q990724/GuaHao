@@ -34,7 +34,7 @@
     <div class="all">
       <!-- 有一个相对定位 -->
       <div class="all-list">
-        <div class="row">
+        <div class="row" v-for="(row,i) of rows" :key="i">
         <!-- 循环生成 -->
           <div class="item">
             <div class="img">
@@ -62,34 +62,7 @@
             <p class="item-info">就医互助</p>
           </div>
         </div>
-        <div class="row">
-        <!-- 循环生成 -->
-          <div class="item">
-            <div class="img">
-              <img src="../../../../public/images/jkh/true-wy.png">
-            </div>
-            <p class="item-info">就医互助</p>
-          </div>
-          <!-- 循环生成 -->
-          <div class="item">
-            <div class="img">
-              <img src="../../../../public/images/jkh/true-wy.png">
-            </div>
-            <p class="item-info">就医互助</p>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="../../../../public/images/jkh/true-wy.png">
-            </div>
-            <p class="item-info">就医互助</p>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="../../../../public/images/jkh/true-wy.png">
-            </div>
-            <p class="item-info">就医互助</p>
-          </div>
-        </div>
+       
       </div>
       <!-- 动态话题 -->
       <div class="topic">
@@ -136,6 +109,8 @@ export default {
       loading:false,//不加载
       tips:"努力加载中",
       url:"healthyNumber/healthyNumber",
+      // 上方两排
+      rows:[0,1]
     }
   },
   components:{
@@ -217,21 +192,20 @@ export default {
 </script>
 <style scoped>
 #top{
-  background-color:#f5f6f6;
+  background-color:#fff;
   position:relative;
 }
 .all{
   border-bottom:1px solid #ebecf1;
-  height:92px;
+  height:5.618321rem;
   /* background-color:#fff; */
   z-index:1;
-  /* position:relative; */
-  /* top:100px; */
+  
 }
 /*搜索框样式*/
   .search{
     background-color:#3f86ff;
-    height:100px;
+    height:6.10687rem;
   }
   .search-top{
     display:flex;
@@ -239,14 +213,14 @@ export default {
     color:#fff;
   }
   .search-input{
-    width:75%;height:30px;
+    width:75%;height:1.832061rem;
     background:url("../../../../public/images/index/22toGuahao/gray-search.cfda5be2b31e1669e46a9bc82bf199f2.png") no-repeat 0 0;
-    background-size:20px 20px;
-    background-position:6px 6px;
-    padding-left:30px;
-    line-height:30px;
-    border-radius:60px;
-    margin:10px 0 10px 14px;
+    background-size:1.221374rem 1.221374rem;
+    background-position:.366412rem .366412rem;
+    padding-left:1.832061rem;
+    line-height:1.832061rem;
+    border-radius:3.664122rem;
+    margin:.610687rem 0 .610687rem .854962rem;
     border:1px solid #3775dd;
     background-color:transparent;
   }
@@ -255,32 +229,32 @@ export default {
   }
 /*头像*/
   .tx{
-    margin:14px 0 0 8px;
+    margin:.854962rem 0 0 .48855rem;
     
   }
 /* 推荐医生 */
   .doc-top{
     width:90%;
-    height:70px;
+    height:4.274809rem;
     background-color:#fff;
-    border-radius:10px;
+    border-radius:.610687rem;
     margin:auto;
     display:flex;
     justify-content: space-around;
-    box-shadow:0 4px 8px 0 rgba(40,53,76,.05);
+    box-shadow:0 .244275rem .48855rem 0 rgba(40,53,76,.05);
     z-index:99;
   }
   .p1{
-    width:60px;
-    height:78px;
+    width:3.664122rem;
+    height:4.763359rem;
     position:absolute;
-    top:-10px;
-    left:10px;
+    top:-0.610687rem;
+    left:.610687rem;
   }
   .txt{
     position:absolute;
-    top:20px;
-    left:70px;
+    top:1.221374rem;
+    left:4rem;
   }
   .doc-left,.doc-right{
     display:flex;
@@ -290,65 +264,66 @@ export default {
   }
   
   .txt p{
-    font-size:12px;
-    margin-top:5px;
+    font-size:.732824rem;
+    margin-top:.305344rem;
     color:#a6a8b6;
   }
 
 /*下方选项列表*/
   .all-list{
     position:absolute;
-    top:140px;
+    top:8.549618rem;
     width:100%;
   }
   .row{
     width:100%;
     display:flex;
     justify-content: space-around;
-    margin-bottom:15px;
+    margin-bottom:.916031rem;
   }
 
   .item{
-    width:48px;
+    width:2.931298rem;
   }
   .img img{
     width:100%;
   }
   .item-info{
-    width:48px;
+    width:3.931298rem;
     color:#83889a;
-    font-size:12px;
+    font-size:.732824rem;
   }
 
 /*动态话题*/
   .topic{
-    margin-top:200px;
-    font-size:15px;
+    margin-top:12.21374rem;
+    font-size:.916031rem;
     color:#83889a;
   }
   .first-topic,.second-topic{
     width:95%;
+    margin:auto;
     display:flex;
     justify-content: space-between;
     border-top:1px solid #ebecf1;
-    height:40px;
-    line-height:40px;
+    height:2.442748rem;
+    line-height:2.442748rem;
   }
   .first-topic span,.second-topic span{
     color:#000;
   }
-  .t1,.t3{margin-left:25px;}
-  .t2{margin-right:20px;}
-  .t4{margin-right:35px;}
+  .t1,.t3{margin-left:1.526718rem;}
+  .t2{margin-right:1.221374rem;}
+  .t4{margin-right:2.137405rem;}
 /*下方精选推荐*/
 .jx-title{
   display: flex;
   justify-content: space-around;
-  height:40px;
-  line-height:40px;
+  height:2.442748rem;
+  line-height:2.442748rem;
   border-bottom:1px solid #ebecf1;
   border-top:1px solid #ebecf1;
   color:#a6a8b6;
-  font-size:15px;
+  font-size:.916031rem
 }
 </style>

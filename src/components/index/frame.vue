@@ -36,7 +36,7 @@ export default {
           active: require("../../../public/images/index/icon-yyt.png")
         },
         {
-          name: "",
+          name: "find",
           title: "发现",
           normal: require("../../../public/images/index/icon-find.png"),
           active: require("../../../public/images/index/icon-find.png")

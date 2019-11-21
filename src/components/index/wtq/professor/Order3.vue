@@ -28,14 +28,14 @@
     <!-- 医生个人信息 循环生成 -->
       <div class="main-doctor">
         <!-- 循环生成医生的预约信息列表 -->
-        <div class="order">
+        <div class="order" v-for="(doc,i) of docs" :key="i">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/gzh/doc.webp">
+            <img src="../../../../../public/images/index/gzh/doc.png">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">
+          <div class="doc-info" >
             <!-- 第一行 -->
             <div class="first-info">
               <div class="left">
@@ -51,218 +51,9 @@
             <div class="third">
               <span class="good-at">擅长:周一上午、周三全天挂号费100元,周二上午特需门诊,翟所强医生线上门诊</span>
             </div>
-            
           </div>
         </div>
-        <!-- 循环多个 -->
-        <div class="order">
-          <!-- 医生图片 -->
-          <div class="doc-img">
-            <img src="../../../../../public/images/index/gzh/doc.webp">
-          </div>
-          <!-- 医生预约信息 -->
-          <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">
-            <!-- 第一行 -->
-            <div class="first-info">
-              <div class="left">
-                <h4>翟所强</h4><h6>主任医师</h6><span>问</span><span>服务包</span>
-              </div>
-              <span>预约</span>
-            </div>
-            <!-- 第二行 -->
-            <div class="second">
-              <span>评分 8.9</span><span>预约量 2385</span>
-            </div>
-            <!-- 第三行 -->
-            <div class="third">
-              <span class="good-at">擅长:周一上午、周三全天挂号费100元,周二上午特需门诊,翟所强医生线上门诊</span>
-            </div>
-            
-          </div>
-        </div>
-        <div class="order">
-          <!-- 医生图片 -->
-          <div class="doc-img">
-            <img src="../../../../../public/images/index/gzh/doc.webp">
-          </div>
-          <!-- 医生预约信息 -->
-          <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">
-            <!-- 第一行 -->
-            <div class="first-info">
-              <div class="left">
-                <h4>翟所强</h4><h6>主任医师</h6><span>问</span><span>服务包</span>
-              </div>
-              <span>预约</span>
-            </div>
-            <!-- 第二行 -->
-            <div class="second">
-              <span>评分 8.9</span><span>预约量 2385</span>
-            </div>
-            <!-- 第三行 -->
-            <div class="third">
-              <span class="good-at">擅长:周一上午、周三全天挂号费100元,周二上午特需门诊,翟所强医生线上门诊</span>
-            </div>
-            
-          </div>
-        </div>
-        <div class="order">
-          <!-- 医生图片 -->
-          <div class="doc-img">
-            <img src="../../../../../public/images/index/gzh/doc.webp">
-          </div>
-          <!-- 医生预约信息 -->
-          <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">
-            <!-- 第一行 -->
-            <div class="first-info">
-              <div class="left">
-                <h4>翟所强</h4><h6>主任医师</h6><span>问</span><span>服务包</span>
-              </div>
-              <span>预约</span>
-            </div>
-            <!-- 第二行 -->
-            <div class="second">
-              <span>评分 8.9</span><span>预约量 2385</span>
-            </div>
-            <!-- 第三行 -->
-            <div class="third">
-              <span class="good-at">擅长:周一上午、周三全天挂号费100元,周二上午特需门诊,翟所强医生线上门诊</span>
-            </div>
-            
-          </div>
-        </div>
-        <div class="order">
-          <!-- 医生图片 -->
-          <div class="doc-img">
-            <img src="../../../../../public/images/index/gzh/doc.webp">
-          </div>
-          <!-- 医生预约信息 -->
-          <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">
-            <!-- 第一行 -->
-            <div class="first-info">
-              <div class="left">
-                <h4>翟所强</h4><h6>主任医师</h6><span>问</span><span>服务包</span>
-              </div>
-              <span>预约</span>
-            </div>
-            <!-- 第二行 -->
-            <div class="second">
-              <span>评分 8.9</span><span>预约量 2385</span>
-            </div>
-            <!-- 第三行 -->
-            <div class="third">
-              <span class="good-at">擅长:周一上午、周三全天挂号费100元,周二上午特需门诊,翟所强医生线上门诊</span>
-            </div>
-            
-          </div>
-        </div>
-        <div class="order">
-          <!-- 医生图片 -->
-          <div class="doc-img">
-            <img src="../../../../../public/images/index/gzh/doc.webp">
-          </div>
-          <!-- 医生预约信息 -->
-          <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">
-            <!-- 第一行 -->
-            <div class="first-info">
-              <div class="left">
-                <h4>翟所强</h4><h6>主任医师</h6><span>问</span><span>服务包</span>
-              </div>
-              <span>预约</span>
-            </div>
-            <!-- 第二行 -->
-            <div class="second">
-              <span>评分 8.9</span><span>预约量 2385</span>
-            </div>
-            <!-- 第三行 -->
-            <div class="third">
-              <span class="good-at">擅长:周一上午、周三全天挂号费100元,周二上午特需门诊,翟所强医生线上门诊</span>
-            </div>
-            
-          </div>
-        </div>
-        <div class="order">
-          <!-- 医生图片 -->
-          <div class="doc-img">
-            <img src="../../../../../public/images/index/gzh/doc.webp">
-          </div>
-          <!-- 医生预约信息 -->
-          <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">
-            <!-- 第一行 -->
-            <div class="first-info">
-              <div class="left">
-                <h4>翟所强</h4><h6>主任医师</h6><span>问</span><span>服务包</span>
-              </div>
-              <span>预约</span>
-            </div>
-            <!-- 第二行 -->
-            <div class="second">
-              <span>评分 8.9</span><span>预约量 2385</span>
-            </div>
-            <!-- 第三行 -->
-            <div class="third">
-              <span class="good-at">擅长:周一上午、周三全天挂号费100元,周二上午特需门诊,翟所强医生线上门诊</span>
-            </div>
-            
-          </div>
-        </div>
-        <div class="order">
-          <!-- 医生图片 -->
-          <div class="doc-img">
-            <img src="../../../../../public/images/index/gzh/doc.webp">
-          </div>
-          <!-- 医生预约信息 -->
-          <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">
-            <!-- 第一行 -->
-            <div class="first-info">
-              <div class="left">
-                <h4>翟所强</h4><h6>主任医师</h6><span>问</span><span>服务包</span>
-              </div>
-              <span>预约</span>
-            </div>
-            <!-- 第二行 -->
-            <div class="second">
-              <span>评分 8.9</span><span>预约量 2385</span>
-            </div>
-            <!-- 第三行 -->
-            <div class="third">
-              <span class="good-at">擅长:周一上午、周三全天挂号费100元,周二上午特需门诊,翟所强医生线上门诊</span>
-            </div>
-            
-          </div>
-        </div>
-        <div class="order">
-          <!-- 医生图片 -->
-          <div class="doc-img">
-            <img src="../../../../../public/images/index/gzh/doc.webp">
-          </div>
-          <!-- 医生预约信息 -->
-          <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">  
-            <!-- 第一行 -->
-            <div class="first-info">
-              <div class="left">
-                <h4>翟所强</h4><h6>主任医师</h6><span>问</span><span>服务包</span>
-              </div>
-              <span>预约</span>
-            </div>
-            <!-- 第二行 -->
-            <div class="second">
-              <span>评分 8.9</span><span>预约量 2385</span>
-            </div>
-            <!-- 第三行 -->
-            <div class="third">
-              <span class="good-at">擅长:周一上午、周三全天挂号费100元,周二上午特需门诊,翟所强医生线上门诊</span>
-            </div>
-            
-          </div>
-        </div>
+       
       </div>
   </div>
 </template>
@@ -283,7 +74,7 @@ export default {
         { text: '甲状腺', value: 6 }
       ],
       days:[],
-
+      docs:[1,2,3,4,5,6,7,8,9,10],
     }
   },
   methods:{
@@ -405,14 +196,18 @@ export default {
 .van-nav-bar .van-icon{
   color:#28354c !important;
 }
+.van-nav-bar__title{
+  z-index:6;
+}
 /* 选择时间样式 */
   .choose-all{
     border:.04266667rem solid #e3e3e3;
     border-right:0rem solid ;
     width:100%;
     height:4rem;
-    position:fixed;
-    top:3.3rem;
+    /* position:fixed; */
+    top:3rem;
+    /* padding-top:2.80916rem; */
     left:0;
     z-index:5;
     background-color:#fff;
@@ -423,34 +218,32 @@ export default {
     color:#36d;
   }
   .left-date{
-    position:fixed;
+    /* position:fixed; */
     top:2.80916rem;
     left:1rem;
     width:2rem;
     z-index:999;
     text-align:left;
     font-size:.732824rem;
-    padding-top:1.1rem;
+    /* padding-top:1.1rem; */
+    
   }
   
-  .two{
-    margin-top:1rem;
-  }
+  
   .can-choose-date{
-    margin-left:3rem;
+    padding-left:3rem;
     text-align:center;
     width:100%;
-    height:3.3rem;
+    height:3rem;
     display:flex;
     flex-wrap: nowrap;
     /* position:fixed; */
     left:3rem;
-    top:2.80916rem;
+    /* top:2.80916rem; */
     overflow-x:auto;
     overflow-y:hidden;
     white-space: nowrap;
     justify-content: space-between;
-    margin-top:.305344rem;
     z-index:1;
   }
   .date{
@@ -460,13 +253,17 @@ export default {
   .date span:first-child{
     font-size:.732824rem;
   }
-
+  .buxian{
+    z-index:7;
+    padding-top: 2rem;
+    display:flex;
+  }
 
 
 
 /* ddd */
   .van-dropdown-menu{
-    padding-top: 9.5rem;
+    /* padding-top: 9.5rem; */
     z-index:0;
     border-bottom:.04266667rem solid #e3e3e3;
     height:2.748092rem !important;
@@ -477,6 +274,7 @@ export default {
   }
   .order{
     display:flex;
+    /* flex-direction: column; */
     flex-wrap:nowrap; 
     border-bottom:.061069rem solid #e3e3e3;
     /* width:22.900763rem; */
