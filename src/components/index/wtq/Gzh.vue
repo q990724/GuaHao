@@ -46,10 +46,11 @@ p{margin:0;}
 /* 整体阴影 */
 .health-num{
   width:100%;
-  height:10.375rem;
+  height:12.375rem;
   box-shadow:0 0.256rem 0.59733333rem 0.34133333rem rgba(20,19,51,.06);
   border-radius:.3125rem;
-  padding:0.4rem 0.4rem 0 0;
+  padding:.9375rem 1.5rem;
+  box-sizing: border-box;
 }
 /* 药丸样式 */
   .yao{
@@ -91,12 +92,14 @@ p{margin:0;}
     margin:.3125rem 0;
   }
   .num-text p:nth-child(3){
-    height:1.9rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
     color:#9d9ea7;
     font-size:.8125rem;
     margin:.3125rem 0;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
   }
   .num-bottom{
     display:flex;
