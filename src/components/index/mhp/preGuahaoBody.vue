@@ -283,7 +283,7 @@ van-tag{
   padding: .610687rem .610687rem;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3.969466rem;
+  /* margin-bottom: 3.969466rem; */
 }
 .more>.nomore{
   color:#aaa;
