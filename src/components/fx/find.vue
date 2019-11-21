@@ -13,7 +13,7 @@
                 </p>
               </div>
               <div class="right-img">
-                <img src="../../../../public/images/find/jg.jpg" alt="">
+                <img src="../../../public/images/find/jg.jpg" alt="">
               </div>
             </div>
             <div class="footer">
@@ -29,7 +29,7 @@
             <ul class="health-ul">
               <li class="doc-intr" v-for="(d,i) of doc" :key="i">
                 <div class="doc-img">
-                  <img src="../../../../public/images/find/doctor.jpg" alt="">
+                  <img src="../../../public/images/find/doctor.jpg" alt="">
                 </div>
                 <p class="doc-name">老廖说医疗</p>
                 <p class="short-intr">主任医师/教授 广州医科大学附属口腔医院-口腔颞下颌关节科</p>
