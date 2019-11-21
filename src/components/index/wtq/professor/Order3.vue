@@ -13,49 +13,17 @@
       <div class="can-choose-date">
         <!-- 时间得后期自动获取 -->
         <!-- 每个时间是一个 -->
-        <div class="date">
+        <div class="date" v-for="(day,ind) of days" :key="ind">
           <span>周一</span>
           <h4>11.09</h4>
         </div>
         <!-- 循环生成 -->
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
-        <div class="date">
-          <span>周一</span>
-          <h4>11.09</h4>
-        </div>
+      
       </div>
     </div>
     <!-- 组件:下拉菜单 -->
      <van-dropdown-menu>
       <van-dropdown-item v-model="value1" :options="option1" />
-      <van-dropdown-item v-model="value2" :options="option2" />
     </van-dropdown-menu>
     <!-- 医生个人信息 循环生成 -->
       <div class="main-doctor">
@@ -63,7 +31,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -90,7 +58,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -116,7 +84,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -142,7 +110,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -168,7 +136,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -194,7 +162,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -220,7 +188,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -246,7 +214,7 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
@@ -272,11 +240,11 @@
         <div class="order">
           <!-- 医生图片 -->
           <div class="doc-img">
-            <img src="../../../../../public/images/index/doctor-main.webp">
+            <img src="../../../../../public/images/index/gzh/doc.webp">
           </div>
           <!-- 医生预约信息 -->
           <!-- 点击整个div 能够跳转 -->
-          <div class="doc-info">
+          <div class="doc-info">  
             <!-- 第一行 -->
             <div class="first-info">
               <div class="left">
@@ -306,17 +274,23 @@ export default {
       value1: 0,
       value2: 'a',
       option1: [
-        { text: '全部商品', value: 0 },
-        { text: '新款商品', value: 1 },
-        { text: '活动商品', value: 2 }
+        { text: '专家擅长', value: 0 },
+        { text: '全部', value: 1 },
+        { text: '糖尿病', value: 2 },
+        { text: '甲状腺', value: 3 },
+        { text: '甲状腺', value: 4 },
+        { text: '甲状腺', value: 5 },
+        { text: '甲状腺', value: 6 }
       ],
-      option2: [
-        { text: '默认排序', value: 'a' },
-        { text: '好评排序', value: 'b' },
-        { text: '销量排序', value: 'c' },
-      ]
+      
+
     }
-  }
+  },
+  methods:{
+    getDate(){
+
+    }
+  },
   
 }
 </script>
@@ -325,6 +299,12 @@ export default {
 #export{
   position:relative;
 }
+.van-dropdown-menu__item{
+  justify-content: start !important;
+}
+[class*=van-hairline]::after{
+  border:0px solid #fff;
+}
 /* 顶部导航 固定的左上角的颜色 */
 .van-nav-bar .van-icon{
   color:#28354c !important;
@@ -332,10 +312,12 @@ export default {
 /* 选择时间样式 */
   .choose-all{
     border:.04266667rem solid #e3e3e3;
+    border-right:0rem solid ;
     width:100%;
-    height:3.5rem;
+    height:4rem;
     position:fixed;
-    top:2.8rem;
+    top:3.3rem;
+    left:0;
     z-index:5;
     background-color:#fff;
   }
@@ -359,11 +341,13 @@ export default {
     margin-top:1rem;
   }
   .can-choose-date{
+    margin-left:3rem;
+    text-align:center;
     width:100%;
     height:3.3rem;
     display:flex;
     flex-wrap: nowrap;
-    position:fixed;
+    /* position:fixed; */
     left:3rem;
     top:2.80916rem;
     overflow-x:auto;
@@ -386,7 +370,7 @@ export default {
 
 /* ddd */
   .van-dropdown-menu{
-    padding-top:6.5rem;
+    padding-top: 9.5rem;
     z-index:0;
     border-bottom:.04266667rem solid #e3e3e3;
     height:2.748092rem !important;
@@ -414,7 +398,7 @@ export default {
     margin-top:.732824rem;
   }
   .doc-info{
-    width:17.770992rem !important;
+    width:19.770992rem !important;
     padding:.305344rem .610687rem;
   }
   .first-info{
@@ -436,7 +420,7 @@ export default {
     height:.916031rem;
     padding:.030534rem .005344rem;
     line-height: .916031rem;
-   
+    text-align: center;
   }
   .left{
     width:12.053435rem;
@@ -456,8 +440,9 @@ export default {
   .first-info span:nth-child(2){
     border:1px solid #468aff;
     color: #468aff;
-    width: 1.6rem;
+    width: 2.6rem;
     height:.916031rem;
+    text-align:center;
   }
   .second{
     text-align:left;
