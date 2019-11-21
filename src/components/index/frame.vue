@@ -7,7 +7,7 @@
     >
       <span :class="currIndex == index ? active:''">{{item.title}}</span>
       <template slot="icon" slot-scope="props">
-        <i :style="`background-image:url(${props.active ? item.active : item.normal});background-position:0 ${props.active ? 0 : -22}px`"></i>
+        <i :style="`background-image:url(${props.active ? item.active : item.normal});background-position:0 ${props.active ? -25 : 0}px`"></i>
       </template>
     </van-tabbar-item>
   </van-tabbar>
@@ -32,45 +32,42 @@ export default {
         {
           name: "",
           title: "健康号",
-          normal: require("../../../public/images/index/tabbar/add.png"),
-          active: require("../../../public/images/index/tabbar/add.png")
+          normal: require("../../../public/images/index/icon-yyt.png"),
+          active: require("../../../public/images/index/icon-yyt.png")
         },
         {
-          name: "message",
-          title: "消息",
-          normal: "",
-          active: ""
-        },
-        {
-          name: "cart",
-          title: "购物车",
-          normal: "",
-          active: ""
+          name: "",
+          title: "发现",
+          normal: require("../../../public/images/index/icon-find.png"),
+          active: require("../../../public/images/index/icon-find.png")
         },
         {
           name: "me",
-          title: "我的",
-          normal: "",
-          active: ""
+          title: "我",
+          normal: require("../../../public/images/index/icon-mine.png"),
+          active: require("../../../public/images/index/icon-mine.png")
         }
       ]
     };
   },
+  props:["frameName"],
    methods: {
     tab(index, val) {
       this.currIndex = index;
       this.$router.push(val)
     }
    },
-
+  created(){
+    this.active=this.frameName;
+  }
 }
 </script>
 
 <style scoped>
   i{
     display: inline-block;
-    width: 1.5625rem;
-    height: 1.25rem;
+    width: 1.526718rem;
+    height: 1.526718rem;
     background-repeat:  no-repeat;
     background-size: 100%; 
   }
