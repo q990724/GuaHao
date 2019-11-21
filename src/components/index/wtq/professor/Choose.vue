@@ -18,6 +18,7 @@ export default {
     justify-content: space-between;
     padding:15px 15px 10px 15px;
     margin:10px 0;
+    background-color:#fff;
   }
   h5{
     display:inline;

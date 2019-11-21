@@ -20,20 +20,20 @@
           <!-- 每一个item 弹性 -->
           <div class="item">
             <div class="item-img">
-              <img src="../../../../public/images/index/8love/1.webp">
+              <img src="../../../../public/images/index/8love/1.png">
             </div>
             <p class="item-text">主治医生</p>
           </div>
           <!-- 遍历获得 -->
           <div class="item">
             <div class="item-img">
-              <img src="../../../../public/images/index/8love/1.webp">
+              <img src="../../../../public/images/index/8love/1.png">
             </div>
             <p class="item-text">主治医生</p>
           </div>
           <div class="item">
             <div class="item-img">
-              <img src="../../../../public/images/index/8love/1.webp">
+              <img src="../../../../public/images/index/8love/1.png">
             </div>
             <p class="item-text">主治医生</p>
           </div>

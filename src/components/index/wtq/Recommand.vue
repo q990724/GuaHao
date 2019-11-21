@@ -79,7 +79,7 @@
             <router-link class="doctor" to="#">
               <!-- 医生图片 相对定位-->
               <div style="width:4.375rem;height:4.375rem;" class="item-img">
-                <img src="../../../../public/images/index/8love/1.webp">
+                <img src="../../../../public/images/index/8love/1.png">
               </div>
               <p>剩余4次</p>
               <p class="yuan-price">¥20元</p>
@@ -89,7 +89,7 @@
             <router-link class="doctor" to="#">
               <!-- 医生图片 相对定位-->
               <div class="item-img">
-                <img  src="../../../../public/images/index/8love/1.webp">
+                <img  src="../../../../public/images/index/8love/1.png">
               </div>
               <p>剩余4次</p>
               <p class="yuan-price">¥20元</p>
@@ -98,7 +98,7 @@
             <router-link class="doctor" to="#">
               <!-- 医生图片 相对定位-->
               <div class="item-img">
-                <img src="../../../../public/images/index/8love/1.webp">
+                <img src="../../../../public/images/index/8love/1.png">
               </div>
               <p>剩余4次</p>
               <p class="yuan-price">¥20元</p>
@@ -117,20 +117,20 @@
       <ask></ask>
       <!-- 广告 -->
       <div id="gg">
-        <img style=" border-radius:.3125rem;"  src="../../../../public/images/index/gg.webp">
+        <img style=" border-radius:.3125rem;"  src="../../../../public/images/index/gg.png">
       </div>
       <ask></ask>
       <ask></ask>
       <gzh></gzh>
       <gzh></gzh>
       <div id="gg">
-        <img style=" border-radius:.3125rem;"  src="../../../../public/images/index/gg.webp">
+        <img style=" border-radius:.3125rem;"  src="../../../../public/images/index/gg.png">
       </div>
       <ask></ask>
       <gzh></gzh>
       <gzh></gzh>
       <div id="gg">
-        <img style=" border-radius:.3125rem;" src="../../../../public/images/index/gg.webp">
+        <img style=" border-radius:.3125rem;" src="../../../../public/images/index/gg.png">
       </div>
       <gzh></gzh>
       <gzh></gzh>
