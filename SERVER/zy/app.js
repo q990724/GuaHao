@@ -11,8 +11,9 @@ var user = require("./routes/user");
 var hotRommend = require("./routes/hotRommend");
 var hospitals = require("./routes/hospitals");
 var healthyNumber = require("./routes/healthyNumber");
+var doctor = require("./routes/doctor");
 app.use(cors({
-  origin:['http://localhost:8080',"http://127.0.0.1:5500","http://localhost:8081","http://127.0.0.1:8080"],
+  origin:['http://localhost:8080',"http://127.0.0.1:5500","http://127.0.0.1:8081","http://127.0.0.1:8080"],
   credentials:true
 }))
 http.listen(5050);
@@ -34,3 +35,4 @@ app.use("/user",user);
 app.use("/hotRommend",hotRommend);
 app.use("/hospitals",hospitals);
 app.use("/healthyNumber",healthyNumber);
+app.use("/doctor",doctor);

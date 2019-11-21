@@ -72,7 +72,6 @@ router.post("/insertUserOrder",function(req,res){
       order_time : req.body.order_time
    }
    
-
    if(!obj.uid){
       res.send({code : -2, msg :'未登录,请重新登录'});
       return;
@@ -81,18 +80,28 @@ router.post("/insertUserOrder",function(req,res){
    config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
       if(err) throw err;
       var dbo = db.db("app_zhuanyi");
-      dbo.collection("user_orders").insertOne(obj,function(err,result){
+      
+      //提前查询用户是否已经预约此医生
+      dbo.collection("user_orders").findOne({uid : obj.uid , did : obj.did},function(err,result){
          if(err) throw err;
-         var docObj = {
-            uid : obj.uid,
-            did : obj.did,
-            order_number : obj.order_number
+         if(result){
+            res.send({code : -2, msg : "您已预约过此医生，请前往我的预约查看详情!"});
+            return;
+         }else{
+            dbo.collection("user_orders").insertOne(obj,function(err,result){
+               if(err) throw err;
+               var docObj = {
+                  uid : obj.uid,
+                  did : obj.did,
+                  order_number : obj.order_number
+               }
+               dbo.collection("doctor_orders").insertOne(docObj,function(err,result){
+                  if(err) throw err;
+                  res.send({code : 1 , msg : "预约成功!"});
+               })
+            });
          }
-         dbo.collection("doctor_orders").insertOne(docObj,function(err,result){
-            if(err) throw err;
-            res.send({code : 1 , msg : "预约成功!"});
-         })
-      });
+      })
    });
 });
 
@@ -120,5 +129,54 @@ router.get("/deleteUserOrder",function(req,res){
    });
 });
 
+//查询某组医生的预约信息
+router.get("/showSomeDoctorOrders",function(req,res){
+   var dids;
+   try {
+     dids = req.query.dids.split(",");   
+   } catch (error) {
+      res.send({code : -2 , msg : "参数错误"});
+      return
+   }
+   
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
+      if(err) throw err;
+      var dbo = db.db("app_zhuanyi");
+      //结果对象
+      var resObj = {};
+      var arrFun = [];//Promise方法组
+      for(var i = 0; i < dids.length; i++){
+         arrFun.push(
+            new Promise(function(resolve,reject){
+               dbo.collection("doctor_orders").find({did : dids[i]}).toArray(function(err,result){
+                  if(err) reject(err);
+                  resolve(result);
+               });
+            })
+         );
+      }
+
+      Promise.all(arrFun).then(arr=>{
+         for(var item of arr){
+            for(var o of item){
+               resObj[o.did] = item;
+            }
+         }
+         
+         res.send(resObj);
+      }).catch(err=>{
+         res.send(err);
+      })
+
+   });
+
+});
 
 module.exports=router;
+
+/*
+   config.mongoClient.connect(config.url,{ useNewUrlParser: true, useUnifiedTopology: true },function(err,db){
+      if(err) throw err;
+      var dbo = db.db("app_zhuanyi");
+   });
+*/

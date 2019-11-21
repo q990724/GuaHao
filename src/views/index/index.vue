@@ -1,17 +1,17 @@
 <template>
   <div on="index">
     <parent></parent>
-    <bottom-bar></bottom-bar>
+    <bottom></bottom>
   </div>
 </template>
 
 <script>
 import parent from '../../components/index/mhp/parent'
-import BottomBar from '../../components/index/wtq/BottomBar'
+import bottom from "../../components/index/wtq/Bottom"
 export default {
   components:{
     "parent":parent,
-    "bottomBar":BottomBar,
+    bottom
   }
 }
 </script>
