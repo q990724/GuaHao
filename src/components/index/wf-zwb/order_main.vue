@@ -42,35 +42,35 @@
               </div>
               <span class="isOrder">可预约</span>
             </div>
-            <div class="down_content" :style="`height:${isPull ? 17.2 : 8.6}rem`">
+            <div class="down_content" :style="`height:${isPull ? 17.8 : 8.6}rem`">
               <div class="left">
                 本月
               </div>
               <ul class="right">
                 <li>
                   <div>
-                    <p class="time">2019-11-21 周四 下午 <b>2天后</b></p>
+                    <p class="time">{{date}} {{week}} 上午<b>今天</b></p>
+                    <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
+                  </div>               
+                  <van-button :round="true" type="info" :disabled="isDisabled">预约</van-button>
+                </li>
+                <li>
+                  <div>
+                    <p class="time">{{date}} {{week}} 下午 <b>今天</b></p>
+                    <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
+                  </div>               
+                  <van-button :round="true" type="info" :disabled="isDisabled">预约</van-button>
+                </li>
+                <li>
+                  <div>
+                    <p class="time">{{later_date}} {{later_week}} 上午 <b>2天后</b></p>
                     <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
                   </div>               
                   <van-button :round="true" type="info">预约</van-button>
                 </li>
                 <li>
                   <div>
-                    <p class="time">2019-11-21 周四 下午 <b>2天后</b></p>
-                    <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
-                  </div>               
-                  <van-button :round="true" type="info">预约</van-button>
-                </li>
-                <li>
-                  <div>
-                    <p class="time">2019-11-21 周四 下午 <b>2天后</b></p>
-                    <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
-                  </div>               
-                  <van-button :round="true" type="info">预约</van-button>
-                </li>
-                <li>
-                  <div>
-                    <p class="time">2019-11-21 周四 下午 <b>2天后</b></p>
+                    <p class="time">{{later_date}} {{later_week}} 下午 <b>2天后</b></p>
                     <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
                   </div>               
                   <van-button :round="true" type="info">预约</van-button>
@@ -137,6 +137,7 @@
   width: 26rem;
   position: fixed;
   top: 0;
+  z-index: 5;
 }
 .top{
   position: relative;
@@ -430,13 +431,65 @@ export default {
     return {
       activeNames: ['1'],
       stars:5,
-      isPull:false
+      isPull:false,
+      date:"",
+      week:"",
+      hour:"",
+      later_date:"",
+      later_week:"",
+      isDisabled:false
     }
   },
   methods:{
     pull:function(){
       this.isPull=!this.isPull;
+    },
+    getDay:function(){
+      var date=new Date().toLocaleDateString();
+      var day=new Date().getDate();
+      var hour=new Date().getHours();
+      var week=new Date().getDay();
+      var later_time=new Date().getTime()+1000*48*60*60;
+      var later_date=new Date(later_time).toLocaleDateString();
+      
+      this.date=date;
+      this.later_date=later_date;
+      if(week==1){
+        this.week="周一";
+        this.later_week="周三";
+      }else if(week==2){
+        this.week="周二"
+        this.later_week="周四";
+      }else if(week==3){
+        this.week="周三";
+        this.later_week="周五";
+      }else if(week==4){
+        this.week="周四";
+        this.later_week="周六";
+      }else if(week==5){
+        this.week="周五";
+        this.later_week="周日";
+      }else if(week==6){
+        this.week="周六";
+        this.later_week="周一";
+      }else{
+        this.week="周日";
+        this.later_week="周二";
+      }
+      if(hour>=12){
+        this.hour="下午"
+        this.isDisabled=true;
+      }else{
+        this.hour="上午"
+      }
+      if(hour>=17){
+        this.isDisabled=true;
+      }
+      console.log(week)
     }
+  },
+  created(){
+    this.getDay();
   }
 }
 </script>
