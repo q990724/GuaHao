@@ -2,7 +2,7 @@
 <!-- 预约挂号第二页面 -->
   <div id="order2">
     <!-- 子组件头部 -->
-    <header></header>
+    <pre-title></pre-title>
     <!-- 页面2下方选项卡 -->
     <!-- 医院信息卡 -->
     <div class="hospital-info">
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import preTitle from '../../mhp/preTitle'
 import Choose from './Choose'
 export default {
   data(){
@@ -113,6 +114,7 @@ export default {
   },
   components:{
     "choose":Choose,
+    "preTitle":preTitle,
   },
   methods:{
     
@@ -127,7 +129,8 @@ a{text-decoration: none;}
     height: 5rem;
     display:flex;
     flex-direction: column;
-    padding:15px 15px 10px 15px;
+    padding:55px 15px 10px 15px;
+    background-color:#fff;
   }
   .title{
     display:flex;
