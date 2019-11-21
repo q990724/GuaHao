@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <frame></frame>
   </div>
 </template>
 
 <script>
+import frame from "./components/index/frame.vue"
 export default {
   // created(){
   //   (function(doc, win) {
@@ -20,6 +22,9 @@ export default {
   //   doc.addEventListener('DOMContentLoaded', recalc, false);
   //   })(document, window);
   // }
+  components:{
+    frame
+  }
 }
 </script>
 

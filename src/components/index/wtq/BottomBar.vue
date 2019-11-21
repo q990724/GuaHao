@@ -26,8 +26,8 @@
     <!-- 切换面板 和底部导航栏一起用 -->
     <mt-tab-container v-model="active">
       <mt-tab-container-item id="zy">
-        <!-- 首页Bottom组件 -->
-        <bottom></bottom>
+        <!-- 首页index组件 -->
+        
       <!-- <mt-cell v-for="n in 10" title="tab-container 1"></mt-cell> -->
       </mt-tab-container-item>
       <mt-tab-container-item id="xx">
@@ -38,20 +38,23 @@
       </mt-tab-container-item>
       <mt-tab-container-item id="me">
         <!--  -->
+        <me></me>
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
 </template>
 <script>
 import Bottom from './Bottom'
+import me from "../../me/me.vue"
 export default {
   data(){
     return {
-      active:"zy",
+     
     }
   },
   components:{
     "bottom":Bottom,
+    me
   },
 }
 </script>
