@@ -14,67 +14,13 @@
       <!-- 主要内容 -->
       <div class="special-server-container">
         <!-- 每一个都循环生成 -->
-        <div class="item" to="#">
+        <div class="item" to="#" v-for="(item,i) of servers" :key="i">
           <div style="width:1.8rem;height:1.8rem" class="item-img">
             <img class="server-img" src="../../../../public/images/index/2serve/doctor.webp" width="28">
           </div>
           <div class="item-text">私人医生</div>
         </div>
 
-        <div class="item" to="#">
-          <div style="width:1.8rem;height:1.8rem"  class="item-img">
-            <img class="server-img"  src="../../../../public/images/index/2serve/doctor.webp" >
-          </div>
-          <div class="item-text">私人医生</div>
-        </div>
-        <div class="item" to="#">
-          <div style="width:1.8rem;height:1.8rem"  class="item-img">
-            <img class="server-img"  src="../../../../public/images/index/2serve/doctor.webp" >
-          </div>
-          <div class="item-text">私人医生</div>
-        </div>
-        <div class="item" to="#">
-          <div style="width:1.8rem;height:1.8rem"  class="item-img">
-            <img class="server-img"  src="../../../../public/images/index/2serve/doctor.webp" >
-          </div>
-          <div class="item-text">私人医生</div>
-        </div>
-        <div class="item" to="#">
-          <div style="width:1.8rem;height:1.8rem"   class="item-img">
-            <img class="server-img"  src="../../../../public/images/index/2serve/doctor.webp" >
-          </div>
-          <div class="item-text">私人医生</div>
-        </div>
-        <div class="item" to="#">
-          <div style="width:1.8rem;height:1.8rem"   class="item-img">
-            <img class="server-img"   src="../../../../public/images/index/2serve/doctor.webp" >
-          </div>
-          <div class="item-text">私人医生</div>
-        </div>
-        <div class="item" to="#">
-          <div style="width:1.8rem;height:1.8rem"   class="item-img">
-            <img class="server-img"   src="../../../../public/images/index/2serve/doctor.webp" >
-          </div>
-          <div class="item-text">私人医生</div>
-        </div>
-        <div class="item" to="#">
-          <div style="width:1.8rem;height:1.8rem"   class="item-img">
-            <img class="server-img"   src="../../../../public/images/index/2serve/doctor.webp" >
-          </div>
-          <div class="item-text">私人医生</div>
-        </div>
-        <div class="item" to="#">
-          <div style="width:1.8rem;height:1.8rem"   class="item-img">
-            <img class="server-img"   src="../../../../public/images/index/2serve/doctor.webp" >
-          </div>
-          <div class="item-text">私人医生</div>
-        </div>
-        <div class="item" to="#">
-          <div style="width:1.8rem;height:1.8rem"   class="item-img">
-            <img class="server-img"   src="../../../../public/images/index/2serve/doctor.webp" >
-          </div>
-          <div class="item-text">私人医生</div>
-        </div>
         
       </div>
     </div>
@@ -196,7 +142,12 @@ export default {
   components:{
     "recommand":Recommand,
 
-  }
+  },
+  data(){
+    return {
+      servers:[1,2,3,4,5,6,7,8,9,10],
+    }
+  },
 }
 </script>
 <style scoped>
