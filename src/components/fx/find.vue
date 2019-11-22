@@ -138,11 +138,12 @@ mt-header{
   width:41.526718rem;
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
+
 }
 .health{
   padding:.610687rem;
+    overflow-x: auto;
+  overflow-y: hidden;
 }
 .doc-intr{
   width:9.770992rem;
