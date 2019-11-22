@@ -92,11 +92,13 @@
       </div>
     </div>
     
+    <myframe :frameName="1"></myframe>
   </div>
 </template>
 <script>
 // 引入精选推荐
 import jx from './jx'
+import myframe from "../../index/frame.vue"
 import config from  '../../../assets/js/config.js'
 export default {
   data(){
@@ -115,6 +117,7 @@ export default {
   },
   components:{
     "jx":jx,
+    "myframe" : myframe
   },
   created(){//组件创建成功后,立即执行
     this.loadMore();

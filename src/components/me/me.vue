@@ -63,6 +63,7 @@
 import toolsItem from "./wf/tools-item.vue"
 import tools from "./wf/tools.vue"
 import frame from "../index/frame.vue"
+import config from "../../assets/js/config.js"
 export default {
   data(){
     return {
@@ -73,16 +74,46 @@ export default {
           {text:"商品订单",path:"me/me-order/icon-order2.png"},
       ],
       result:{},
-      user_name:""
+      user_name:"",
+      isLoading : true
     }
   },
   created(){
-    this.result=this.$route.params.data
+    //检测用户是否已经登录
+    config.axios.get("/user/islogin").then(res=>{
+      if(res.data.code == -1){
+          this.$notify({
+            message : res.data.msg,
+            duration : 2000,   
+          });
+          sessionStorage.setItem("userMsg",null);
+          setTimeout(()=>{
+            this.$router.push("login");
+          },2000);
+      }else{  
+        this.$notify({
+          type : "success",
+          message : "欢迎登录",
+          duration : 3000
+        });
+      }
+    }).catch(err=>{
+      console.log(err);
+    });
+
+    var sessionItem = sessionStorage.getItem("userMsg");
+    if(!sessionItem){
+      return;
+    }
+    this.result = JSON.parse(sessionItem);
+    console.log(this.result);
     if(!this.result.user_name){
       var time=new Date().getTime().toString().slice(3)
       this.user_name="zy"+time;
+    }else{
+      this.user_name = this.result.user_name;
     }
-    sessionStorage.setItem("userMsg",JSON.stringify(this.result))
+    
   },
   components:{
     toolsItem,tools,frame

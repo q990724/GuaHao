@@ -26,29 +26,6 @@
       <div class = "login-card">
             <img src="../../../../public/images/me/me-reg/weiyi-logo-blue.png" alt="">
       </div>
-      <!-- <div class = "login-card-item">
-            <ul>
-                  <li>
-                        <routerLink to="">首页</routerLink>
-                  </li>
-                  <li>
-                        <routerLink to="">在线问诊</routerLink>
-                  </li>
-                  <li>
-                        <routerLink to="">疾病导诊</routerLink>
-                  </li>
-                  <li>
-                        <routerLink to="">我的关注</routerLink>
-                  </li>
-                  <li>
-                        <routerLink to="">频道导航</routerLink>
-                  </li>
-                  <li>
-                        <routerLink to="">个人中心</routerLink>
-                  </li>
-            </ul>
-      </div> -->
-
    </div>
 </template>
 
@@ -56,28 +33,29 @@
 import config from "../../../assets/js/config.js"
    export default {
       data(){
-            return {
-                  uname:"",
-                  upwd:""
-            }
+			return {
+				uname:"",
+				upwd:""
+			}
       },
       methods:{
-            login:function(){
-                  config.axios.get(
-                        `/user/login/${this.uname}&${this.upwd}`
-                  ).then(res=>{
-                        if(res.data.code==1){
-                              this.$notify({type:"success",message:res.data.msg,duration:1000,
-                              onOpened:()=>{
-                                    this.$router.push({name:"me",params:{data:res.data}})
-                              }
-                              });
-                        }
-                  })
-                  .catch(err=>{          
-                        console.log(err)
-                  })
-            }
+			login:function(){
+				config.axios.get(
+					`/user/login/${this.uname}&${this.upwd}`
+				).then(res=>{
+					if(res.data.code==1){
+						this.$notify({type:"success",message:res.data.msg,duration:1000,
+						onOpened:()=>{
+								sessionStorage.setItem("userMsg",JSON.stringify(res.data.data))
+								this.$router.push("me");
+						}
+						});
+					}
+				})
+				.catch(err=>{          
+					console.log(err)
+				})
+			}
       },
       created(){
             

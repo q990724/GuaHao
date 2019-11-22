@@ -53,6 +53,9 @@ export default {
   props:["frameName"],
    methods: {
     tab(index, val) {
+      if(this.$route.path.slice(1) == val){
+        return;
+      }
       this.currIndex = index;
       this.$router.push(val)
     }

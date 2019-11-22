@@ -25,7 +25,7 @@ export default new Router({
     { path: "/city", component: city },
     { path: "/parent", component: parent },
     { path: "/BottomBar", component: BottomBar },
-    { name:"me", path: "/me", component: me },
+    { path: "/me", component: me },
     { path: "/login",component: login},
     { path: "/index",component: index},
     { path: "/reg",component: reg},

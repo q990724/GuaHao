@@ -148,6 +148,15 @@ router.get("/showSomeDoctorOrders", function (req, res) {
 
 });
 
+//判断用户是否已经登录
+router.get("/islogin",function(req,res){
+  if(!req.session.uid){
+    res.send({code : -1 , msg : "请重新登录!"});
+  }else{
+    res.send({code : 1 , msg : "已登录"});
+  }
+});
+
 module.exports = router;
 
 /*
