@@ -42,8 +42,8 @@
       <van-tab class="tools" title="工具">
         <div class="nav-tech" v-for="(t,i) of tool" :key="i">
           <div class="left-p">
-            <p>科室导航</p>
-            <h3>常见科室分类，帮你更快找到对医生</h3>
+            <p class="nav-tech-p">科室导航</p>
+            <h3 class="nav-details">常见科室分类，帮你更快找到对医生</h3>
           </div>
           <div class="right-img">
             <img src="../../../public/images/find/found-zizhen.png" alt="">
@@ -193,14 +193,26 @@ mt-header{
   background: #fff;
   display: flex;
   justify-content: space-between;
-  padding:.305344rem .916031rem;
+  padding:1.105344rem .916031rem;
 }
 .right-img{
   width: 2.381679rem;
   height:2.381679rem;
 }
+.right-img>img{
+  margin:.610687rem 1.316031rem 0 0;
+}
 .left-p{
   color:#28354c;
   font-size:.64rem;
+}
+.nav-tech-p{
+  font-size:1.099237rem;
+  padding-bottom: .610687rem;
+}
+.nav-details{
+  font-size: 1.099237rem;
+  color:#908f9d;
+  font-weight: normal;
 }
 </style>
