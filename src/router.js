@@ -15,6 +15,7 @@ import order_main from "./components/index/wf-zwb/order_main.vue";
 import frame from "./components/index/frame.vue"
 import find from "./components/fx/find.vue";
 import jkh from "./components/jkh/wtq/top_search.vue";
+import hospitalMain from "./components/index/mhp/hospitalMain.vue";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -34,5 +35,6 @@ export default new Router({
     { path: "/frame",component: frame},
     { path: "/find",component: find},
     { path: "/jkh",component: jkh},
+    { path: "/hospitalMain",component: hospitalMain},
   ]
 })
