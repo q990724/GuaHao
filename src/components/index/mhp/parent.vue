@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-container">
     <wytitle class="title"></wytitle>
     <!-- 手动复制搜索框 与后面的不受影响 -->
     <div class="search">
@@ -42,6 +42,9 @@ export default {
 }
 </script>
 <style scoped>
+.main-container{
+  background: #fff;
+}
 .entry_major{ 
   display: flex;
   justify-content: space-around;

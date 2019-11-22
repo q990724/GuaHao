@@ -51,6 +51,7 @@ export default {
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: .9375rem;
+  background: #fff;
   /* width:343px;
   height:100px;
   margin:15px 15px 0px 15px; */
