@@ -22,9 +22,10 @@
     <!-- 3.简介 -->
     <div class="intr">
       <div class="hname-intr">
-        <div></div>
-        <p class="hname">中国人民解放军总医院(301医院)</p>
-        <span class="hlevel">三甲</span>
+        <div class="htitle">
+          <p class="hname">中国人民解放军总医院(301医院)</p>
+          <span class="hlevel">三甲</span>
+        </div>
         <h4 class="time">放号时间：
           <span>18:30</span>
           预约量：
@@ -39,11 +40,13 @@
     <!-- 4.主体 -->
     <div class="pro-main">
       <div class="left">
-        <img src="../../../../public/images/index/22hospitalMain/text.png" alt="">
+        <img class="text-img" src="../../../../public/images/index/22hospitalMain/text.png" alt="">
         <p>根据疾病找专科与专家</p>
-        <img src="../../../../public/images/index/22hospitalMain/doc-icon.png" alt="">
-        <p>预约周期：</p>
-        <span>28天</span>
+        <img class="doc-img" src="../../../../public/images/index/22hospitalMain/doc-icon.png" alt="">
+        <div class="pro-week">
+          <span class="week">预约周期：</span>
+          <span class="day">28天</span>
+        </div>
       </div>
       <div class="right">
         <div class="first">
@@ -53,14 +56,14 @@
             <h5>提前预约先人一步</h5>
           </div>
         </div>
-        <div class="second">
+        <div class="first">
           <img src="../../../../public/images/index/22hospitalMain/icon-feature.png" alt="">
           <div class="pre">
             <p>预约挂号</p>
             <h5>提前预约先人一步</h5>
           </div>
         </div>
-        <div class="third">
+        <div class="first">
           <img src="../../../../public/images/index/22hospitalMain/icon-registration.png" alt="">
           <div class="pre">
             <p>预约挂号</p>
@@ -129,8 +132,11 @@ export default {
 .hname-intr{
   width:75%;
 }
+.htitle{
+  margin-bottom: .305344rem;
+}
 .hname{
-  font-size: .854962rem;
+  font-size: .954962rem;
   color:#28354c;
   width:80%;
 }
@@ -138,12 +144,13 @@ export default {
   font-size: .793893rem;
   color:#83889a;
   font-weight: normal;
+  margin-left: .48855rem;
 }
 .hlevel{
   display: inline-block;
-  width:1.93rem;
-  height:.916031rem;
-  line-height: .916031rem;
+  width:2.23rem;
+  height:1.216031rem;
+  line-height: 1.216031rem;
   text-align: center;
   color:#ff695c;
   border:.061069rem solid #ff695c;
@@ -159,14 +166,79 @@ export default {
   background: #fff;
   display: flex;
   justify-content: space-between;
-  padding:0 1.221374rem;
+  /* padding:0 1.221374rem; */
+  margin-bottom: .610687rem;
 }
 .left{
   width:50%;
   border-right: .061069rem solid #ccc;
-  padding:2.042748rem 1.242748rem;
+  padding:2.042748rem 0;
+  text-align: center;
+}
+.left>.text-img{
+  width: 6.290076rem;
+  height:1.221374rem;
+  margin-bottom: .48855rem;
+}
+.left>.doc-img{
+  width: 4.580153rem;
+  height:3.664122rem;
+  margin-bottom: .610687rem;
+}
+.pro-week>.week,.left>p{
+  font-size: .893893rem;
+  color:#83889a;
+  margin-bottom: .610687rem;
+}
+.pro-week>.day{
+  color:#4294fe;
+  font-size: .793893rem;
 }
 .right{
   width:50%;
+}
+.first{
+  height:4.641221rem;
+  display: flex;
+  justify-content: space-between;
+}
+.right>.first~.first{
+  border-top:.061069rem solid #ccc;
+}
+.first>img{
+  width: 2.015267rem;
+  height:2.015267rem;
+  margin: 1.221374rem 1.221374rem
+}
+.pre{
+  margin: 1.221374rem 1.210687rem 1.221374rem 0;
+}
+.pre>p{
+  margin-bottom: .28855rem;
+}
+.pre>h5{
+  font-weight: normal;
+  color:#83889a;
+}
+.bottom{
+  background: #fff;
+  padding:.916031rem .610687rem;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom>img{
+  width: 2.015267rem;
+  height:2.015267rem;
+}
+.ser{
+  margin-right: 5.832061rem;
+}
+.ser>p{
+  color:#28354c;
+  margin-bottom: .305344rem;
+}
+.ser>h5{
+  color:#83889a;
+  font-weight: normal;
 }
 </style>
