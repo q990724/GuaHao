@@ -1,2 +1,0 @@
-{"_id":{"$oid":"5dd3cc0e0e86462f3c0465bc"},"uid":"5dd3cad00e86462f3c0465bb","did":"5dd3ccc20e86462f3c0465bd","hname":"北京医院","class_name":"骨科","class_subname":"骨科","order_number":{"$numberInt":"1"},"order_time":{"$numberLong":"1573721671084"}}
-{"_id":{"$oid":"5dd3ec6c12764e0f3841fcfc"},"uid":"5dd3cad00e86462f3c0465bb","did":"5dd3ce36c4c81e2f3c83e9de","hname":"北京医院","class_name":"精神科","class_subname":"神经病","order_number":"2","order_time":"100000000"}
