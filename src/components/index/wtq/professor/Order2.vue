@@ -7,13 +7,13 @@
     <!-- 医院信息卡 -->
     <div class="hospital-info">
       <div class="title">
-        <h3>中国人民解放军总医院301医院</h3>
+        <h3>{{hospital.hname}}</h3>
         <span class="yao">预约规则</span>
       </div>
       <div class="subtitle">
-        <span class="choose">三级甲等</span>
+        <span class="choose">{{hospital.hrank}}</span>
         <span>公立医院</span>
-        <span>综合医院</span>
+        <span>{{hospital.hmajor}}</span>
       </div>
       <!-- 有的医院有 有的没有 -->
       <div class="more">
@@ -36,6 +36,7 @@
 <script>
 import preTitle from '../../mhp/preTitle'
 import Choose from './Choose'
+import config from "../../../../assets/js/config.js"
 export default {
   data(){
     return {
@@ -110,6 +111,8 @@ export default {
       ],
       activeId:1,
       activeIndex:0,
+      hospital:{},
+      hid:0
     }
   },
   components:{
@@ -118,10 +121,20 @@ export default {
   },
   methods:{
    next(data){ 
-     this.$router.push("/order3");
-   },
-    
+    this.$router.push({name:"order3",params:{text:data.text,hid:this.hid}});
+   }  
   },
+  created(){
+    var hid=this.$route.params.hid;
+    this.hid=hid
+    config.axios.get(
+      `/hospitals/hospitalsDetails/${hid}`
+    ).then(res=>{
+      this.hospital=res.data.data;
+    }).catch(err=>{
+      console.log(err)
+    })
+  }
 }
 </script>
 

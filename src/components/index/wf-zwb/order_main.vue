@@ -12,18 +12,15 @@
         </router-link>
         <div class="doc_msg">
           <div class="main_msg">
-            <span class="name">小阿砍</span>
-            <span class="type">主治医师/教授</span>
+            <span class="name">{{doctor.dname}}</span>
+            <span class="type">{{doctor.dtype}}</span>
           </div>
           <div class="details">
             <span  class="order_count">预约量：<i>5455</i></span>
-            <span  class="score">评分：<i>9.5</i></span>
+            <span  class="score">评分：<i>{{doctor.com_grade}}</i></span>
           </div>
           <div class="skill">
-            <span>骨肿瘤</span>
-            <span>关节炎</span>
-            <span>骨质增生</span>
-            <span>骨瘤</span>
+            <span v-for="(item,i) of doctor.skill_tages" :key="i">{{item}}</span>
           </div>
         </div>
       </div>
@@ -38,7 +35,7 @@
             <div slot="title" class="hospital">
               <i></i>
               <div class="h_name">
-                <p><b>上海交通大学医学院附属瑞金医院</b>-门诊骨科</p>
+                <p><b>{{hospital.hname}}</b>-门诊{{doctor.skill}}</p>
               </div>
               <span class="isOrder">可预约</span>
             </div>
@@ -52,28 +49,28 @@
                     <p class="time">{{date}} {{week}} 上午<b>今天</b></p>
                     <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
                   </div>               
-                  <van-button :round="true" type="info" :disabled="isDisabled">预约</van-button>
+                  <van-button :round="true" type="info" :disabled="isDisabled" @click="Order(date,'A')">预约</van-button>
                 </li>
                 <li>
                   <div>
                     <p class="time">{{date}} {{week}} 下午 <b>今天</b></p>
                     <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
                   </div>               
-                  <van-button :round="true" type="info" :disabled="isDisabled">预约</van-button>
+                  <van-button :round="true" type="info" :disabled="isDisabled" @click="Order(date,'P')">预约</van-button>
                 </li>
                 <li>
                   <div>
                     <p class="time">{{later_date}} {{later_week}} 上午 <b>2天后</b></p>
                     <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
                   </div>               
-                  <van-button :round="true" type="info">预约</van-button>
+                  <van-button :round="true" type="info" @click="Order(later_date,'A')">预约</van-button>
                 </li>
                 <li>
                   <div>
                     <p class="time">{{later_date}} {{later_week}} 下午 <b>2天后</b></p>
                     <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
                   </div>               
-                  <van-button :round="true" type="info">预约</van-button>
+                  <van-button :round="true" type="info" @click="Order(later_date,'P')">预约</van-button>
                 </li>
               </ul>
             </div>
@@ -426,6 +423,7 @@
 }
 </style>
 <script>
+import config from "../../../assets/js/config.js"
 export default {
    data() {
     return {
@@ -437,10 +435,20 @@ export default {
       hour:"",
       later_date:"",
       later_week:"",
-      isDisabled:false
+      isDisabled:false,
+      doctor:{},
+      did:0,
+      hospital:{},
+      hid:0
     }
   },
   methods:{
+    Order:function(date,hour){
+      var uidMsg=JSON.parse(sessionStorage.getItem("userMsg"));
+      var uid=uidMsg._id;
+      console.log(date);
+      this.$router.push({name:"appointment",params:{uid:uid,did:this.did,date:date,hour:hour,week:this.week,hid:this.hid}})
+    },
     pull:function(){
       this.isPull=!this.isPull;
     },
@@ -485,11 +493,28 @@ export default {
       if(hour>=17){
         this.isDisabled=true;
       }
-      console.log(week)
     }
   },
   created(){
     this.getDay();
+    this.did=this.$route.params.did;
+    this.hid=this.$route.params.hid;
+    config.axios(
+      `/doctor/showDoctor/${this.did}`
+    ).then(res=>{
+      this.doctor=res.data.data;
+      console.log(this.doctor)
+    }).catch(err=>{
+      console.log(err)
+    })
+    config.axios.get(
+      `/hospitals/hospitalsDetails/${hid}`
+    ).then(res=>{
+      this.hospital=res.data.data;
+      console.log(this.hospital)
+    }).catch(err=>{
+      console.log(err)
+    })
   }
 }
 </script>
