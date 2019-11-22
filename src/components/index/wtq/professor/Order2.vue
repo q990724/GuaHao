@@ -18,7 +18,7 @@
       <!-- 有的医院有 有的没有 -->
       <div class="more">
         <span class="mingci">全国综合昂患者好评第2名</span>
-        <router-link class="zhuye" to="#">医院主页<span class="large">&gt;</span></router-link>
+        <router-link class="zhuye" to="/hospitalMain">医院主页<span class="large">&gt;</span></router-link>
       </div>
     </div>
     <!-- 小组件   选择科室组件 -->
