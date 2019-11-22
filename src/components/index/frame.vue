@@ -30,7 +30,7 @@ export default {
           active: require("../../../public/images/index/icon-index.png")
         },
         {
-          name: "",
+          name: "jkh",
           title: "健康号",
           normal: require("../../../public/images/index/icon-yyt.png"),
           active: require("../../../public/images/index/icon-yyt.png")

@@ -33,6 +33,7 @@
       <mt-tab-container-item id="xx">
       </mt-tab-container-item>
       <mt-tab-container-item id="jkh">
+        <jkh></jkh>
       </mt-tab-container-item>
       <mt-tab-container-item id="find">
         <find></find>
@@ -48,6 +49,7 @@
 import Bottom from './Bottom'
 import me from "../../me/me.vue"
 import find from "../../fx/find.vue"
+import jkh from "../../jkh/wtq/top_search.vue"
 export default {
   data(){
     return {

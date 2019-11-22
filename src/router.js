@@ -14,6 +14,7 @@ import order2 from "./components/index/wtq/professor/Order2";
 import order_main from "./components/index/wf-zwb/order_main.vue";
 import frame from "./components/index/frame.vue"
 import find from "./components/fx/find.vue";
+import jkh from "./components/jkh/wtq/top_search.vue";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -31,6 +32,7 @@ export default new Router({
     { path: "/order2",component: order2},
     { path: "/order_main",component:order_main},
     { path: "/frame",component: frame},
-    { path: "/find",component: find}
+    { path: "/find",component: find},
+    { path: "/jkh",component: jkh},
   ]
 })
