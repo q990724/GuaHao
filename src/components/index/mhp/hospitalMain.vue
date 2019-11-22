@@ -174,16 +174,21 @@ export default {
   border-right: .061069rem solid #ccc;
   padding:2.042748rem 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  vertical-align: middle;
 }
 .left>.text-img{
   width: 6.290076rem;
   height:1.221374rem;
-  margin-bottom: .48855rem;
+  margin:0 auto .48855rem;
 }
 .left>.doc-img{
   width: 4.580153rem;
   height:3.664122rem;
-  margin-bottom: .610687rem;
+  /* margin-bottom: .610687rem; */
+  margin:0 auto .610687rem;
 }
 .pro-week>.week,.left>p{
   font-size: .893893rem;
