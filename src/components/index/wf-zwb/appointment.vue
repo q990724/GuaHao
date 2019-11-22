@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class = "be-careful">
-        <van-collapse v-model="activeNames" :accordion = "false" style="padding:0;">
+        <van-collapse v-model="activeNames" accordion = "false" style="padding:0;">
           <van-collapse-item name="1" >
             <div slot="title" >
               <span>挂号费由医院自行设定，平台不收取任何额外费用。</span><br>
@@ -112,12 +112,9 @@
           activeNames: ['1'],
           show: false,
           actions: [
-          { name: '08:00-08:59'},
-          { name: '09:00-09:59'},
-          { name: '10:00-10:59'},
-          { name: '14:00-14:59'},
-          { name: '15:00-15:59'},
-          { name: '16:00-16:59'},
+          { name: '08:00-08-59'},
+          { name: '09:00-09-59'},
+          { name: '10:00-10-59'}
           ],
           time:"08:00-08-59"
         }
@@ -137,22 +134,6 @@
          onCancel() {
             this.show = false;
          },
-      },
-      created(){
-        var uid=this.$route.params.uid;
-        var did=this.$route.params.did;
-        var date=this.$route.params.date;
-        var hour=this.$route.params.hour;
-        var week=this.$route.params.week;
-        var hid=this.$route.params.hid;
-        if(hour=='A'){
-          this.actions=this.actions.slice(0,3);
-          this.time="08:00-08-59";
-        }else{
-          this.actions=this.actions.slice(3);
-          this.time='14:00-14:59';
-        }
-
       }
    }
 </script>

@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="hospital" @click="todetail(h._id)" v-for="(h,i) of hospital" :key="i">
+    <div class="hospital" @click="todetail" v-for="(h,i) of hospital" :key="i">
       <div class="hos">
         <div class="left_img">
           <img :src="`http://127.0.0.1:5050/${h.hpic}`" alt="">
@@ -132,13 +132,15 @@ export default {
     }
   },
   methods:{
-    todetail(hid){
-      this.$router.push({name:"order2",params:{hid:hid}});
+    todetail(){
+      this.$router.push("/Order2");
     },
     load(){
       config.axios.get(this.url)
       .then(res=>{
+        console.log(res.data);
         this.hospital=this.hospital.concat(res.data.data);
+        console.log(this.hospital)
       })
       .catch(err=>{
         console.log(err);

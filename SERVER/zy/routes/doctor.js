@@ -1,6 +1,5 @@
 const express=require("express");
 var router=express.Router();
-var objectId = require('mongodb').ObjectId;
 /*
 //插入到医生预约表中
 router.post("/insertDoctorOrder",function(req,res){
@@ -60,25 +59,4 @@ router.post("/insertDoctorOrder",function(req,res){
     });
  });
  */
- router.get("/showDoctorsAll",function(req,res){
-   req.db.collection("doctors").find({}).toArray(function(err,result){
-            if(err) throw err;
-						if(result.length > 0){
-                res.send({code : 1 , msg : "查询成功" , data : result});
-            }else{
-                res.send({code : -1 , msg : "查询失败" , err : err});
-            }
-        });
- });
-  router.get("/showDoctor/:did",function(req,res){
-		var did=req.params.did;
-   req.db.collection("doctors").findOne({'_id':objectId(did)},function(err,result){
-            if(err) throw err;
-						if(result){
-                res.send({code : 1 , msg : "查询成功" , data : result});
-            }else{
-                res.send({code : -1 , msg : "查询失败" , err : err});
-            }
-        });
- });
 module.exports=router;

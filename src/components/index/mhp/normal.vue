@@ -28,7 +28,7 @@
         </div>
         <p class="zjwz">健康商城</p>
         <p class="constructor">
-          <span>1小时</span>
+          <span>1小时达</span>
           极速送药
         </p>
       </div>
@@ -110,7 +110,6 @@ export default {
   /* width:365px; */
   width: 100%;
   height: 100%;
-  margin-top:.610687rem;
   /* position: relative; */
   /* top:20px; */
   /* left:-10px; */
