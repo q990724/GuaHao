@@ -16,6 +16,8 @@ import frame from "./components/index/frame.vue"
 import find from "./components/fx/find.vue";
 import jkh from "./components/jkh/wtq/top_search.vue";
 import hospitalMain from "./components/index/mhp/hospitalMain.vue";
+import order3 from "./components/index/wtq/professor/Order3";
+import appointment from "./components/index/wf-zwb/appointment.vue";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -30,11 +32,13 @@ export default new Router({
     { path: "/login",component: login},
     { path: "/index",component: index},
     { path: "/reg",component: reg},
-    { path: "/order2",component: order2},
-    { path: "/order_main",component:order_main},
     { path: "/frame",component: frame},
     { path: "/find",component: find},
     { path: "/jkh",component: jkh},
+		{ path: "/order2",component: order2,name:"order2"},
+    { path: "/order_main",component:order_main,name:"order_main"},
     { path: "/hospitalMain",component: hospitalMain},
+    { path: "/order3",component: order3,name:"order3"},
+    { path: "/appointment",component:appointment,name:"appointment"}
   ]
 })
