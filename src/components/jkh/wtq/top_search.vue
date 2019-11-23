@@ -138,7 +138,7 @@ export default {
       .then(res=>{
         console.log(res.data);
         console.log(this.list,typeof this.list)
-        this.list = this.list.concat(res.data.data);
+        this.list = this.list.concat(res.data.rows);
       })
       .catch(err=>{
         console.log(err);

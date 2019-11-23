@@ -4,7 +4,7 @@
     <div class="first-row">
       <div class="left">
         <div class="img">
-          <img :src="`http://127.0.0.1:5050/${item.authorPic}`">
+          <img :src="`http://zhuanyi.applinzi.com/${item.authorPic}`">
         </div>
         <div class="info">
           <span>{{item.author}} | {{item.authorType}}</span>
@@ -19,7 +19,7 @@
       <!-- 第三行 -->
       <p class="msg">{{item.content}}</p>
       <div class="msg-img">
-        <img :src="`http://127.0.0.1:5050/${item.content_pic}`">
+        <img :src="`http://zhuanyi.applinzi.com/${item.content_pic}`">
       </div>
       <!-- 最后一行的额话题.回复 点赞 -->
       <div class="last">
