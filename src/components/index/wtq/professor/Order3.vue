@@ -2,24 +2,50 @@
   <!-- 第三个页面  选专家 -->
   <div on="export">
     <!-- 组件 顶部导航栏 -->
-    <van-nav-bar :title="`${text}`" left-arrow fixed/>
+      <pre-title></pre-title>
+      <!-- @click-left="onClickLeft"-->
+      <!-- 时间选择 -->
+      <div class="container">
+        <div class="choose-all" >
+          <div class="buxian">不限日期</div>
+          <div class="date" >
+            <span>周一 11.22</span>
+            <span>周一 11.22</span>
+            <span>周一 11.22</span>
+            <span>周一 11.22</span>
+            <span>周一 11.22</span>
+            <span>周一 11.22</span>
+            <span>周一 11.22</span>
+            <span>周一 11.22</span>
+            <span>周一 11.22</span>
+          </div>
+          <!--<div class="can-choose-date">
+        <div class="date" v-for="(day,ind) of days" :key="ind">
+        <span>{{day.lastWeek}}</span>
+        <h4>{{day.month}}.{{day.lastDay}}</h4>
+        </div>
+        </div>-->
+        </div>
+      </div>
+    <!-- 组件 顶部导航栏 -->
+    <!-- <van-nav-bar :title="`${text}`" left-arrow fixed/> -->
     <!-- @click-left="onClickLeft"-->
     <!-- 时间选择 -->
-    <div class="choose-all">
+    <!-- <div class="choose-all">
       <div class="buxian">
         <p class="left-date zindex fixed one">不限</p>
         <p class="left-date zindex fixed two">日期</p>
       </div>
       <div class="can-choose-date">
-        <!-- 时间得后期自动获取 -->
+        时间得后期自动获取 -->
         <!-- 每个时间是一个 -->
-        <div class="date" v-for="(day,ind) of days" :key="ind">
+        <!-- <div class="date" v-for="(day,ind) of days" :key="ind">
           <span>{{day.lastWeek}}</span>
           <h4>{{day.month}}.{{day.lastDay}}</h4>
-        </div>
+        </div> -->
         <!-- 循环生成 -->
-      </div>
-    </div>
+      <!-- </div>
+    </div> -->
     <!-- 组件:下拉菜单 -->
     <van-dropdown-menu>
       <van-dropdown-item v-model="value1" :options="option1"/>
@@ -62,7 +88,11 @@
 
 <script>
 import config from "../../../../assets/js/config.js"
+import preTitle from '../../mhp/preTitle'
 export default {
+  components:{
+    "preTitle":preTitle,
+  },
   data() {
     return {
       text:'',
@@ -236,62 +266,42 @@ export default {
   z-index: 6;
 }
 /* 选择时间样式 */
-.choose-all {
-  border: 0.04266667rem solid #e3e3e3;
-  border-right: 0rem solid;
-  width: 100%;
-  height: 4rem;
-  /* position:fixed; */
-  top: 3rem;
-  /* padding-top:2.80916rem; */
-  left: 0;
-  z-index: 5;
-  background-color: #fff;
+.container{
+height:7.5rem;
+overflow: hidden;
+}
+.choose-all{
+padding-top:2.5rem;
+display:flex;
+color:#28354c;
+background-color:#fff;
+}
+.buxian,.date{
+width:11%;
+height:3.5rem;
+line-height:1.7rem;
+/* margin:0 0.5rem; */
+padding:1rem;
+}
+.date{
+display:flex;
+flex-wrap:nowrap;
+z-index:99;
+width:100%;
+/* overflow-x: hidden; */
+overflow-y: auto;
+margin:0;
+}
+.date span{
+display:inline-block;
+margin-right:1rem;
+text-align: center;
+/* overflow-x: hidden;
+overflow-y: auto; */
 }
 /* 点击上的样式 */
-.click {
-  border-bottom: 0.061069rem solid #36d;
-  color: #36d;
-}
-.left-date {
-  /* position:fixed; */
-  top: 2.80916rem;
-  left: 1rem;
-  width: 2rem;
-  z-index: 999;
-  text-align: left;
-  font-size: 0.732824rem;
-  /* padding-top:1.1rem; */
-}
 
-.can-choose-date {
-  padding-left: 3rem;
-  text-align: center;
-  width: 100%;
-  height: 3rem;
-  display: flex;
-  flex-wrap: nowrap;
-  /* position:fixed; */
-  left: 3rem;
-  /* top:2.80916rem; */
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  justify-content: space-between;
-  z-index: 1;
-}
-.date {
-  padding: 0.5rem 0.610687rem;
-  height: 2rem;
-}
-.date span:first-child {
-  font-size: 0.732824rem;
-}
-.buxian {
-  z-index: 7;
-  padding-top: 2rem;
-  display: flex;
-}
+
 
 /* ddd */
 .van-dropdown-menu {
