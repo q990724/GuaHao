@@ -48,62 +48,22 @@
               <div class="item-name">{{item.s1}}</div>
             </div>
           </div>
-          <!-- 复制一排  排也得循环-->
           <div class="row">
             <!-- 一排中的一个 -->
-            <div class="item" to="#">
+            <div class="item" to="#" v-for="(every,i) of special2" :key="i">
               <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
+                <img :src="every.pic">
               </div>
-              <div class="item-name">糖尿病</div>
-            </div>
-            <!-- 之后的循环生成 -->
-            <div class="item" to="#">
-              <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
-              </div>
-              <div class="item-name">糖尿病</div>
-            </div>
-            <div class="item" to="#">
-              <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
-              </div>
-              <div class="item-name">糖尿病</div>
-            </div>
-            <div class="item" to="#">
-              <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
-              </div>
-              <div class="item-name">糖尿病</div>
+              <div class="item-name">{{every.s1}}</div>
             </div>
           </div>
-          <!-- 一共循环三次 -->
           <div class="row">
             <!-- 一排中的一个 -->
-            <div class="item" to="#">
+            <div class="item" to="#" v-for="(every,i) of special3" :key="i">
               <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
+                <img :src="every.pic">
               </div>
-              <div class="item-name">糖尿病</div>
-            </div>
-            <!-- 之后的循环生成 -->
-            <div class="item" to="#">
-              <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
-              </div>
-              <div class="item-name">糖尿病</div>
-            </div>
-            <div class="item" to="#">
-              <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
-              </div>
-              <div class="item-name">糖尿病</div>
-            </div>
-            <div class="item" to="#">
-              <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
-              </div>
-              <div class="item-name">糖尿病</div>
+              <div class="item-name">{{every.s1}}</div>
             </div>
           </div>
         </div>
@@ -140,9 +100,21 @@ export default {
       ],
       special1:[
         {s1:"糖尿病",pic:require('../../../../public/images/index/4bing/1tang.png')},
-        {s1:"糖尿病",pic:require('../../../../public/images/index/4bing/1tang.png')},
-        {s1:"糖尿病",pic:require('../../../../public/images/index/4bing/1tang.png')},
-        {s1:"糖尿病",pic:require('../../../../public/images/index/4bing/1tang.png')},
+        {s1:"儿童哮喘病",pic:require('../../../../public/images/index/4bing/2.png')},
+        {s1:"辅助生殖",pic:require('../../../../public/images/index/4bing/3.png')},
+        {s1:"医疗美容",pic:require('../../../../public/images/index/4bing/4.png')},
+      ],
+      special2:[
+        {s1:"心血管内科",pic:require('../../../../public/images/index/4bing/5.png')},
+        {s1:"男科",pic:require('../../../../public/images/index/4bing/6.png')},
+        {s1:"肿瘤",pic:require('../../../../public/images/index/4bing/7.png')},
+        {s1:"消化肝病",pic:require('../../../../public/images/index/4bing/8.png')},
+      ],
+      special3:[
+        {s1:"普外科",pic:require('../../../../public/images/index/4bing/9.png')},
+        {s1:"神经内科",pic:require('../../../../public/images/index/4bing/10.png')},
+        {s1:"妇科",pic:require('../../../../public/images/index/4bing/11.png')},
+        {s1:"呼吸内科",pic:require('../../../../public/images/index/4bing/12.png')},
       ],
     }
   },
