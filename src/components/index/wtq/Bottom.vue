@@ -16,9 +16,9 @@
         <!-- 每一个都循环生成 -->
         <div class="item" to="#" v-for="(item,i) of servers" :key="i">
           <div style="width:2.8rem;height:2.8rem" class="item-img">
-            <img src="../../../../public/images/index/2serve/doctor.png">
+            <img :src="item.pic">
           </div>
-          <div class="item-text">私人医生</div>
+          <div class="item-text">{{item.text}}</div>
         </div>
 
         
@@ -41,30 +41,11 @@
           <!-- 一排四个 -->
           <div class="row">
             <!-- 一排中的一个 -->
-            <div class="item" to="#">
+            <div class="item" to="#" v-for="(item,i) of special1" :key="i">
               <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
+                <img :src="item.pic">
               </div>
-              <div class="item-name">糖尿病</div>
-            </div>
-            <!-- 之后的循环生成 -->
-            <div class="item" to="#">
-              <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
-              </div>
-              <div class="item-name">糖尿病</div>
-            </div>
-            <div class="item" to="#">
-              <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
-              </div>
-              <div class="item-name">糖尿病</div>
-            </div>
-            <div class="item" to="#">
-              <div class="item-img">
-                <img src="../../../../public/images/index/4bing/1tang.png">
-              </div>
-              <div class="item-name">糖尿病</div>
+              <div class="item-name">{{item.s1}}</div>
             </div>
           </div>
           <!-- 复制一排  排也得循环-->
@@ -145,7 +126,24 @@ export default {
   },
   data(){
     return {
-      servers:[1,2,3,4,5,6,7,8,9,10],
+      servers:[
+        {text:"私人医生",pic:require('../../../../public/images/index/2serve/doctor.png')},
+        {text:"三甲体检",pic:require('../../../../public/images/index/2serve/2.png')},
+        {text:"海外就医",pic:require('../../../../public/images/index/2serve/3.png')},
+        {text:"奶瓶之家",pic:require('../../../../public/images/index/2serve/4.png')},
+        {text:"肝病中心",pic:require('../../../../public/images/index/2serve/5.png')},
+        {text:"保险平台",pic:require('../../../../public/images/index/2serve/6.png')},
+        {text:"病友群",pic:require('../../../../public/images/index/2serve/7.png')},
+        {text:"膏方节",pic:require('../../../../public/images/index/2serve/8.png')},
+        {text:"报告解读",pic:require('../../../../public/images/index/2serve/9.png')},
+        {text:"品质医美",pic:require('../../../../public/images/index/2serve/10.png')},
+      ],
+      special1:[
+        {s1:"糖尿病",pic:require('../../../../public/images/index/4bing/1tang.png')},
+        {s1:"糖尿病",pic:require('../../../../public/images/index/4bing/1tang.png')},
+        {s1:"糖尿病",pic:require('../../../../public/images/index/4bing/1tang.png')},
+        {s1:"糖尿病",pic:require('../../../../public/images/index/4bing/1tang.png')},
+      ],
     }
   },
 }
@@ -201,12 +199,12 @@ export default {
     display:flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding: 0rem 1.25rem 1.875rem .3125rem;
+    padding: 0rem 1.25rem 1.875rem 1rem;
     overflow-y: hidden;
   }
   #special-server-floor .item{
     width:20%;
-    text-align:center;
+    /* text-align:center; */
     margin-right: 1.875rem;
     display: flex;
     flex-direction: column;
@@ -225,8 +223,8 @@ export default {
     font-size:.512rem;
     line-height:.6rem;
     margin-top:.2rem;
-    width:3.153435rem;
-    text-align:center;
+    width:4rem;
+    /* text-align:center; */
   }
 /*  专病专科*/
 /* 上方标题 */
