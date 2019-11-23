@@ -34,33 +34,15 @@
     <div class="all">
       <!-- 有一个相对定位 -->
       <div class="all-list">
-        <div class="row" v-for="(row,i) of rows" :key="i">
+        <div class="row">
         <!-- 循环生成 -->
-          <div class="item">
+          <div class="item"  v-for="(row,i) of rows" :key="i">
             <div class="img">
-              <img src="../../../../public/images/jkh/true-wy.png">
+              <img :src="row.pic">
             </div>
-            <p class="item-info">就医互助</p>
+            <p class="item-info">{{row.text}}</p>
           </div>
-          <!-- 循环生成 -->
-          <div class="item">
-            <div class="img">
-              <img src="../../../../public/images/jkh/true-wy.png">
-            </div>
-            <p class="item-info">就医互助</p>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="../../../../public/images/jkh/true-wy.png">
-            </div>
-            <p class="item-info">就医互助</p>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="../../../../public/images/jkh/true-wy.png">
-            </div>
-            <p class="item-info">就医互助</p>
-          </div>
+          
         </div>
        
       </div>
@@ -112,7 +94,16 @@ export default {
       tips:"努力加载中",
       url:"healthyNumber/healthyNumber",
       // 上方两排
-      rows:[0,1]
+      rows:[
+        {text:"就医互助",pic:require('../../../../public/images/jkh/true-wy.png')},
+        {text:"女性健康",pic:require('../../../../public/images/jkh/2.png')},
+        {text:"亲子育儿",pic:require('../../../../public/images/jkh/3.png')},
+        {text:"慢病调理",pic:require('../../../../public/images/jkh/4.png')},
+        {text:"皮肤疾病",pic:require('../../../../public/images/jkh/5.png')},
+        {text:"肿瘤癌症",pic:require('../../../../public/images/jkh/6.png')},
+        {text:"会员生活",pic:require('../../../../public/images/jkh/7.jpg')},
+        {text:"两性之间",pic:require('../../../../public/images/jkh/8.png')},
+      ],
     }
   },
   components:{
@@ -281,18 +272,20 @@ export default {
   .row{
     width:100%;
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom:.916031rem;
+    flex-wrap: wrap;
   }
 
   .item{
     width:2.931298rem;
+    margin:0.3rem 1.5rem 0 1.5rem;
   }
   .img img{
     width:100%;
   }
   .item-info{
-    width:3.931298rem;
+    width:4rem;
     color:#83889a;
     font-size:.732824rem;
   }
