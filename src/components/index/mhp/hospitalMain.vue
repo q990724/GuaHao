@@ -176,7 +176,7 @@ export default {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   vertical-align: middle;
 }
 .left>.text-img{

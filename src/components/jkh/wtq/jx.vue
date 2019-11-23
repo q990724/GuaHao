@@ -55,7 +55,7 @@ export default {
   }
   .left{
     display:flex;
-    justify-content: start;
+    justify-content: flex-start;
   }
   .img{
     width:36px;
