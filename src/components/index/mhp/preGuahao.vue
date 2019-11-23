@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="content">
     <preTitle></preTitle>
     <wysearch></wysearch> 
     <div class="addr" @click="goCity">北京</div>

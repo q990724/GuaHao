@@ -444,10 +444,7 @@ export default {
   },
   methods:{
     Order:function(date,hour){
-      var uidMsg=JSON.parse(sessionStorage.getItem("userMsg"));
-      var uid=uidMsg._id;
-      console.log(date);
-      this.$router.push({name:"appointment",params:{uid:uid,did:this.did,date:date,hour:hour,week:this.week,hid:this.hid}})
+      this.$router.push({name:"appointment",params:{did:this.did,date:date,hour:hour,week:this.week,hid:this.hid}})
     },
     pull:function(){
       this.isPull=!this.isPull;
@@ -499,18 +496,19 @@ export default {
     this.getDay();
     this.did=this.$route.params.did;
     this.hid=this.$route.params.hid;
+
     config.axios(
       `/doctor/showDoctor/${this.did}`
     ).then(res=>{
-      this.doctor=res.data.data;
+      this.doctor=res.data.data[0];
       console.log(this.doctor)
     }).catch(err=>{
       console.log(err)
     })
     config.axios.get(
-      `/hospitals/hospitalsDetails/${hid}`
+      `/hospitals/hospitalsDetails/${this.hid}`
     ).then(res=>{
-      this.hospital=res.data.data;
+      this.hospital=res.data.result[0];
       console.log(this.hospital)
     }).catch(err=>{
       console.log(err)

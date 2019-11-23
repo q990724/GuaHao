@@ -69,7 +69,7 @@
               <span>问</span>
               <span>服务包</span>
             </div>
-            <span @click="toOrder(doc._id)">预约</span>
+            <span @click="toOrder(doc.did)">预约</span>
           </div>
           <!-- 第二行 -->
           <div class="second">
@@ -78,7 +78,7 @@
           </div>
           <!-- 第三行 -->
           <div class="third">
-            擅长：<span class="good-at" v-for="(item,i) of doc.skill_tages" :key="i">{{item}}</span>
+            擅长：<span class="good-at" v-for="(item,i) of skills[i]" :key="i">{{item}}</span>
           </div>
         </div>
       </div>
@@ -109,18 +109,29 @@ export default {
       ],
       days: [],
       docs:[],
-      hid:0
+      hid:0,
+      skills : []
     };
   },
   created() {
     this.getDate();
     var text=this.$route.params.text;
-    this.hid=this.$route.params.hid
+    this.hid=this.$route.params.hid;
+    console.log(this.hid);
     this.text=text;
     config.axios(
       "/doctor/showDoctorsAll"
     ).then(res=>{
       this.docs=res.data.data;
+      console.log(this.docs);
+      for(var i = 0; i < this.docs.length; i++){
+        this.skills[i] = [];
+        var arr = this.docs[i].skill_tags.split(",");
+        for(var item of arr){
+          this.skills[i].push(item);
+        }
+      }
+      console.log(this.skills)
     }).catch(err=>{
       console.log(err)
     })
@@ -248,7 +259,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #export {
   position: relative;
 }

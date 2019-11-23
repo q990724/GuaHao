@@ -58,4 +58,31 @@ router.post("/insertDoctorOrder",function(req,res){
        }
     });
  });
+
+  //查询所有医生
+  router.get("/showDoctorsAll",function(req,res){
+   var sql = "select * from doctors";
+   pool.query(sql,function(err,result){
+       if(err) throw err;
+       if(result.length > 0){
+           res.send({code : 1 , msg : "查询成功" , data : result});
+       }else{
+           res.send({code : -1 , msg : "查询结果为空"});
+       }
+   });
+});
+
+//查询某个医生的详细信息
+router.get("/showDoctor/:did",function(req,res){
+   var did = req.params.did;
+   var sql = "select * from doctors where did=?";
+   pool.query(sql,[did],function(err,result){
+       if(err) throw err;
+       if(result.length > 0){
+           res.send({code : 1 , msg : "查询成功" , data : result});
+       }else{
+           res.send({code : -1 , msg : "查询结果为空"});
+       }
+   });
+});
 module.exports=router;

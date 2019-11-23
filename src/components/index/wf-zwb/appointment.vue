@@ -139,7 +139,6 @@
          },
       },
       created(){
-        var uid=this.$route.params.uid;
         var did=this.$route.params.did;
         var date=this.$route.params.date;
         var hour=this.$route.params.hour;
@@ -152,6 +151,8 @@
           this.actions=this.actions.slice(3);
           this.time='14:00-14:59';
         }
+
+        console.log(did,date,hour,week,hid);
         
       }
    }
@@ -172,7 +173,7 @@
       border-bottom: .04266667rem solid #eee;
       height: 3.375rem;
       display: flex;
-      justify-content: flex-start;
+      justify-content: start;
       align-items: center;
       margin-top: 2.5rem;
       background: #fff;

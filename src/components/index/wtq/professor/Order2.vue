@@ -126,11 +126,13 @@ export default {
   },
   created(){
     var hid=this.$route.params.hid;
-    this.hid=hid
+    console.log(hid);
+    this.hid=hid;
     config.axios.get(
       `/hospitals/hospitalsDetails/${hid}`
     ).then(res=>{
-      this.hospital=res.data.data;
+      this.hospital=res.data.result[0];
+      console.log(this.hospital);
     }).catch(err=>{
       console.log(err)
     })

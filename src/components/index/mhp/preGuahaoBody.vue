@@ -50,10 +50,10 @@
         </div>
       </div>
     </div>
-    <div class="hospital" @click="todetail(h._id)" v-for="(h,i) of hospital" :key="i">
+    <div class="hospital" @click="todetail(h.hid)" v-for="(h,i) of hospital" :key="i">
       <div class="hos">
         <div class="left_img">
-          <img :src="`http://127.0.0.1:5050/${h.hpic}`" alt="">
+          <img :src="`http://zhuanyi.applinzi.com/${h.hpic}`" alt="">
         </div>
         <div class="right_title">
           <p class="hos_name">{{h.hname}}</p>
@@ -80,7 +80,7 @@
     <div class="hospital" v-for="(h,i) of hospital" :key="i+4">
       <div class="hos">
         <div class="left_img">
-          <img :src="`http://127.0.0.1:5050/${h.hpic}`" alt="">
+          <img :src="`http://zhuanyi.applinzi.com/${h.hpic}`" alt="">
         </div>
         <div class="right_title">
           <p class="hos_name">{{h.hname}}</p>
@@ -138,7 +138,7 @@ export default {
     load(){
       config.axios.get(this.url)
       .then(res=>{
-        this.hospital=this.hospital.concat(res.data.data);
+        this.hospital=this.hospital.concat(res.data.result);
       })
       .catch(err=>{
         console.log(err);

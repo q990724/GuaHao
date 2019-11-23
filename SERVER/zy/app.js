@@ -37,6 +37,21 @@ app.use(express.static('public'));
 
 
 http.listen(5050);
+
+
+io.on("connection",client=>{
+  client.on("unorder",did=>{
+    pool.query("select * from doctor_orders where did=" + did,(err,result)=>{
+      if(err) throw err;
+      if(result.length > 0){
+        io.emit("update",result);
+      }else{
+        io.emit("update",null);
+      }
+    })
+  })
+})
+
 /*
 //启动socket.io监听客户端连接
 io.on("connection",client=>{
