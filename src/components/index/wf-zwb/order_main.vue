@@ -20,7 +20,7 @@
             <span  class="score">评分：<i>{{doctor.com_grade}}</i></span>
           </div>
           <div class="skill">
-            <span v-for="(item,i) of doctor.skill_tages" :key="i">{{item}}</span>
+            <span v-for="(item,i) of skill_tags" :key="i">{{item}}</span>
           </div>
         </div>
       </div>
@@ -49,14 +49,14 @@
                     <p class="time">{{date}} {{week}} 上午<b>今天</b></p>
                     <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
                   </div>               
-                  <van-button :round="true" type="info" :disabled="isDisabled" @click="Order(date,'A')">预约</van-button>
+                  <van-button :round="true" type="info" :disabled="isDisabled_A" @click="Order(date,'A')">预约</van-button>
                 </li>
                 <li>
                   <div>
                     <p class="time">{{date}} {{week}} 下午 <b>今天</b></p>
                     <p class="platform">专家门诊-[平台] <b>50.00元</b></p>
                   </div>               
-                  <van-button :round="true" type="info" :disabled="isDisabled" @click="Order(date,'P')">预约</van-button>
+                  <van-button :round="true" type="info" :disabled="isDisabled_P" @click="Order(date,'P')">预约</van-button>
                 </li>
                 <li>
                   <div>
@@ -435,16 +435,21 @@ export default {
       hour:"",
       later_date:"",
       later_week:"",
-      isDisabled:false,
+      isDisabled_A:false,
+      isDisabled_P:false,
       doctor:{},
       did:0,
       hospital:{},
-      hid:0
+      hid:0,
+      skill_tags:[]
     }
   },
   methods:{
     Order:function(date,hour){
-      this.$router.push({name:"appointment",params:{did:this.did,date:date,hour:hour,week:this.week,hid:this.hid}})
+      this.$store.commit("setOrderMsg",{name : "date" , val : date});
+      this.$store.commit("setOrderMsg",{name : "hour" , val : hour});
+      this.$store.commit("setOrderMsg",{name : "week" , val : this.week});
+      this.$router.push("appointment");
     },
     pull:function(){
       this.isPull=!this.isPull;
@@ -483,24 +488,26 @@ export default {
       }
       if(hour>=12){
         this.hour="下午"
-        this.isDisabled=true;
+        this.isDisabled_A=true;
       }else{
         this.hour="上午"
       }
       if(hour>=17){
-        this.isDisabled=true;
+        this.isDisabled_P=true;
       }
     }
   },
   created(){
     this.getDay();
-    this.did=this.$route.params.did;
-    this.hid=this.$route.params.hid;
+    this.did=this.$store.getters.getOrderMsg.did;
+    this.hid=this.$store.getters.getOrderMsg.hid;
 
     config.axios(
       `/doctor/showDoctor/${this.did}`
     ).then(res=>{
       this.doctor=res.data.data[0];
+      var arr=this.doctor.skill_tags.split(",");
+      this.skill_tags=arr;
       console.log(this.doctor)
     }).catch(err=>{
       console.log(err)

@@ -18,6 +18,7 @@ import jkh from "./components/jkh/wtq/top_search.vue";
 import hospitalMain from "./components/index/mhp/hospitalMain.vue";
 import order3 from "./components/index/wtq/professor/Order3";
 import appointment from "./components/index/wf-zwb/appointment.vue";
+import myorder from "./components/me/order/myorder.vue";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -39,6 +40,7 @@ export default new Router({
     { path: "/order_main",component:order_main,name:"order_main"},
     { path: "/hospitalMain",component: hospitalMain},
     { path: "/order3",component: order3,name:"order3"},
-    { path: "/appointment",component:appointment,name:"appointment"}
+    { path: "/appointment",component:appointment,name:"appointment"},
+    { path: "/myorder",component: myorder},
   ]
 })

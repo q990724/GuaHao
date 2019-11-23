@@ -51,11 +51,16 @@
         </div>
       </van-tab>
     </van-tabs>
+    <frame :frameName="2"></frame>
   </div>
 </template>
 <script>
 import config from "../../assets/js/config.js";
+import frame from "../index/frame.vue"
 export default{
+  components : {
+    "frame" : frame
+  },
   data(){
     return {
       msg:[1,2,3],

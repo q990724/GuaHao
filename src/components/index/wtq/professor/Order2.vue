@@ -121,15 +121,14 @@ export default {
   },
   methods:{
    next(data){ 
-    this.$router.push({name:"order3",params:{text:data.text,hid:this.hid}});
+    this.$store.commit("setOrderMsg",{name : "className" , val : data.text});
+    this.$router.push("order3");
    }  
   },
   created(){
-    var hid=this.$route.params.hid;
-    console.log(hid);
-    this.hid=hid;
+    this.hid=this.$store.getters.getOrderMsg.hid;
     config.axios.get(
-      `/hospitals/hospitalsDetails/${hid}`
+      `/hospitals/hospitalsDetails/${this.hid}`
     ).then(res=>{
       this.hospital=res.data.result[0];
       console.log(this.hospital);

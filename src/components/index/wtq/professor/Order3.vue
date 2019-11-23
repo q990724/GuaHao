@@ -2,10 +2,10 @@
   <!-- 第三个页面  选专家 -->
   <div on="export">
     <!-- 组件 顶部导航栏 -->
-      <pre-title></pre-title>
+      <pre-title :text="text"></pre-title>
       <!-- @click-left="onClickLeft"-->
       <!-- 时间选择 -->
-      <div class="container">
+      <div class="containers">
         <div class="choose-all" >
           <div class="buxian">不限日期</div>
           <div class="date" >
@@ -53,7 +53,7 @@
     <!-- 医生个人信息 循环生成 -->
     <div class="main-doctor">
       <!-- 循环生成医生的预约信息列表 -->
-      <div class="order" v-for="(doc,i) of docs" :key="i">
+      <div class="orders" v-for="(doc,i) of docs" :key="i">
         <!-- 医生图片 -->
         <div class="doc-img">
           <img src="../../../../../public/images/index/gzh/doc.png">
@@ -110,14 +110,14 @@ export default {
       days: [],
       docs:[],
       hid:0,
-      skills : []
+      skills : [],
+      text : ""
     };
   },
   created() {
     this.getDate();
-    var text=this.$route.params.text;
-    this.hid=this.$route.params.hid;
-    console.log(this.hid);
+    var text=this.$store.getters.getOrderMsg.className;
+    this.hid=this.$store.getters.getOrderMsg.hid;
     this.text=text;
     config.axios(
       "/doctor/showDoctorsAll"
@@ -139,7 +139,8 @@ export default {
   },
   methods: {
     toOrder:function(did){
-      this.$router.push({name:"order_main",params:{did:did,hid:this.hid}})
+      this.$store.commit("setOrderMsg",{name : "did" , val : did});
+      this.$router.push("order_main");
     },
     getDate: function() {
       var year = new Date().getFullYear();
@@ -259,7 +260,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #export {
   position: relative;
 }
@@ -277,7 +278,7 @@ export default {
   z-index: 6;
 }
 /* 选择时间样式 */
-.container{
+.containers{
 height:7.5rem;
 overflow: hidden;
 }
@@ -325,7 +326,7 @@ overflow-y: auto; */
 .van-dropdown-menu__title {
   text-align: left !important;
 }
-.order {
+.orders {
   display: flex;
   /* flex-direction: column; */
   flex-wrap: nowrap;

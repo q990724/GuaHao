@@ -7,7 +7,7 @@
       </mt-header>
       <div class = "doc-title">
          <img src="../../../../public/images/me/me-header/qZY78470658.png" alt="">
-         <span>吴佩</span>
+         <span>{{doctor.dname}}</span>
          医生
       </div>
       <div class = "information">
@@ -16,7 +16,7 @@
               <span>就诊医院:</span>
           </div>
           <div class = "information-item"> 
-            <span>瑞金医院(医联平台)</span>
+            <span>{{orderMsg.hname}}</span>
           </div>
         </div>
         <div>
@@ -24,7 +24,7 @@
               <span>科室医生:</span>
           </div>
           <div class = "information-item"> 
-            <span>门诊肾脏 - 潘晓霞</span>
+            <span>{{orderMsg.className}} - {{doctor.dname}}</span>
           </div>
         </div>
         <div>
@@ -32,7 +32,7 @@
               <span>门诊时间:</span>
           </div>
           <div class = "information-item"> 
-            <span class = "text-color">2019-12-02 周一 下午</span>
+            <span class = "text-color">{{orderMsg.date}} {{orderMsg.week}} {{orderMsg.hour == "P" ? "下午" : "上午"}}</span>
           </div>
         </div>
         <div>
@@ -48,7 +48,7 @@
               <span>费用:</span>
           </div>
           <div class = "information-item"> 
-            <span>68.00元 （挂号费）</span>
+            <span>{{doctor.money}}元 （挂号费）</span>
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@
             <span>就诊人:</span>
           </div>
           <div>
-            <router-link to="">李明</router-link>
+            <router-link to="">{{uname}}</router-link>
             <i></i>
           </div>
         </div>
@@ -95,22 +95,25 @@
             <span>所患疾病:</span>
           </div>
           <div>
-            <router-link to="" class = "a_color">请选择疾病</router-link>
+              <span @click="open2" class = "a_color">{{dis}}</span>
             <i></i>
           </div>
         </div>
       </div>
       <van-action-sheet v-model="show" :actions="actions" cancel-text="取消" @cancel="onCancel" @select = "phoneMethod" @click-overlay = "hide" style="width:27rem;"/>
+      <van-action-sheet v-model="show2" :actions="actions2" cancel-text="取消" @cancel="onCancel2" @select = "phoneMethod2" @click-overlay = "hide2" style="width:27rem;"/>
       <button class = "my-register-btn">提交</button>
    </div>
 </template>
 
 <script>
+import config from "../../../assets/js/config.js"
    export default {
       data(){
         return {
           activeNames: ['1'],
           show: false,
+          show2:false,
           actions: [
           { name: '08:00-08:59'},
           { name: '09:00-09:59'},
@@ -119,40 +122,73 @@
           { name: '15:00-15:59'},
           { name: '16:00-16:59'},
           ],
-          time:"08:00-08-59"
+          time:"08:00-08-59",
+          doctor : {},
+          orderMsg : {},
+          uname : "",
+          dis:"请选择疾病",
+          actions2: [
+          { name: '关节炎'},
+          { name: '骨质增生'},
+          { name: '骨折'},
+          { name: '骨关节炎'},
+          { name: '骨瘤'},
+          { name: '骨质疏松'},
+          ],
         }
       },
       methods:{
         open(){
             this.show = !this.show;
          },
+         open2(){
+            this.show2 = !this.show2;
+         },
         hide(){
             this.show = false;
+         },
+         hide2(){
+           this.show2=false
          },
          phoneMethod(item){
             var str = item.name;
             this.time = str;
             this.show = false;
          },
+         phoneMethod2(item){
+            var str = item.name;
+            this.dis = str;
+            this.show2 = false;
+            console.log(item,this.dis,str)
+         },
          onCancel() {
             this.show = false;
          },
+         onCancel2() {
+            this.show2 = false;
+         },
       },
       created(){
-        var did=this.$route.params.did;
-        var date=this.$route.params.date;
-        var hour=this.$route.params.hour;
-        var week=this.$route.params.week;
-        var hid=this.$route.params.hid;
-        if(hour=='A'){
+        this.orderMsg = this.$store.getters.getOrderMsg;
+        this.uname = JSON.parse(sessionStorage.getItem("userMsg"))[0].user_name;
+        console.log(JSON.parse(sessionStorage.getItem("userMsg"))[0]);
+        if(this.orderMsg.hour=='A'){
           this.actions=this.actions.slice(0,3);
           this.time="08:00-08-59";
         }else{
           this.actions=this.actions.slice(3);
           this.time='14:00-14:59';
         }
-
-        console.log(did,date,hour,week,hid);
+        console.log(this.orderMsg);
+        config.axios.get(
+          `/doctor/showDoctor/${this.orderMsg.did}`
+        ).then(res=>{
+          console.log(res);
+          this.doctor = res.data.data[0];
+        }).catch(err=>{
+          console.log(err)
+        })
+        
         
       }
    }

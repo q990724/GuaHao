@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="hospital" @click="todetail(h.hid)" v-for="(h,i) of hospital" :key="i">
+    <div class="hospital" @click="todetail(h.hid,h.hname)" v-for="(h,i) of hospital" :key="i">
       <div class="hos">
         <div class="left_img">
           <img :src="`http://zhuanyi.applinzi.com/${h.hpic}`" alt="">
@@ -132,8 +132,11 @@ export default {
     }
   },
   methods:{
-    todetail(hid){
-      this.$router.push({name:"order2",params:{hid:hid}});
+    todetail(hid,hname){
+      console.log(hid)
+      this.$store.commit("setOrderMsg",{name : "hid" , val : hid});
+      this.$store.commit("setOrderMsg",{name : "hname" , val : hname});
+      this.$router.push("order2");
     },
     load(){
       config.axios.get(this.url)

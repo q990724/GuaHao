@@ -4,14 +4,15 @@
       <van-icon class="goback" @click="goback" name="arrow-left" /> 
       
     </div>
-    <div class="pre_title">预约挂号</div>
+    <div class="pre_title">{{text ? text : "预约挂号"}}</div>
   </div>
 </template>
 <script>
 export default {
+  props : ["text"],
   data(){
     return {
-
+      
     }
   },
   methods: {
